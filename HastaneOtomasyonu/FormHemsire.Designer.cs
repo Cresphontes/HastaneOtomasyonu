@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.txtAra = new System.Windows.Forms.TextBox();
-            this.lstKisiler = new System.Windows.Forms.ListBox();
-            this.cmsListe = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pbHemsire = new System.Windows.Forms.PictureBox();
+            this.btnHemsireGuncelle = new System.Windows.Forms.Button();
+            this.txtHemsirAra = new System.Windows.Forms.TextBox();
+            this.lstHemsireKisiler = new System.Windows.Forms.ListBox();
+            this.cmsHemsire = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.txtTckn = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
-            this.txtAd = new System.Windows.Forms.TextBox();
+            this.btnHemsireKaydet = new System.Windows.Forms.Button();
+            this.txtHemsireTCKN = new System.Windows.Forms.TextBox();
+            this.txtHemsireEmail = new System.Windows.Forms.TextBox();
+            this.txtHemsireTelefon = new System.Windows.Forms.TextBox();
+            this.txtHemsireSoyad = new System.Windows.Forms.TextBox();
+            this.txtHemsireAd = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,107 +52,111 @@
             this.denetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.cmsListe.SuspendLayout();
+            this.lblHemsireTCKN = new System.Windows.Forms.Label();
+            this.lblHemsireEmail = new System.Windows.Forms.Label();
+            this.lblHemsireTelefon = new System.Windows.Forms.Label();
+            this.lblHemsireSoyad = new System.Windows.Forms.Label();
+            this.lblHemsireAd = new System.Windows.Forms.Label();
+            this.lblHemsireMaas = new System.Windows.Forms.Label();
+            this.lblHemsireBrans = new System.Windows.Forms.Label();
+            this.txtHemsireMaas = new System.Windows.Forms.TextBox();
+            this.cmbHemsireBrans = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHemsire)).BeginInit();
+            this.cmsHemsire.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbHemsire
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(208, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
+            this.pbHemsire.Location = new System.Drawing.Point(199, 30);
+            this.pbHemsire.Name = "pbHemsire";
+            this.pbHemsire.Size = new System.Drawing.Size(139, 124);
+            this.pbHemsire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHemsire.TabIndex = 34;
+            this.pbHemsire.TabStop = false;
             // 
-            // btnGuncelle
+            // btnHemsireGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(123, 195);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(79, 38);
-            this.btnGuncelle.TabIndex = 33;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnHemsireGuncelle.Location = new System.Drawing.Point(114, 207);
+            this.btnHemsireGuncelle.Name = "btnHemsireGuncelle";
+            this.btnHemsireGuncelle.Size = new System.Drawing.Size(79, 38);
+            this.btnHemsireGuncelle.TabIndex = 33;
+            this.btnHemsireGuncelle.Text = "Güncelle";
+            this.btnHemsireGuncelle.UseVisualStyleBackColor = true;
             // 
-            // txtAra
+            // txtHemsirAra
             // 
-            this.txtAra.Location = new System.Drawing.Point(353, 235);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(196, 20);
-            this.txtAra.TabIndex = 32;
+            this.txtHemsirAra.Location = new System.Drawing.Point(344, 205);
+            this.txtHemsirAra.Name = "txtHemsirAra";
+            this.txtHemsirAra.Size = new System.Drawing.Size(196, 20);
+            this.txtHemsirAra.TabIndex = 32;
             // 
-            // lstKisiler
+            // lstHemsireKisiler
             // 
-            this.lstKisiler.ContextMenuStrip = this.cmsListe;
-            this.lstKisiler.FormattingEnabled = true;
-            this.lstKisiler.Location = new System.Drawing.Point(353, 60);
-            this.lstKisiler.Name = "lstKisiler";
-            this.lstKisiler.Size = new System.Drawing.Size(196, 147);
-            this.lstKisiler.TabIndex = 31;
+            this.lstHemsireKisiler.ContextMenuStrip = this.cmsHemsire;
+            this.lstHemsireKisiler.FormattingEnabled = true;
+            this.lstHemsireKisiler.Location = new System.Drawing.Point(344, 30);
+            this.lstHemsireKisiler.Name = "lstHemsireKisiler";
+            this.lstHemsireKisiler.Size = new System.Drawing.Size(196, 147);
+            this.lstHemsireKisiler.TabIndex = 31;
             // 
-            // cmsListe
+            // cmsHemsire
             // 
-            this.cmsListe.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsHemsire.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.silToolStripMenuItem});
-            this.cmsListe.Name = "cmsListe";
-            this.cmsListe.Size = new System.Drawing.Size(129, 26);
+            this.cmsHemsire.Name = "cmsListe";
+            this.cmsHemsire.Size = new System.Drawing.Size(129, 26);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
             this.silToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.silToolStripMenuItem.Text = "Sil";
             // 
-            // btnKaydet
+            // btnHemsireKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(21, 195);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(79, 38);
-            this.btnKaydet.TabIndex = 30;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnHemsireKaydet.Location = new System.Drawing.Point(12, 207);
+            this.btnHemsireKaydet.Name = "btnHemsireKaydet";
+            this.btnHemsireKaydet.Size = new System.Drawing.Size(79, 38);
+            this.btnHemsireKaydet.TabIndex = 30;
+            this.btnHemsireKaydet.Text = "Kaydet";
+            this.btnHemsireKaydet.UseVisualStyleBackColor = true;
             // 
-            // txtTckn
+            // txtHemsireTCKN
             // 
-            this.txtTckn.Location = new System.Drawing.Point(67, 164);
-            this.txtTckn.Name = "txtTckn";
-            this.txtTckn.Size = new System.Drawing.Size(135, 20);
-            this.txtTckn.TabIndex = 29;
+            this.txtHemsireTCKN.Location = new System.Drawing.Point(58, 130);
+            this.txtHemsireTCKN.Name = "txtHemsireTCKN";
+            this.txtHemsireTCKN.Size = new System.Drawing.Size(135, 20);
+            this.txtHemsireTCKN.TabIndex = 29;
             // 
-            // txtEmail
+            // txtHemsireEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(67, 138);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(135, 20);
-            this.txtEmail.TabIndex = 28;
+            this.txtHemsireEmail.Location = new System.Drawing.Point(58, 105);
+            this.txtHemsireEmail.Name = "txtHemsireEmail";
+            this.txtHemsireEmail.Size = new System.Drawing.Size(135, 20);
+            this.txtHemsireEmail.TabIndex = 28;
             // 
-            // txtTelefon
+            // txtHemsireTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(67, 112);
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(135, 20);
-            this.txtTelefon.TabIndex = 27;
+            this.txtHemsireTelefon.Location = new System.Drawing.Point(58, 80);
+            this.txtHemsireTelefon.Name = "txtHemsireTelefon";
+            this.txtHemsireTelefon.Size = new System.Drawing.Size(135, 20);
+            this.txtHemsireTelefon.TabIndex = 27;
             // 
-            // txtSoyad
+            // txtHemsireSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(67, 86);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(135, 20);
-            this.txtSoyad.TabIndex = 26;
+            this.txtHemsireSoyad.Location = new System.Drawing.Point(58, 55);
+            this.txtHemsireSoyad.Name = "txtHemsireSoyad";
+            this.txtHemsireSoyad.Size = new System.Drawing.Size(135, 20);
+            this.txtHemsireSoyad.TabIndex = 26;
             // 
-            // txtAd
+            // txtHemsireAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(67, 60);
-            this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(135, 20);
-            this.txtAd.TabIndex = 25;
+            this.txtHemsireAd.Location = new System.Drawing.Point(58, 30);
+            this.txtHemsireAd.Name = "txtHemsireAd";
+            this.txtHemsireAd.Size = new System.Drawing.Size(135, 20);
+            this.txtHemsireAd.TabIndex = 25;
             // 
             // menuStrip1
             // 
@@ -237,76 +241,113 @@
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
-            // label5
+            // lblHemsireTCKN
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 164);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "TCKN";
+            this.lblHemsireTCKN.AutoSize = true;
+            this.lblHemsireTCKN.Location = new System.Drawing.Point(12, 133);
+            this.lblHemsireTCKN.Name = "lblHemsireTCKN";
+            this.lblHemsireTCKN.Size = new System.Drawing.Size(36, 13);
+            this.lblHemsireTCKN.TabIndex = 36;
+            this.lblHemsireTCKN.Text = "TCKN";
             // 
-            // label4
+            // lblHemsireEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Email";
+            this.lblHemsireEmail.AutoSize = true;
+            this.lblHemsireEmail.Location = new System.Drawing.Point(12, 108);
+            this.lblHemsireEmail.Name = "lblHemsireEmail";
+            this.lblHemsireEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblHemsireEmail.TabIndex = 37;
+            this.lblHemsireEmail.Text = "Email";
             // 
-            // label3
+            // lblHemsireTelefon
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Telefon";
+            this.lblHemsireTelefon.AutoSize = true;
+            this.lblHemsireTelefon.Location = new System.Drawing.Point(12, 83);
+            this.lblHemsireTelefon.Name = "lblHemsireTelefon";
+            this.lblHemsireTelefon.Size = new System.Drawing.Size(43, 13);
+            this.lblHemsireTelefon.TabIndex = 38;
+            this.lblHemsireTelefon.Text = "Telefon";
             // 
-            // label2
+            // lblHemsireSoyad
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Soyad";
+            this.lblHemsireSoyad.AutoSize = true;
+            this.lblHemsireSoyad.Location = new System.Drawing.Point(12, 58);
+            this.lblHemsireSoyad.Name = "lblHemsireSoyad";
+            this.lblHemsireSoyad.Size = new System.Drawing.Size(37, 13);
+            this.lblHemsireSoyad.TabIndex = 39;
+            this.lblHemsireSoyad.Text = "Soyad";
             // 
-            // label1
+            // lblHemsireAd
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Ad";
+            this.lblHemsireAd.AutoSize = true;
+            this.lblHemsireAd.Location = new System.Drawing.Point(12, 33);
+            this.lblHemsireAd.Name = "lblHemsireAd";
+            this.lblHemsireAd.Size = new System.Drawing.Size(20, 13);
+            this.lblHemsireAd.TabIndex = 40;
+            this.lblHemsireAd.Text = "Ad";
+            // 
+            // lblHemsireMaas
+            // 
+            this.lblHemsireMaas.AutoSize = true;
+            this.lblHemsireMaas.Location = new System.Drawing.Point(12, 184);
+            this.lblHemsireMaas.Name = "lblHemsireMaas";
+            this.lblHemsireMaas.Size = new System.Drawing.Size(33, 13);
+            this.lblHemsireMaas.TabIndex = 43;
+            this.lblHemsireMaas.Text = "Maaş";
+            // 
+            // lblHemsireBrans
+            // 
+            this.lblHemsireBrans.AutoSize = true;
+            this.lblHemsireBrans.Location = new System.Drawing.Point(12, 158);
+            this.lblHemsireBrans.Name = "lblHemsireBrans";
+            this.lblHemsireBrans.Size = new System.Drawing.Size(34, 13);
+            this.lblHemsireBrans.TabIndex = 44;
+            this.lblHemsireBrans.Text = "Branş";
+            // 
+            // txtHemsireMaas
+            // 
+            this.txtHemsireMaas.Location = new System.Drawing.Point(58, 181);
+            this.txtHemsireMaas.Name = "txtHemsireMaas";
+            this.txtHemsireMaas.Size = new System.Drawing.Size(135, 20);
+            this.txtHemsireMaas.TabIndex = 42;
+            // 
+            // cmbHemsireBrans
+            // 
+            this.cmbHemsireBrans.FormattingEnabled = true;
+            this.cmbHemsireBrans.Location = new System.Drawing.Point(58, 155);
+            this.cmbHemsireBrans.Name = "cmbHemsireBrans";
+            this.cmbHemsireBrans.Size = new System.Drawing.Size(135, 21);
+            this.cmbHemsireBrans.TabIndex = 45;
             // 
             // FormHemsire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.lstKisiler);
-            this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.txtTckn);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtTelefon);
-            this.Controls.Add(this.txtSoyad);
-            this.Controls.Add(this.txtAd);
+            this.Controls.Add(this.cmbHemsireBrans);
+            this.Controls.Add(this.lblHemsireMaas);
+            this.Controls.Add(this.lblHemsireBrans);
+            this.Controls.Add(this.txtHemsireMaas);
+            this.Controls.Add(this.lblHemsireTCKN);
+            this.Controls.Add(this.lblHemsireEmail);
+            this.Controls.Add(this.lblHemsireTelefon);
+            this.Controls.Add(this.lblHemsireSoyad);
+            this.Controls.Add(this.lblHemsireAd);
+            this.Controls.Add(this.pbHemsire);
+            this.Controls.Add(this.btnHemsireGuncelle);
+            this.Controls.Add(this.txtHemsirAra);
+            this.Controls.Add(this.lstHemsireKisiler);
+            this.Controls.Add(this.btnHemsireKaydet);
+            this.Controls.Add(this.txtHemsireTCKN);
+            this.Controls.Add(this.txtHemsireEmail);
+            this.Controls.Add(this.txtHemsireTelefon);
+            this.Controls.Add(this.txtHemsireSoyad);
+            this.Controls.Add(this.txtHemsireAd);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormHemsire";
             this.Text = "FormHemsire";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.cmsListe.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbHemsire)).EndInit();
+            this.cmsHemsire.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -316,18 +357,18 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.TextBox txtAra;
-        private System.Windows.Forms.ListBox lstKisiler;
-        private System.Windows.Forms.ContextMenuStrip cmsListe;
+        private System.Windows.Forms.PictureBox pbHemsire;
+        private System.Windows.Forms.Button btnHemsireGuncelle;
+        private System.Windows.Forms.TextBox txtHemsirAra;
+        private System.Windows.Forms.ListBox lstHemsireKisiler;
+        private System.Windows.Forms.ContextMenuStrip cmsHemsire;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
-        private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.TextBox txtTckn;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTelefon;
-        private System.Windows.Forms.TextBox txtSoyad;
-        private System.Windows.Forms.TextBox txtAd;
+        private System.Windows.Forms.Button btnHemsireKaydet;
+        private System.Windows.Forms.TextBox txtHemsireTCKN;
+        private System.Windows.Forms.TextBox txtHemsireEmail;
+        private System.Windows.Forms.TextBox txtHemsireTelefon;
+        private System.Windows.Forms.TextBox txtHemsireSoyad;
+        private System.Windows.Forms.TextBox txtHemsireAd;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
@@ -339,10 +380,14 @@
         private System.Windows.Forms.ToolStripMenuItem denetimToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHemsireTCKN;
+        private System.Windows.Forms.Label lblHemsireEmail;
+        private System.Windows.Forms.Label lblHemsireTelefon;
+        private System.Windows.Forms.Label lblHemsireSoyad;
+        private System.Windows.Forms.Label lblHemsireAd;
+        private System.Windows.Forms.Label lblHemsireMaas;
+        private System.Windows.Forms.Label lblHemsireBrans;
+        private System.Windows.Forms.TextBox txtHemsireMaas;
+        private System.Windows.Forms.ComboBox cmbHemsireBrans;
     }
 }
