@@ -52,6 +52,11 @@
             this.denetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -59,7 +64,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(179, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(286, 48);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(139, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -68,7 +73,7 @@
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(140, 178);
+            this.btnGuncelle.Location = new System.Drawing.Point(247, 178);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(79, 38);
             this.btnGuncelle.TabIndex = 33;
@@ -77,7 +82,7 @@
             // 
             // txtAra
             // 
-            this.txtAra.Location = new System.Drawing.Point(324, 223);
+            this.txtAra.Location = new System.Drawing.Point(431, 223);
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(196, 20);
             this.txtAra.TabIndex = 32;
@@ -86,7 +91,7 @@
             // 
             this.lstKisiler.ContextMenuStrip = this.cmsListe;
             this.lstKisiler.FormattingEnabled = true;
-            this.lstKisiler.Location = new System.Drawing.Point(324, 48);
+            this.lstKisiler.Location = new System.Drawing.Point(431, 48);
             this.lstKisiler.Name = "lstKisiler";
             this.lstKisiler.Size = new System.Drawing.Size(196, 147);
             this.lstKisiler.TabIndex = 31;
@@ -107,7 +112,7 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(38, 178);
+            this.btnKaydet.Location = new System.Drawing.Point(145, 178);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(79, 38);
             this.btnKaydet.TabIndex = 30;
@@ -116,35 +121,35 @@
             // 
             // txtTckn
             // 
-            this.txtTckn.Location = new System.Drawing.Point(38, 152);
+            this.txtTckn.Location = new System.Drawing.Point(145, 152);
             this.txtTckn.Name = "txtTckn";
             this.txtTckn.Size = new System.Drawing.Size(135, 20);
             this.txtTckn.TabIndex = 29;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(38, 126);
+            this.txtEmail.Location = new System.Drawing.Point(145, 126);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(135, 20);
             this.txtEmail.TabIndex = 28;
             // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(38, 100);
+            this.txtTelefon.Location = new System.Drawing.Point(145, 100);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtTelefon.TabIndex = 27;
             // 
             // txtSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(38, 74);
+            this.txtSoyad.Location = new System.Drawing.Point(145, 74);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(135, 20);
             this.txtSoyad.TabIndex = 26;
             // 
             // txtAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(38, 48);
+            this.txtAd.Location = new System.Drawing.Point(145, 48);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(135, 20);
             this.txtAd.TabIndex = 25;
@@ -232,11 +237,61 @@
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(89, 152);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "TCKN";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(93, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Email";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(82, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Telefon";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(88, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Soyad";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(105, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Ad";
+            // 
             // FormDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.txtAra);
@@ -284,5 +339,10 @@
         private System.Windows.Forms.ToolStripMenuItem denetimToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
