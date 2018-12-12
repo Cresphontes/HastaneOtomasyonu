@@ -24,7 +24,7 @@ namespace HastaneOtomasyonu.Class_Lib
 
             set
             {
-                if (!rgx.IsMatch(value))
+                if (!(rgx.IsMatch(value)))
                 {
                     throw new Exception("Adınız yalnızca harflerden oluşmalıdır.");
                 }
@@ -98,6 +98,7 @@ namespace HastaneOtomasyonu.Class_Lib
                 _tckn = value;
             }
         }
+      
 
     }
 }
