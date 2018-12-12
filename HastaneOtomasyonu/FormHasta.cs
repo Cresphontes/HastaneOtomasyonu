@@ -16,5 +16,6 @@ namespace HastaneOtomasyonu
         {
             InitializeComponent();
         }
+
     }
 }

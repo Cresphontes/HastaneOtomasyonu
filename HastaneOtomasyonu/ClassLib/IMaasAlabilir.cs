@@ -8,6 +8,6 @@ namespace HastaneOtomasyonu
 {
     public interface IMaasAlabilir
     {
-       
+        int Maas { get; set; }
     }
 }
