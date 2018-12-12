@@ -13,7 +13,8 @@ namespace HastaneOtomasyonu.Class_Lib
     {
 
         private string _ad, _soyad, _email, _telefon, _tckn;
-        Regex rgx = new Regex(@"^[a-zA-Z]*$");
+        Regex rgxAd = new Regex(@"^[a-zA-Z\s]*$");
+        Regex rgxSoyad = new Regex(@"^[a-zA-Z]*$");
         Regex rgxEmail = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
         Regex rgxTelefon = new Regex(@"^[0-9]*$");
 
@@ -24,11 +25,11 @@ namespace HastaneOtomasyonu.Class_Lib
 
             set
             {
-                if (!(rgx.IsMatch(value)))
+                if (!(rgxAd.IsMatch(value)))
                 {
                     throw new Exception("Adınız yalnızca harflerden oluşmalıdır.");
                 }
-
+                value = value.Trim();
                 _ad = value.Substring(0, 1).ToUpper() + value.Substring(1).ToLower();
             }
         }
@@ -37,9 +38,9 @@ namespace HastaneOtomasyonu.Class_Lib
             get => this._soyad;
             set
             {
-                if (!rgx.IsMatch(value))
+                if (!rgxSoyad.IsMatch(value))
                 {
-                    throw new Exception("Soyadınızı yalnızca harflerden oluşmalıdır.");
+                    throw new Exception("Soyadınız yalnızca harflerden oluşmalıdır.");
                 }
 
                 _soyad = value.Substring(0, 1).ToUpper() + value.Substring(1).ToLower();

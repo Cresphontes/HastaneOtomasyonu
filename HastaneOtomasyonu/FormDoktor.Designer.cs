@@ -295,7 +295,7 @@
             // cmbDoktorBrans
             // 
             this.cmbDoktorBrans.FormattingEnabled = true;
-            this.cmbDoktorBrans.Location = new System.Drawing.Point(75, 218);
+            this.cmbDoktorBrans.Location = new System.Drawing.Point(75, 186);
             this.cmbDoktorBrans.Name = "cmbDoktorBrans";
             this.cmbDoktorBrans.Size = new System.Drawing.Size(135, 21);
             this.cmbDoktorBrans.TabIndex = 49;
@@ -312,7 +312,7 @@
             // lblDoktorBrans
             // 
             this.lblDoktorBrans.AutoSize = true;
-            this.lblDoktorBrans.Location = new System.Drawing.Point(19, 221);
+            this.lblDoktorBrans.Location = new System.Drawing.Point(19, 189);
             this.lblDoktorBrans.Name = "lblDoktorBrans";
             this.lblDoktorBrans.Size = new System.Drawing.Size(34, 13);
             this.lblDoktorBrans.TabIndex = 48;
@@ -328,7 +328,7 @@
             // cmbDoktorHemsire
             // 
             this.cmbDoktorHemsire.FormattingEnabled = true;
-            this.cmbDoktorHemsire.Location = new System.Drawing.Point(75, 186);
+            this.cmbDoktorHemsire.Location = new System.Drawing.Point(75, 218);
             this.cmbDoktorHemsire.Name = "cmbDoktorHemsire";
             this.cmbDoktorHemsire.Size = new System.Drawing.Size(135, 21);
             this.cmbDoktorHemsire.TabIndex = 50;
@@ -336,7 +336,7 @@
             // lblDoktorHemsire
             // 
             this.lblDoktorHemsire.AutoSize = true;
-            this.lblDoktorHemsire.Location = new System.Drawing.Point(19, 189);
+            this.lblDoktorHemsire.Location = new System.Drawing.Point(19, 221);
             this.lblDoktorHemsire.Name = "lblDoktorHemsire";
             this.lblDoktorHemsire.Size = new System.Drawing.Size(45, 13);
             this.lblDoktorHemsire.TabIndex = 51;

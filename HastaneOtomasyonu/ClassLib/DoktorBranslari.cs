@@ -15,7 +15,7 @@ namespace HastaneOtomasyonu
         KBB,
         CocukSagligi,
         Kardiyoloji,
-        GözHastaliklaari
+        GözHastaliklari
     }
 
     

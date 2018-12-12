@@ -125,6 +125,7 @@
             this.btnHemsireKaydet.TabIndex = 30;
             this.btnHemsireKaydet.Text = "Kaydet";
             this.btnHemsireKaydet.UseVisualStyleBackColor = true;
+            this.btnHemsireKaydet.Click += new System.EventHandler(this.btnHemsireKaydet_Click);
             // 
             // txtHemsireTCKN
             // 
@@ -170,7 +171,7 @@
             this.toolStripComboBox1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(813, 27);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -337,7 +338,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(813, 461);
             this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.cmbHemsireBrans);
             this.Controls.Add(this.lblHemsireMaas);
@@ -361,6 +362,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormHemsire";
             this.Text = "FormHemsire";
+            this.Load += new System.EventHandler(this.FormHemsire_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbHemsire)).EndInit();
             this.cmsHemsire.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

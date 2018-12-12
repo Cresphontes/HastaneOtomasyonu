@@ -32,32 +32,37 @@ namespace HastaneOtomasyonu
             doktor.Telefon = txtDoktorTelefon.Text;
             doktor.TCKN = txtDoktorTCKN.Text;
             doktor.Maas = txtDoktorMaas.Text;
+           
 
 
-            //doktor.DoktorBrans = cmbDoktorBrans.SelectedItem as DoktorBranslari;
 
-            //switch (cmbdoktorbrans.selectedıtem as i)
-            //{
-            //    case doktorbranslari.genelcerrahi:
-
-            //        break;
-            //    case doktorbranslari.ıchastaliklari:
-            //        break;
-            //    case doktorbranslari.ortopedi:
-            //        break;
-            //    case doktorbranslari.uroloji:
-            //        break;
-            //    case doktorbranslari.kbb:
-            //        break;
-            //    case doktorbranslari.cocuksagligi:
-            //        break;
-            //    case doktorbranslari.kardiyoloji:
-            //        break;
-            //    case doktorbranslari.gözhastaliklaari:
-            //        break;
-            //    default:
-            //        break;
-            //}
+            switch (cmbDoktorBrans.SelectedItem)
+            {
+             
+                case DoktorBranslari.GenelCerrahi:
+                    doktor.DoktorBrans = DoktorBranslari.GenelCerrahi;
+                    break;
+                case DoktorBranslari.Ortopedi:
+                    doktor.DoktorBrans = DoktorBranslari.Ortopedi;
+                    break;
+                case DoktorBranslari.Uroloji:
+                    doktor.DoktorBrans = DoktorBranslari.Uroloji;
+                    break;
+                case DoktorBranslari.KBB:
+                    doktor.DoktorBrans = DoktorBranslari.KBB;
+                    break;
+                case DoktorBranslari.CocukSagligi:
+                    doktor.DoktorBrans = DoktorBranslari.CocukSagligi;
+                    break;
+                case DoktorBranslari.Kardiyoloji:
+                    doktor.DoktorBrans = DoktorBranslari.Kardiyoloji;
+                    break;
+                case DoktorBranslari.GözHastaliklaari:
+                    doktor.DoktorBrans = DoktorBranslari.GözHastaliklaari;
+                    break;
+                default:
+                    break;
+            }
 
 
             doktorlar.Add(doktor);
@@ -76,6 +81,7 @@ namespace HastaneOtomasyonu
         private void FormDoktor_Load(object sender, EventArgs e)
         {
             cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
+            
             
         }
     }

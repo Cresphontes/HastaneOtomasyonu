@@ -36,7 +36,7 @@ namespace HastaneOtomasyonu.ClassLib
 
         public override string ToString()
         {
-            return $"{this.Ad} {this.Soyad} {this.DoktorBrans}";
+            return $"{this.Ad} {this.Soyad}";
         }
     }
 }
