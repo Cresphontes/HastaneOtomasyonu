@@ -8,6 +8,6 @@ namespace HastaneOtomasyonu
 {
     public interface IHemsireSecebilir
     {
-       string HemsireSec();
+        string HemsireSec { get; set; }
     }
 }

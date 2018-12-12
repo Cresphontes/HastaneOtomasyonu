@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace HastaneOtomasyonu.ClassLib
 {
-    public class Doktor : Kisi, IMaasAlabilir, IHemsireSecebilir
+    public class Doktor : Kisi, IMaasAlabilir,IHemsireSecebilir
     {
         private string _maas;
 
-        public DoktorBranslari DoktorBrans { get; }
+        public DoktorBranslari DoktorBrans { get; set; }
 
         public string Maas
         {
@@ -28,9 +28,15 @@ namespace HastaneOtomasyonu.ClassLib
 
         }
 
-        public string HemsireSec()
+        public string HemsireSec
         {
-            throw new NotImplementedException();
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Ad} {this.Soyad} {this.DoktorBrans}";
         }
     }
 }

@@ -17,4 +17,6 @@ namespace HastaneOtomasyonu
         Kardiyoloji,
         GözHastaliklaari
     }
+
+    
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HastaneOtomasyonu.ClassLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace HastaneOtomasyonu
 
         private void btnHastaKayit_Click(object sender, EventArgs e)
         {
-          
+              
         }
 
         private void FormGiris_Load(object sender, EventArgs e)
@@ -117,7 +118,7 @@ namespace HastaneOtomasyonu
         #region Hemşire Form
         private void hemşireKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           
             if (_frmHemsire == null || _frmHemsire.IsDisposed)
             {
                 _frmHemsire = new FormHemsire();

@@ -127,6 +127,7 @@
             this.btnDoktorKaydet.TabIndex = 30;
             this.btnDoktorKaydet.Text = "Kaydet";
             this.btnDoktorKaydet.UseVisualStyleBackColor = true;
+            this.btnDoktorKaydet.Click += new System.EventHandler(this.btnDoktorKaydet_Click);
             // 
             // txtDoktorTCKN
             // 
@@ -172,7 +173,7 @@
             this.toolStripComboBox1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(665, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(721, 27);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -356,7 +357,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Sienna;
-            this.ClientSize = new System.Drawing.Size(665, 450);
+            this.ClientSize = new System.Drawing.Size(721, 461);
             this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.lblDoktorHemsire);
             this.Controls.Add(this.cmbDoktorHemsire);
@@ -383,6 +384,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDoktor";
             this.Text = "FormDoktor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormDoktor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).EndInit();
             this.cmsListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

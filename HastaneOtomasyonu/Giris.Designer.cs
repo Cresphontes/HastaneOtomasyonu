@@ -47,10 +47,9 @@
             this.hemşireKayıtToolStripMenuItem});
             this.menuGirisler.Location = new System.Drawing.Point(0, 0);
             this.menuGirisler.Name = "menuGirisler";
-            this.menuGirisler.Size = new System.Drawing.Size(860, 24);
+            this.menuGirisler.Size = new System.Drawing.Size(484, 24);
             this.menuGirisler.TabIndex = 6;
             this.menuGirisler.Text = "MenuKayıtlar";
-           
             // 
             // hastaKayıtToolStripMenuItem
             // 
@@ -85,7 +84,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(860, 470);
+            this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.menuGirisler);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
