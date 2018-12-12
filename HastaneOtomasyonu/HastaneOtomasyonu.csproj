@@ -83,8 +83,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDoktor.resx">
+      <DependentUpon>FormDoktor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHasta.resx">
+      <DependentUpon>FormHasta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHemsire.resx">
       <DependentUpon>FormHemsire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPersonel.resx">
+      <DependentUpon>FormPersonel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
