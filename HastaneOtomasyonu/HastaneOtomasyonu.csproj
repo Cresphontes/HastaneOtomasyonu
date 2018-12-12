@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassLib\Doktor.cs" />
     <Compile Include="ClassLib\Kisi.cs" />
     <Compile Include="ClassLib\DoktorBranslari.cs" />
     <Compile Include="FormDoktor.cs">
