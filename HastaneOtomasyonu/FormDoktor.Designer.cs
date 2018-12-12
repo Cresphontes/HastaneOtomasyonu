@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.txtAra = new System.Windows.Forms.TextBox();
-            this.lstKisiler = new System.Windows.Forms.ListBox();
+            this.pbDoktor = new System.Windows.Forms.PictureBox();
+            this.btnDoktorGuncelle = new System.Windows.Forms.Button();
+            this.txtDoktorAra = new System.Windows.Forms.TextBox();
+            this.lstDoktorlar = new System.Windows.Forms.ListBox();
             this.cmsListe = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.txtTckn = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
-            this.txtAd = new System.Windows.Forms.TextBox();
+            this.btnDoktorKaydet = new System.Windows.Forms.Button();
+            this.txtDoktorTCKN = new System.Windows.Forms.TextBox();
+            this.txtDoktorEmail = new System.Windows.Forms.TextBox();
+            this.txtDoktorTelefon = new System.Windows.Forms.TextBox();
+            this.txtDoktorSoyad = new System.Windows.Forms.TextBox();
+            this.txtDoktorAd = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,49 +52,53 @@
             this.denetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblDoktorTCKN = new System.Windows.Forms.Label();
+            this.lblDoktorEmail = new System.Windows.Forms.Label();
+            this.lblDoktorTelefon = new System.Windows.Forms.Label();
+            this.lblDoktorSoyad = new System.Windows.Forms.Label();
+            this.lblDoktorAd = new System.Windows.Forms.Label();
+            this.cmbHemsireBrans = new System.Windows.Forms.ComboBox();
+            this.lblDoktorMaas = new System.Windows.Forms.Label();
+            this.lblDoktorBrans = new System.Windows.Forms.Label();
+            this.txtHemsireMaas = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbDoktor
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(286, 48);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
+            this.pbDoktor.Location = new System.Drawing.Point(216, 52);
+            this.pbDoktor.Name = "pbDoktor";
+            this.pbDoktor.Size = new System.Drawing.Size(139, 124);
+            this.pbDoktor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDoktor.TabIndex = 34;
+            this.pbDoktor.TabStop = false;
             // 
-            // btnGuncelle
+            // btnDoktorGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(247, 178);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(79, 38);
-            this.btnGuncelle.TabIndex = 33;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnDoktorGuncelle.Location = new System.Drawing.Point(177, 250);
+            this.btnDoktorGuncelle.Name = "btnDoktorGuncelle";
+            this.btnDoktorGuncelle.Size = new System.Drawing.Size(79, 38);
+            this.btnDoktorGuncelle.TabIndex = 33;
+            this.btnDoktorGuncelle.Text = "Güncelle";
+            this.btnDoktorGuncelle.UseVisualStyleBackColor = true;
             // 
-            // txtAra
+            // txtDoktorAra
             // 
-            this.txtAra.Location = new System.Drawing.Point(431, 223);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(196, 20);
-            this.txtAra.TabIndex = 32;
+            this.txtDoktorAra.Location = new System.Drawing.Point(361, 229);
+            this.txtDoktorAra.Name = "txtDoktorAra";
+            this.txtDoktorAra.Size = new System.Drawing.Size(196, 20);
+            this.txtDoktorAra.TabIndex = 32;
             // 
-            // lstKisiler
+            // lstDoktorlar
             // 
-            this.lstKisiler.ContextMenuStrip = this.cmsListe;
-            this.lstKisiler.FormattingEnabled = true;
-            this.lstKisiler.Location = new System.Drawing.Point(431, 48);
-            this.lstKisiler.Name = "lstKisiler";
-            this.lstKisiler.Size = new System.Drawing.Size(196, 147);
-            this.lstKisiler.TabIndex = 31;
+            this.lstDoktorlar.ContextMenuStrip = this.cmsListe;
+            this.lstDoktorlar.FormattingEnabled = true;
+            this.lstDoktorlar.Location = new System.Drawing.Point(361, 52);
+            this.lstDoktorlar.Name = "lstDoktorlar";
+            this.lstDoktorlar.Size = new System.Drawing.Size(196, 147);
+            this.lstDoktorlar.TabIndex = 31;
             // 
             // cmsListe
             // 
@@ -110,49 +114,49 @@
             this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.silToolStripMenuItem.Text = "Sil";
             // 
-            // btnKaydet
+            // btnDoktorKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(145, 178);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(79, 38);
-            this.btnKaydet.TabIndex = 30;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnDoktorKaydet.Location = new System.Drawing.Point(75, 250);
+            this.btnDoktorKaydet.Name = "btnDoktorKaydet";
+            this.btnDoktorKaydet.Size = new System.Drawing.Size(79, 38);
+            this.btnDoktorKaydet.TabIndex = 30;
+            this.btnDoktorKaydet.Text = "Kaydet";
+            this.btnDoktorKaydet.UseVisualStyleBackColor = true;
             // 
-            // txtTckn
+            // txtDoktorTCKN
             // 
-            this.txtTckn.Location = new System.Drawing.Point(145, 152);
-            this.txtTckn.Name = "txtTckn";
-            this.txtTckn.Size = new System.Drawing.Size(135, 20);
-            this.txtTckn.TabIndex = 29;
+            this.txtDoktorTCKN.Location = new System.Drawing.Point(75, 156);
+            this.txtDoktorTCKN.Name = "txtDoktorTCKN";
+            this.txtDoktorTCKN.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorTCKN.TabIndex = 29;
             // 
-            // txtEmail
+            // txtDoktorEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(145, 126);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(135, 20);
-            this.txtEmail.TabIndex = 28;
+            this.txtDoktorEmail.Location = new System.Drawing.Point(75, 130);
+            this.txtDoktorEmail.Name = "txtDoktorEmail";
+            this.txtDoktorEmail.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorEmail.TabIndex = 28;
             // 
-            // txtTelefon
+            // txtDoktorTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(145, 100);
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(135, 20);
-            this.txtTelefon.TabIndex = 27;
+            this.txtDoktorTelefon.Location = new System.Drawing.Point(75, 104);
+            this.txtDoktorTelefon.Name = "txtDoktorTelefon";
+            this.txtDoktorTelefon.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorTelefon.TabIndex = 27;
             // 
-            // txtSoyad
+            // txtDoktorSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(145, 74);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(135, 20);
-            this.txtSoyad.TabIndex = 26;
+            this.txtDoktorSoyad.Location = new System.Drawing.Point(75, 78);
+            this.txtDoktorSoyad.Name = "txtDoktorSoyad";
+            this.txtDoktorSoyad.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorSoyad.TabIndex = 26;
             // 
-            // txtAd
+            // txtDoktorAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(145, 48);
-            this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(135, 20);
-            this.txtAd.TabIndex = 25;
+            this.txtDoktorAd.Location = new System.Drawing.Point(75, 52);
+            this.txtDoktorAd.Name = "txtDoktorAd";
+            this.txtDoktorAd.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorAd.TabIndex = 25;
             // 
             // menuStrip1
             // 
@@ -237,75 +241,112 @@
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
-            // label5
+            // lblDoktorTCKN
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(89, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "TCKN";
+            this.lblDoktorTCKN.AutoSize = true;
+            this.lblDoktorTCKN.Location = new System.Drawing.Point(19, 156);
+            this.lblDoktorTCKN.Name = "lblDoktorTCKN";
+            this.lblDoktorTCKN.Size = new System.Drawing.Size(36, 13);
+            this.lblDoktorTCKN.TabIndex = 36;
+            this.lblDoktorTCKN.Text = "TCKN";
             // 
-            // label4
+            // lblDoktorEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(93, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Email";
+            this.lblDoktorEmail.AutoSize = true;
+            this.lblDoktorEmail.Location = new System.Drawing.Point(19, 130);
+            this.lblDoktorEmail.Name = "lblDoktorEmail";
+            this.lblDoktorEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblDoktorEmail.TabIndex = 37;
+            this.lblDoktorEmail.Text = "Email";
             // 
-            // label3
+            // lblDoktorTelefon
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Telefon";
+            this.lblDoktorTelefon.AutoSize = true;
+            this.lblDoktorTelefon.Location = new System.Drawing.Point(19, 104);
+            this.lblDoktorTelefon.Name = "lblDoktorTelefon";
+            this.lblDoktorTelefon.Size = new System.Drawing.Size(43, 13);
+            this.lblDoktorTelefon.TabIndex = 38;
+            this.lblDoktorTelefon.Text = "Telefon";
             // 
-            // label2
+            // lblDoktorSoyad
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Soyad";
+            this.lblDoktorSoyad.AutoSize = true;
+            this.lblDoktorSoyad.Location = new System.Drawing.Point(19, 78);
+            this.lblDoktorSoyad.Name = "lblDoktorSoyad";
+            this.lblDoktorSoyad.Size = new System.Drawing.Size(37, 13);
+            this.lblDoktorSoyad.TabIndex = 39;
+            this.lblDoktorSoyad.Text = "Soyad";
             // 
-            // label1
+            // lblDoktorAd
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Ad";
+            this.lblDoktorAd.AutoSize = true;
+            this.lblDoktorAd.Location = new System.Drawing.Point(19, 52);
+            this.lblDoktorAd.Name = "lblDoktorAd";
+            this.lblDoktorAd.Size = new System.Drawing.Size(20, 13);
+            this.lblDoktorAd.TabIndex = 40;
+            this.lblDoktorAd.Text = "Ad";
+            // 
+            // cmbHemsireBrans
+            // 
+            this.cmbHemsireBrans.FormattingEnabled = true;
+            this.cmbHemsireBrans.Location = new System.Drawing.Point(74, 183);
+            this.cmbHemsireBrans.Name = "cmbHemsireBrans";
+            this.cmbHemsireBrans.Size = new System.Drawing.Size(135, 21);
+            this.cmbHemsireBrans.TabIndex = 49;
+            // 
+            // lblDoktorMaas
+            // 
+            this.lblDoktorMaas.AutoSize = true;
+            this.lblDoktorMaas.Location = new System.Drawing.Point(20, 212);
+            this.lblDoktorMaas.Name = "lblDoktorMaas";
+            this.lblDoktorMaas.Size = new System.Drawing.Size(33, 13);
+            this.lblDoktorMaas.TabIndex = 47;
+            this.lblDoktorMaas.Text = "Maaş";
+            // 
+            // lblDoktorBrans
+            // 
+            this.lblDoktorBrans.AutoSize = true;
+            this.lblDoktorBrans.Location = new System.Drawing.Point(19, 186);
+            this.lblDoktorBrans.Name = "lblDoktorBrans";
+            this.lblDoktorBrans.Size = new System.Drawing.Size(34, 13);
+            this.lblDoktorBrans.TabIndex = 48;
+            this.lblDoktorBrans.Text = "Branş";
+            // 
+            // txtHemsireMaas
+            // 
+            this.txtHemsireMaas.Location = new System.Drawing.Point(74, 209);
+            this.txtHemsireMaas.Name = "txtHemsireMaas";
+            this.txtHemsireMaas.Size = new System.Drawing.Size(135, 20);
+            this.txtHemsireMaas.TabIndex = 46;
             // 
             // FormDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.lstKisiler);
-            this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.txtTckn);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtTelefon);
-            this.Controls.Add(this.txtSoyad);
-            this.Controls.Add(this.txtAd);
+            this.Controls.Add(this.cmbHemsireBrans);
+            this.Controls.Add(this.lblDoktorMaas);
+            this.Controls.Add(this.lblDoktorBrans);
+            this.Controls.Add(this.txtHemsireMaas);
+            this.Controls.Add(this.lblDoktorTCKN);
+            this.Controls.Add(this.lblDoktorEmail);
+            this.Controls.Add(this.lblDoktorTelefon);
+            this.Controls.Add(this.lblDoktorSoyad);
+            this.Controls.Add(this.lblDoktorAd);
+            this.Controls.Add(this.pbDoktor);
+            this.Controls.Add(this.btnDoktorGuncelle);
+            this.Controls.Add(this.txtDoktorAra);
+            this.Controls.Add(this.lstDoktorlar);
+            this.Controls.Add(this.btnDoktorKaydet);
+            this.Controls.Add(this.txtDoktorTCKN);
+            this.Controls.Add(this.txtDoktorEmail);
+            this.Controls.Add(this.txtDoktorTelefon);
+            this.Controls.Add(this.txtDoktorSoyad);
+            this.Controls.Add(this.txtDoktorAd);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormDoktor";
             this.Text = "FormDoktor";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).EndInit();
             this.cmsListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -316,18 +357,18 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.TextBox txtAra;
-        private System.Windows.Forms.ListBox lstKisiler;
+        private System.Windows.Forms.PictureBox pbDoktor;
+        private System.Windows.Forms.Button btnDoktorGuncelle;
+        private System.Windows.Forms.TextBox txtDoktorAra;
+        private System.Windows.Forms.ListBox lstDoktorlar;
         private System.Windows.Forms.ContextMenuStrip cmsListe;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
-        private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.TextBox txtTckn;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTelefon;
-        private System.Windows.Forms.TextBox txtSoyad;
-        private System.Windows.Forms.TextBox txtAd;
+        private System.Windows.Forms.Button btnDoktorKaydet;
+        private System.Windows.Forms.TextBox txtDoktorTCKN;
+        private System.Windows.Forms.TextBox txtDoktorEmail;
+        private System.Windows.Forms.TextBox txtDoktorTelefon;
+        private System.Windows.Forms.TextBox txtDoktorSoyad;
+        private System.Windows.Forms.TextBox txtDoktorAd;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
@@ -339,10 +380,14 @@
         private System.Windows.Forms.ToolStripMenuItem denetimToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDoktorTCKN;
+        private System.Windows.Forms.Label lblDoktorEmail;
+        private System.Windows.Forms.Label lblDoktorTelefon;
+        private System.Windows.Forms.Label lblDoktorSoyad;
+        private System.Windows.Forms.Label lblDoktorAd;
+        private System.Windows.Forms.ComboBox cmbHemsireBrans;
+        private System.Windows.Forms.Label lblDoktorMaas;
+        private System.Windows.Forms.Label lblDoktorBrans;
+        private System.Windows.Forms.TextBox txtHemsireMaas;
     }
 }
