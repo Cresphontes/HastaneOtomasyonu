@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.txtAra = new System.Windows.Forms.TextBox();
-            this.lstKisiler = new System.Windows.Forms.ListBox();
-            this.cmsListe = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pbHasta = new System.Windows.Forms.PictureBox();
+            this.btnHastaGuncelle = new System.Windows.Forms.Button();
+            this.txtHastaAra = new System.Windows.Forms.TextBox();
+            this.lstHastaList = new System.Windows.Forms.ListBox();
+            this.cmsHastaListe = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.txtTckn = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
-            this.txtAd = new System.Windows.Forms.TextBox();
+            this.btnHastaKaydet = new System.Windows.Forms.Button();
+            this.txtHastaTCKN = new System.Windows.Forms.TextBox();
+            this.txtHastaEmail = new System.Windows.Forms.TextBox();
+            this.txtHastaTelefon = new System.Windows.Forms.TextBox();
+            this.txtHastaSoyad = new System.Windows.Forms.TextBox();
+            this.txtHastaAd = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,51 +57,51 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.cmsListe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).BeginInit();
+            this.cmsHastaListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbHasta
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(204, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
+            this.pbHasta.Location = new System.Drawing.Point(204, 40);
+            this.pbHasta.Name = "pbHasta";
+            this.pbHasta.Size = new System.Drawing.Size(139, 124);
+            this.pbHasta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHasta.TabIndex = 34;
+            this.pbHasta.TabStop = false;
             // 
-            // btnGuncelle
+            // btnHastaGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(119, 175);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(79, 38);
-            this.btnGuncelle.TabIndex = 33;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnHastaGuncelle.Location = new System.Drawing.Point(119, 175);
+            this.btnHastaGuncelle.Name = "btnHastaGuncelle";
+            this.btnHastaGuncelle.Size = new System.Drawing.Size(79, 38);
+            this.btnHastaGuncelle.TabIndex = 33;
+            this.btnHastaGuncelle.Text = "Güncelle";
+            this.btnHastaGuncelle.UseVisualStyleBackColor = true;
             // 
-            // txtAra
+            // txtHastaAra
             // 
-            this.txtAra.Location = new System.Drawing.Point(349, 215);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(196, 20);
-            this.txtAra.TabIndex = 32;
+            this.txtHastaAra.Location = new System.Drawing.Point(349, 215);
+            this.txtHastaAra.Name = "txtHastaAra";
+            this.txtHastaAra.Size = new System.Drawing.Size(196, 20);
+            this.txtHastaAra.TabIndex = 32;
             // 
-            // lstKisiler
+            // lstHastaList
             // 
-            this.lstKisiler.ContextMenuStrip = this.cmsListe;
-            this.lstKisiler.FormattingEnabled = true;
-            this.lstKisiler.Location = new System.Drawing.Point(349, 40);
-            this.lstKisiler.Name = "lstKisiler";
-            this.lstKisiler.Size = new System.Drawing.Size(196, 147);
-            this.lstKisiler.TabIndex = 31;
+            this.lstHastaList.ContextMenuStrip = this.cmsHastaListe;
+            this.lstHastaList.FormattingEnabled = true;
+            this.lstHastaList.Location = new System.Drawing.Point(349, 40);
+            this.lstHastaList.Name = "lstHastaList";
+            this.lstHastaList.Size = new System.Drawing.Size(196, 147);
+            this.lstHastaList.TabIndex = 31;
             // 
-            // cmsListe
+            // cmsHastaListe
             // 
-            this.cmsListe.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsHastaListe.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.silToolStripMenuItem});
-            this.cmsListe.Name = "cmsListe";
-            this.cmsListe.Size = new System.Drawing.Size(129, 26);
+            this.cmsHastaListe.Name = "cmsListe";
+            this.cmsHastaListe.Size = new System.Drawing.Size(129, 26);
             // 
             // silToolStripMenuItem
             // 
@@ -110,49 +110,49 @@
             this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.silToolStripMenuItem.Text = "Sil";
             // 
-            // btnKaydet
+            // btnHastaKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(17, 175);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(79, 38);
-            this.btnKaydet.TabIndex = 30;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnHastaKaydet.Location = new System.Drawing.Point(17, 175);
+            this.btnHastaKaydet.Name = "btnHastaKaydet";
+            this.btnHastaKaydet.Size = new System.Drawing.Size(79, 38);
+            this.btnHastaKaydet.TabIndex = 30;
+            this.btnHastaKaydet.Text = "Kaydet";
+            this.btnHastaKaydet.UseVisualStyleBackColor = true;
             // 
-            // txtTckn
+            // txtHastaTCKN
             // 
-            this.txtTckn.Location = new System.Drawing.Point(63, 144);
-            this.txtTckn.Name = "txtTckn";
-            this.txtTckn.Size = new System.Drawing.Size(135, 20);
-            this.txtTckn.TabIndex = 29;
+            this.txtHastaTCKN.Location = new System.Drawing.Point(63, 144);
+            this.txtHastaTCKN.Name = "txtHastaTCKN";
+            this.txtHastaTCKN.Size = new System.Drawing.Size(135, 20);
+            this.txtHastaTCKN.TabIndex = 29;
             // 
-            // txtEmail
+            // txtHastaEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(63, 118);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(135, 20);
-            this.txtEmail.TabIndex = 28;
+            this.txtHastaEmail.Location = new System.Drawing.Point(63, 118);
+            this.txtHastaEmail.Name = "txtHastaEmail";
+            this.txtHastaEmail.Size = new System.Drawing.Size(135, 20);
+            this.txtHastaEmail.TabIndex = 28;
             // 
-            // txtTelefon
+            // txtHastaTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(63, 92);
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(135, 20);
-            this.txtTelefon.TabIndex = 27;
+            this.txtHastaTelefon.Location = new System.Drawing.Point(63, 92);
+            this.txtHastaTelefon.Name = "txtHastaTelefon";
+            this.txtHastaTelefon.Size = new System.Drawing.Size(135, 20);
+            this.txtHastaTelefon.TabIndex = 27;
             // 
-            // txtSoyad
+            // txtHastaSoyad
             // 
-            this.txtSoyad.Location = new System.Drawing.Point(63, 66);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(135, 20);
-            this.txtSoyad.TabIndex = 26;
+            this.txtHastaSoyad.Location = new System.Drawing.Point(63, 66);
+            this.txtHastaSoyad.Name = "txtHastaSoyad";
+            this.txtHastaSoyad.Size = new System.Drawing.Size(135, 20);
+            this.txtHastaSoyad.TabIndex = 26;
             // 
-            // txtAd
+            // txtHastaAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(63, 40);
-            this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(135, 20);
-            this.txtAd.TabIndex = 25;
+            this.txtHastaAd.Location = new System.Drawing.Point(63, 40);
+            this.txtHastaAd.Name = "txtHastaAd";
+            this.txtHastaAd.Size = new System.Drawing.Size(135, 20);
+            this.txtHastaAd.TabIndex = 25;
             // 
             // menuStrip1
             // 
@@ -292,21 +292,21 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.lstKisiler);
-            this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.txtTckn);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtTelefon);
-            this.Controls.Add(this.txtSoyad);
-            this.Controls.Add(this.txtAd);
+            this.Controls.Add(this.pbHasta);
+            this.Controls.Add(this.btnHastaGuncelle);
+            this.Controls.Add(this.txtHastaAra);
+            this.Controls.Add(this.lstHastaList);
+            this.Controls.Add(this.btnHastaKaydet);
+            this.Controls.Add(this.txtHastaTCKN);
+            this.Controls.Add(this.txtHastaEmail);
+            this.Controls.Add(this.txtHastaTelefon);
+            this.Controls.Add(this.txtHastaSoyad);
+            this.Controls.Add(this.txtHastaAd);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormHasta";
             this.Text = "FormHasta";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.cmsListe.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).EndInit();
+            this.cmsHastaListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -316,18 +316,18 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.TextBox txtAra;
-        private System.Windows.Forms.ListBox lstKisiler;
-        private System.Windows.Forms.ContextMenuStrip cmsListe;
+        private System.Windows.Forms.PictureBox pbHasta;
+        private System.Windows.Forms.Button btnHastaGuncelle;
+        private System.Windows.Forms.TextBox txtHastaAra;
+        private System.Windows.Forms.ListBox lstHastaList;
+        private System.Windows.Forms.ContextMenuStrip cmsHastaListe;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
-        private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.TextBox txtTckn;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTelefon;
-        private System.Windows.Forms.TextBox txtSoyad;
-        private System.Windows.Forms.TextBox txtAd;
+        private System.Windows.Forms.Button btnHastaKaydet;
+        private System.Windows.Forms.TextBox txtHastaTCKN;
+        private System.Windows.Forms.TextBox txtHastaEmail;
+        private System.Windows.Forms.TextBox txtHastaTelefon;
+        private System.Windows.Forms.TextBox txtHastaSoyad;
+        private System.Windows.Forms.TextBox txtHastaAd;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;

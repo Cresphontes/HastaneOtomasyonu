@@ -57,6 +57,10 @@
             this.lblDoktorTelefon = new System.Windows.Forms.Label();
             this.lblDoktorSoyad = new System.Windows.Forms.Label();
             this.lblDoktorAd = new System.Windows.Forms.Label();
+            this.cmbHemsireBrans = new System.Windows.Forms.ComboBox();
+            this.lblDoktorMaas = new System.Windows.Forms.Label();
+            this.lblDoktorBrans = new System.Windows.Forms.Label();
+            this.txtHemsireMaas = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -73,7 +77,7 @@
             // 
             // btnDoktorGuncelle
             // 
-            this.btnDoktorGuncelle.Location = new System.Drawing.Point(177, 182);
+            this.btnDoktorGuncelle.Location = new System.Drawing.Point(177, 250);
             this.btnDoktorGuncelle.Name = "btnDoktorGuncelle";
             this.btnDoktorGuncelle.Size = new System.Drawing.Size(79, 38);
             this.btnDoktorGuncelle.TabIndex = 33;
@@ -82,7 +86,7 @@
             // 
             // txtDoktorAra
             // 
-            this.txtDoktorAra.Location = new System.Drawing.Point(361, 227);
+            this.txtDoktorAra.Location = new System.Drawing.Point(361, 229);
             this.txtDoktorAra.Name = "txtDoktorAra";
             this.txtDoktorAra.Size = new System.Drawing.Size(196, 20);
             this.txtDoktorAra.TabIndex = 32;
@@ -112,7 +116,7 @@
             // 
             // btnDoktorKaydet
             // 
-            this.btnDoktorKaydet.Location = new System.Drawing.Point(75, 182);
+            this.btnDoktorKaydet.Location = new System.Drawing.Point(75, 250);
             this.btnDoktorKaydet.Name = "btnDoktorKaydet";
             this.btnDoktorKaydet.Size = new System.Drawing.Size(79, 38);
             this.btnDoktorKaydet.TabIndex = 30;
@@ -282,11 +286,48 @@
             this.lblDoktorAd.TabIndex = 40;
             this.lblDoktorAd.Text = "Ad";
             // 
+            // cmbHemsireBrans
+            // 
+            this.cmbHemsireBrans.FormattingEnabled = true;
+            this.cmbHemsireBrans.Location = new System.Drawing.Point(74, 183);
+            this.cmbHemsireBrans.Name = "cmbHemsireBrans";
+            this.cmbHemsireBrans.Size = new System.Drawing.Size(135, 21);
+            this.cmbHemsireBrans.TabIndex = 49;
+            // 
+            // lblDoktorMaas
+            // 
+            this.lblDoktorMaas.AutoSize = true;
+            this.lblDoktorMaas.Location = new System.Drawing.Point(20, 212);
+            this.lblDoktorMaas.Name = "lblDoktorMaas";
+            this.lblDoktorMaas.Size = new System.Drawing.Size(33, 13);
+            this.lblDoktorMaas.TabIndex = 47;
+            this.lblDoktorMaas.Text = "Maaş";
+            // 
+            // lblDoktorBrans
+            // 
+            this.lblDoktorBrans.AutoSize = true;
+            this.lblDoktorBrans.Location = new System.Drawing.Point(19, 186);
+            this.lblDoktorBrans.Name = "lblDoktorBrans";
+            this.lblDoktorBrans.Size = new System.Drawing.Size(34, 13);
+            this.lblDoktorBrans.TabIndex = 48;
+            this.lblDoktorBrans.Text = "Branş";
+            // 
+            // txtHemsireMaas
+            // 
+            this.txtHemsireMaas.Location = new System.Drawing.Point(74, 209);
+            this.txtHemsireMaas.Name = "txtHemsireMaas";
+            this.txtHemsireMaas.Size = new System.Drawing.Size(135, 20);
+            this.txtHemsireMaas.TabIndex = 46;
+            // 
             // FormDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbHemsireBrans);
+            this.Controls.Add(this.lblDoktorMaas);
+            this.Controls.Add(this.lblDoktorBrans);
+            this.Controls.Add(this.txtHemsireMaas);
             this.Controls.Add(this.lblDoktorTCKN);
             this.Controls.Add(this.lblDoktorEmail);
             this.Controls.Add(this.lblDoktorTelefon);
@@ -344,5 +385,9 @@
         private System.Windows.Forms.Label lblDoktorTelefon;
         private System.Windows.Forms.Label lblDoktorSoyad;
         private System.Windows.Forms.Label lblDoktorAd;
+        private System.Windows.Forms.ComboBox cmbHemsireBrans;
+        private System.Windows.Forms.Label lblDoktorMaas;
+        private System.Windows.Forms.Label lblDoktorBrans;
+        private System.Windows.Forms.TextBox txtHemsireMaas;
     }
 }
