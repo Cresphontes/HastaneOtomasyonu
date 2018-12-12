@@ -39,7 +39,7 @@ namespace HastaneOtomasyonu.Class_Lib
             {
                 if (!rgx.IsMatch(value))
                 {
-                    throw new Exception("Adınız yalnızca harflerden oluşmalıdır.");
+                    throw new Exception("Soyadınızı yalnızca harflerden oluşmalıdır.");
                 }
 
                 _soyad = value.Substring(0, 1).ToUpper() + value.Substring(1).ToLower();

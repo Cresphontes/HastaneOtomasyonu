@@ -41,6 +41,10 @@ namespace HastaneOtomasyonu
                 _frmHasta = new FormHasta();
                 _frmHasta.MdiParent = this;
                 _frmHasta.Show();
+                _frmDoktor.Close();
+                _frmHasta.Close();
+                _frmHemsire.Close();
+                _frmPersonel.Close();
             }
            
 
