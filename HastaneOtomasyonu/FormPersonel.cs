@@ -1,4 +1,5 @@
-﻿using HastaneOtomasyonu.ClassLib;
+﻿using HastaneOtomasyonu.Class_Lib;
+using HastaneOtomasyonu.ClassLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ namespace HastaneOtomasyonu
                 yeniKisi.Email = txtPersonelEmail.Text;
                 yeniKisi.Telefon = txtPersonelTelefon.Text;
                 yeniKisi.TCKN = txtPersonelTCKN.Text;
+                yeniKisi.Maas = txtPersonelMaas.Text;
                 (this.MdiParent as FormGiris).Personellerx.Add(yeniKisi);
                
                 //if (memoryStream.Length > 0)
@@ -53,6 +55,20 @@ namespace HastaneOtomasyonu
          
             lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).Personellerx).ToArray());
           
+        }
+
+        private void lstPersonelKisiler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstPersonelKisiler.SelectedItem ==null) return;
+
+            Personel secilikisi = lstPersonelKisiler.SelectedItem as Personel;
+            txtPersonelAd.Text = secilikisi.Ad;
+            txtPersonelSoyad.Text = secilikisi.Soyad;
+            txtPersonelEmail.Text = secilikisi.Email;
+            txtPersonelTelefon.Text = secilikisi.Telefon;
+            txtPersonelTCKN.Text = secilikisi.TCKN;
+            txtPersonelMaas.Text = secilikisi.Maas;
+
         }
     }
 }

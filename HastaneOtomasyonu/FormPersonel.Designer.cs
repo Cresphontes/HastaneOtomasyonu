@@ -193,6 +193,7 @@
             this.lstPersonelKisiler.Name = "lstPersonelKisiler";
             this.lstPersonelKisiler.Size = new System.Drawing.Size(196, 147);
             this.lstPersonelKisiler.TabIndex = 52;
+            this.lstPersonelKisiler.SelectedIndexChanged += new System.EventHandler(this.lstPersonelKisiler_SelectedIndexChanged);
             // 
             // btnPersonelKaydet
             // 
