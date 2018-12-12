@@ -11,6 +11,8 @@ namespace HastaneOtomasyonu.ClassLib
     {
         private string _maas;
 
+        public DoktorBranslari DoktorBrans { get; }
+
         public string Maas
         {
             get => this._maas;
