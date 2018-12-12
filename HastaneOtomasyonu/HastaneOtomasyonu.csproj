@@ -82,6 +82,8 @@
     <Compile Include="Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
+    <Compile Include="IHemsireSecebilir.cs" />
+    <Compile Include="IMaasAlabilir.cs" />
     <Compile Include="PersonelBranslari.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
