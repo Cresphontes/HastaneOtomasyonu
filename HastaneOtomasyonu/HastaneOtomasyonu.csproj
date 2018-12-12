@@ -48,6 +48,7 @@
     <Compile Include="ClassLib\Doktor.cs" />
     <Compile Include="ClassLib\Hasta.cs" />
     <Compile Include="ClassLib\IRandevuAl.cs" />
+    <Compile Include="ClassLib\Hemsire.cs" />
     <Compile Include="ClassLib\Kisi.cs" />
     <Compile Include="ClassLib\DoktorBranslari.cs" />
     <Compile Include="ClassLib\Personel.cs" />
