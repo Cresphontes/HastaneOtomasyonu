@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace HastaneOtomasyonu
 {
-    interface IHemsireSecebilir
+    public interface IHemsireSecebilir
     {
+       string HemsireSec();
     }
 }
