@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHemsire));
             this.pbHemsire = new System.Windows.Forms.PictureBox();
             this.btnHemsireGuncelle = new System.Windows.Forms.Button();
             this.txtHemsirAra = new System.Windows.Forms.TextBox();
@@ -61,9 +62,11 @@
             this.lblHemsireBrans = new System.Windows.Forms.Label();
             this.txtHemsireMaas = new System.Windows.Forms.TextBox();
             this.cmbHemsireBrans = new System.Windows.Forms.ComboBox();
+            this.HastaAramaResim = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbHemsire)).BeginInit();
             this.cmsHemsire.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).BeginInit();
             this.SuspendLayout();
             // 
             // pbHemsire
@@ -86,18 +89,18 @@
             // 
             // txtHemsirAra
             // 
-            this.txtHemsirAra.Location = new System.Drawing.Point(344, 205);
+            this.txtHemsirAra.Location = new System.Drawing.Point(369, 26);
             this.txtHemsirAra.Name = "txtHemsirAra";
-            this.txtHemsirAra.Size = new System.Drawing.Size(196, 20);
+            this.txtHemsirAra.Size = new System.Drawing.Size(171, 20);
             this.txtHemsirAra.TabIndex = 32;
             // 
             // lstHemsireKisiler
             // 
             this.lstHemsireKisiler.ContextMenuStrip = this.cmsHemsire;
             this.lstHemsireKisiler.FormattingEnabled = true;
-            this.lstHemsireKisiler.Location = new System.Drawing.Point(344, 30);
+            this.lstHemsireKisiler.Location = new System.Drawing.Point(344, 50);
             this.lstHemsireKisiler.Name = "lstHemsireKisiler";
-            this.lstHemsireKisiler.Size = new System.Drawing.Size(196, 147);
+            this.lstHemsireKisiler.Size = new System.Drawing.Size(196, 160);
             this.lstHemsireKisiler.TabIndex = 31;
             // 
             // cmsHemsire
@@ -111,7 +114,7 @@
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
             this.silToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.silToolStripMenuItem.Text = "Sil";
             // 
             // btnHemsireKaydet
@@ -319,11 +322,22 @@
             this.cmbHemsireBrans.Size = new System.Drawing.Size(135, 21);
             this.cmbHemsireBrans.TabIndex = 45;
             // 
+            // HastaAramaResim
+            // 
+            this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
+            this.HastaAramaResim.Location = new System.Drawing.Point(344, 26);
+            this.HastaAramaResim.Name = "HastaAramaResim";
+            this.HastaAramaResim.Size = new System.Drawing.Size(22, 20);
+            this.HastaAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HastaAramaResim.TabIndex = 46;
+            this.HastaAramaResim.TabStop = false;
+            // 
             // FormHemsire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.cmbHemsireBrans);
             this.Controls.Add(this.lblHemsireMaas);
             this.Controls.Add(this.lblHemsireBrans);
@@ -350,6 +364,7 @@
             this.cmsHemsire.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +404,6 @@
         private System.Windows.Forms.Label lblHemsireBrans;
         private System.Windows.Forms.TextBox txtHemsireMaas;
         private System.Windows.Forms.ComboBox cmbHemsireBrans;
+        private System.Windows.Forms.PictureBox HastaAramaResim;
     }
 }

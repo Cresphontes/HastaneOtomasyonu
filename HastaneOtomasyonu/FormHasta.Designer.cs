@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHasta));
             this.pbHasta = new System.Windows.Forms.PictureBox();
             this.btnHastaGuncelle = new System.Windows.Forms.Button();
             this.txtHastaAra = new System.Windows.Forms.TextBox();
@@ -58,14 +59,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.HastaAramaResim = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).BeginInit();
             this.cmsHastaListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).BeginInit();
             this.SuspendLayout();
             // 
             // pbHasta
             // 
-            this.pbHasta.Location = new System.Drawing.Point(204, 40);
+            this.pbHasta.Location = new System.Drawing.Point(208, 60);
             this.pbHasta.Name = "pbHasta";
             this.pbHasta.Size = new System.Drawing.Size(139, 124);
             this.pbHasta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -74,7 +77,7 @@
             // 
             // btnHastaGuncelle
             // 
-            this.btnHastaGuncelle.Location = new System.Drawing.Point(119, 175);
+            this.btnHastaGuncelle.Location = new System.Drawing.Point(123, 195);
             this.btnHastaGuncelle.Name = "btnHastaGuncelle";
             this.btnHastaGuncelle.Size = new System.Drawing.Size(79, 38);
             this.btnHastaGuncelle.TabIndex = 33;
@@ -83,16 +86,16 @@
             // 
             // txtHastaAra
             // 
-            this.txtHastaAra.Location = new System.Drawing.Point(349, 215);
+            this.txtHastaAra.Location = new System.Drawing.Point(378, 60);
             this.txtHastaAra.Name = "txtHastaAra";
-            this.txtHastaAra.Size = new System.Drawing.Size(196, 20);
+            this.txtHastaAra.Size = new System.Drawing.Size(175, 20);
             this.txtHastaAra.TabIndex = 32;
             // 
             // lstHastaList
             // 
             this.lstHastaList.ContextMenuStrip = this.cmsHastaListe;
             this.lstHastaList.FormattingEnabled = true;
-            this.lstHastaList.Location = new System.Drawing.Point(349, 40);
+            this.lstHastaList.Location = new System.Drawing.Point(357, 81);
             this.lstHastaList.Name = "lstHastaList";
             this.lstHastaList.Size = new System.Drawing.Size(196, 147);
             this.lstHastaList.TabIndex = 31;
@@ -113,7 +116,7 @@
             // 
             // btnHastaKaydet
             // 
-            this.btnHastaKaydet.Location = new System.Drawing.Point(17, 175);
+            this.btnHastaKaydet.Location = new System.Drawing.Point(21, 195);
             this.btnHastaKaydet.Name = "btnHastaKaydet";
             this.btnHastaKaydet.Size = new System.Drawing.Size(79, 38);
             this.btnHastaKaydet.TabIndex = 30;
@@ -122,35 +125,35 @@
             // 
             // txtHastaTCKN
             // 
-            this.txtHastaTCKN.Location = new System.Drawing.Point(63, 144);
+            this.txtHastaTCKN.Location = new System.Drawing.Point(67, 164);
             this.txtHastaTCKN.Name = "txtHastaTCKN";
             this.txtHastaTCKN.Size = new System.Drawing.Size(135, 20);
             this.txtHastaTCKN.TabIndex = 29;
             // 
             // txtHastaEmail
             // 
-            this.txtHastaEmail.Location = new System.Drawing.Point(63, 118);
+            this.txtHastaEmail.Location = new System.Drawing.Point(67, 138);
             this.txtHastaEmail.Name = "txtHastaEmail";
             this.txtHastaEmail.Size = new System.Drawing.Size(135, 20);
             this.txtHastaEmail.TabIndex = 28;
             // 
             // txtHastaTelefon
             // 
-            this.txtHastaTelefon.Location = new System.Drawing.Point(63, 92);
+            this.txtHastaTelefon.Location = new System.Drawing.Point(67, 112);
             this.txtHastaTelefon.Name = "txtHastaTelefon";
             this.txtHastaTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtHastaTelefon.TabIndex = 27;
             // 
             // txtHastaSoyad
             // 
-            this.txtHastaSoyad.Location = new System.Drawing.Point(63, 66);
+            this.txtHastaSoyad.Location = new System.Drawing.Point(67, 86);
             this.txtHastaSoyad.Name = "txtHastaSoyad";
             this.txtHastaSoyad.Size = new System.Drawing.Size(135, 20);
             this.txtHastaSoyad.TabIndex = 26;
             // 
             // txtHastaAd
             // 
-            this.txtHastaAd.Location = new System.Drawing.Point(63, 40);
+            this.txtHastaAd.Location = new System.Drawing.Point(67, 60);
             this.txtHastaAd.Name = "txtHastaAd";
             this.txtHastaAd.Size = new System.Drawing.Size(135, 20);
             this.txtHastaAd.TabIndex = 25;
@@ -241,7 +244,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 144);
+            this.label5.Location = new System.Drawing.Point(17, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 36;
@@ -250,7 +253,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 118);
+            this.label4.Location = new System.Drawing.Point(21, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 37;
@@ -259,7 +262,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 92);
+            this.label3.Location = new System.Drawing.Point(10, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 38;
@@ -268,7 +271,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 66);
+            this.label2.Location = new System.Drawing.Point(16, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 39;
@@ -277,7 +280,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 40);
+            this.label1.Location = new System.Drawing.Point(33, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 40;
@@ -293,12 +296,24 @@
             this.button1.TabIndex = 41;
             this.button1.Text = "Randevu Al";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // HastaAramaResim
+            // 
+            this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
+            this.HastaAramaResim.Location = new System.Drawing.Point(357, 60);
+            this.HastaAramaResim.Name = "HastaAramaResim";
+            this.HastaAramaResim.Size = new System.Drawing.Size(22, 20);
+            this.HastaAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HastaAramaResim.TabIndex = 42;
+            this.HastaAramaResim.TabStop = false;
             // 
             // FormHasta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -323,6 +338,7 @@
             this.cmsHastaListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +375,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox HastaAramaResim;
     }
 }
