@@ -45,9 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class Lib\Doktor.cs" />
-    <Compile Include="Class Lib\Kisi.cs" />
-    <Compile Include="DoktorBranslari.cs" />
+    <Compile Include="ClassLib\Kisi.cs" />
+    <Compile Include="ClassLib\DoktorBranslari.cs" />
     <Compile Include="FormDoktor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +83,9 @@
     <Compile Include="Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonelBranslari.cs" />
+    <Compile Include="ClassLib\IHemsireSecebilir.cs" />
+    <Compile Include="ClassLib\IMaasAlabilir.cs" />
+    <Compile Include="ClassLib\PersonelBranslari.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormDoktor.resx">

@@ -4,16 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HastaneOtomasyonu.Class_Lib
+namespace HastaneOtomasyonu
 {
-    public class Doktor:Kisi
+    interface IHemsireSecebilir
     {
-        
-        public Doktor()
-        {
-
-        }
-
-
     }
 }
