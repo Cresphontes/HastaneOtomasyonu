@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HastaneOtomasyonu
+namespace HastaneOtomasyonu.ClassLib
 {
-    public interface IMaasAlabilir
+    public interface IRandevuAl
     {
-        string Maas { get; set; }
+        void RandevuAl();
     }
 }
