@@ -87,7 +87,9 @@ namespace HastaneOtomasyonu
             }
            
 
-        } 
+        }
         #endregion
+
+       
     }
 }

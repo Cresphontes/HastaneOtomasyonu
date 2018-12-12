@@ -50,6 +50,7 @@
             this.menuGirisler.Size = new System.Drawing.Size(860, 24);
             this.menuGirisler.TabIndex = 6;
             this.menuGirisler.Text = "MenuKayıtlar";
+           
             // 
             // hastaKayıtToolStripMenuItem
             // 

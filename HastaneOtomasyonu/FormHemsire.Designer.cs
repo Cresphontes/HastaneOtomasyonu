@@ -71,7 +71,7 @@
             // 
             // pbHemsire
             // 
-            this.pbHemsire.Location = new System.Drawing.Point(199, 30);
+            this.pbHemsire.Location = new System.Drawing.Point(199, 40);
             this.pbHemsire.Name = "pbHemsire";
             this.pbHemsire.Size = new System.Drawing.Size(139, 124);
             this.pbHemsire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,7 +80,7 @@
             // 
             // btnHemsireGuncelle
             // 
-            this.btnHemsireGuncelle.Location = new System.Drawing.Point(114, 207);
+            this.btnHemsireGuncelle.Location = new System.Drawing.Point(114, 217);
             this.btnHemsireGuncelle.Name = "btnHemsireGuncelle";
             this.btnHemsireGuncelle.Size = new System.Drawing.Size(79, 38);
             this.btnHemsireGuncelle.TabIndex = 33;
@@ -89,7 +89,7 @@
             // 
             // txtHemsirAra
             // 
-            this.txtHemsirAra.Location = new System.Drawing.Point(369, 26);
+            this.txtHemsirAra.Location = new System.Drawing.Point(372, 40);
             this.txtHemsirAra.Name = "txtHemsirAra";
             this.txtHemsirAra.Size = new System.Drawing.Size(171, 20);
             this.txtHemsirAra.TabIndex = 32;
@@ -98,7 +98,7 @@
             // 
             this.lstHemsireKisiler.ContextMenuStrip = this.cmsHemsire;
             this.lstHemsireKisiler.FormattingEnabled = true;
-            this.lstHemsireKisiler.Location = new System.Drawing.Point(344, 50);
+            this.lstHemsireKisiler.Location = new System.Drawing.Point(347, 65);
             this.lstHemsireKisiler.Name = "lstHemsireKisiler";
             this.lstHemsireKisiler.Size = new System.Drawing.Size(196, 160);
             this.lstHemsireKisiler.TabIndex = 31;
@@ -119,7 +119,7 @@
             // 
             // btnHemsireKaydet
             // 
-            this.btnHemsireKaydet.Location = new System.Drawing.Point(12, 207);
+            this.btnHemsireKaydet.Location = new System.Drawing.Point(12, 217);
             this.btnHemsireKaydet.Name = "btnHemsireKaydet";
             this.btnHemsireKaydet.Size = new System.Drawing.Size(79, 38);
             this.btnHemsireKaydet.TabIndex = 30;
@@ -128,35 +128,35 @@
             // 
             // txtHemsireTCKN
             // 
-            this.txtHemsireTCKN.Location = new System.Drawing.Point(58, 130);
+            this.txtHemsireTCKN.Location = new System.Drawing.Point(58, 140);
             this.txtHemsireTCKN.Name = "txtHemsireTCKN";
             this.txtHemsireTCKN.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireTCKN.TabIndex = 29;
             // 
             // txtHemsireEmail
             // 
-            this.txtHemsireEmail.Location = new System.Drawing.Point(58, 105);
+            this.txtHemsireEmail.Location = new System.Drawing.Point(58, 115);
             this.txtHemsireEmail.Name = "txtHemsireEmail";
             this.txtHemsireEmail.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireEmail.TabIndex = 28;
             // 
             // txtHemsireTelefon
             // 
-            this.txtHemsireTelefon.Location = new System.Drawing.Point(58, 80);
+            this.txtHemsireTelefon.Location = new System.Drawing.Point(58, 90);
             this.txtHemsireTelefon.Name = "txtHemsireTelefon";
             this.txtHemsireTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireTelefon.TabIndex = 27;
             // 
             // txtHemsireSoyad
             // 
-            this.txtHemsireSoyad.Location = new System.Drawing.Point(58, 55);
+            this.txtHemsireSoyad.Location = new System.Drawing.Point(58, 65);
             this.txtHemsireSoyad.Name = "txtHemsireSoyad";
             this.txtHemsireSoyad.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireSoyad.TabIndex = 26;
             // 
             // txtHemsireAd
             // 
-            this.txtHemsireAd.Location = new System.Drawing.Point(58, 30);
+            this.txtHemsireAd.Location = new System.Drawing.Point(58, 40);
             this.txtHemsireAd.Name = "txtHemsireAd";
             this.txtHemsireAd.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireAd.TabIndex = 25;
@@ -247,7 +247,7 @@
             // lblHemsireTCKN
             // 
             this.lblHemsireTCKN.AutoSize = true;
-            this.lblHemsireTCKN.Location = new System.Drawing.Point(12, 133);
+            this.lblHemsireTCKN.Location = new System.Drawing.Point(12, 143);
             this.lblHemsireTCKN.Name = "lblHemsireTCKN";
             this.lblHemsireTCKN.Size = new System.Drawing.Size(36, 13);
             this.lblHemsireTCKN.TabIndex = 36;
@@ -256,7 +256,7 @@
             // lblHemsireEmail
             // 
             this.lblHemsireEmail.AutoSize = true;
-            this.lblHemsireEmail.Location = new System.Drawing.Point(12, 108);
+            this.lblHemsireEmail.Location = new System.Drawing.Point(12, 118);
             this.lblHemsireEmail.Name = "lblHemsireEmail";
             this.lblHemsireEmail.Size = new System.Drawing.Size(32, 13);
             this.lblHemsireEmail.TabIndex = 37;
@@ -265,7 +265,7 @@
             // lblHemsireTelefon
             // 
             this.lblHemsireTelefon.AutoSize = true;
-            this.lblHemsireTelefon.Location = new System.Drawing.Point(12, 83);
+            this.lblHemsireTelefon.Location = new System.Drawing.Point(12, 93);
             this.lblHemsireTelefon.Name = "lblHemsireTelefon";
             this.lblHemsireTelefon.Size = new System.Drawing.Size(43, 13);
             this.lblHemsireTelefon.TabIndex = 38;
@@ -274,7 +274,7 @@
             // lblHemsireSoyad
             // 
             this.lblHemsireSoyad.AutoSize = true;
-            this.lblHemsireSoyad.Location = new System.Drawing.Point(12, 58);
+            this.lblHemsireSoyad.Location = new System.Drawing.Point(12, 68);
             this.lblHemsireSoyad.Name = "lblHemsireSoyad";
             this.lblHemsireSoyad.Size = new System.Drawing.Size(37, 13);
             this.lblHemsireSoyad.TabIndex = 39;
@@ -283,7 +283,7 @@
             // lblHemsireAd
             // 
             this.lblHemsireAd.AutoSize = true;
-            this.lblHemsireAd.Location = new System.Drawing.Point(12, 33);
+            this.lblHemsireAd.Location = new System.Drawing.Point(12, 43);
             this.lblHemsireAd.Name = "lblHemsireAd";
             this.lblHemsireAd.Size = new System.Drawing.Size(20, 13);
             this.lblHemsireAd.TabIndex = 40;
@@ -292,7 +292,7 @@
             // lblHemsireMaas
             // 
             this.lblHemsireMaas.AutoSize = true;
-            this.lblHemsireMaas.Location = new System.Drawing.Point(12, 184);
+            this.lblHemsireMaas.Location = new System.Drawing.Point(12, 194);
             this.lblHemsireMaas.Name = "lblHemsireMaas";
             this.lblHemsireMaas.Size = new System.Drawing.Size(33, 13);
             this.lblHemsireMaas.TabIndex = 43;
@@ -301,7 +301,7 @@
             // lblHemsireBrans
             // 
             this.lblHemsireBrans.AutoSize = true;
-            this.lblHemsireBrans.Location = new System.Drawing.Point(12, 158);
+            this.lblHemsireBrans.Location = new System.Drawing.Point(12, 168);
             this.lblHemsireBrans.Name = "lblHemsireBrans";
             this.lblHemsireBrans.Size = new System.Drawing.Size(34, 13);
             this.lblHemsireBrans.TabIndex = 44;
@@ -309,7 +309,7 @@
             // 
             // txtHemsireMaas
             // 
-            this.txtHemsireMaas.Location = new System.Drawing.Point(58, 181);
+            this.txtHemsireMaas.Location = new System.Drawing.Point(58, 191);
             this.txtHemsireMaas.Name = "txtHemsireMaas";
             this.txtHemsireMaas.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireMaas.TabIndex = 42;
@@ -317,7 +317,7 @@
             // cmbHemsireBrans
             // 
             this.cmbHemsireBrans.FormattingEnabled = true;
-            this.cmbHemsireBrans.Location = new System.Drawing.Point(58, 155);
+            this.cmbHemsireBrans.Location = new System.Drawing.Point(58, 165);
             this.cmbHemsireBrans.Name = "cmbHemsireBrans";
             this.cmbHemsireBrans.Size = new System.Drawing.Size(135, 21);
             this.cmbHemsireBrans.TabIndex = 45;
@@ -325,7 +325,7 @@
             // HastaAramaResim
             // 
             this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
-            this.HastaAramaResim.Location = new System.Drawing.Point(344, 26);
+            this.HastaAramaResim.Location = new System.Drawing.Point(347, 41);
             this.HastaAramaResim.Name = "HastaAramaResim";
             this.HastaAramaResim.Size = new System.Drawing.Size(22, 20);
             this.HastaAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -336,6 +336,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Goldenrod;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.cmbHemsireBrans);

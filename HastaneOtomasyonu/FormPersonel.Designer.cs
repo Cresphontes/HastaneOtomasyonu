@@ -86,7 +86,7 @@
             // cmbPersonelBrans
             // 
             this.cmbPersonelBrans.FormattingEnabled = true;
-            this.cmbPersonelBrans.Location = new System.Drawing.Point(62, 155);
+            this.cmbPersonelBrans.Location = new System.Drawing.Point(62, 158);
             this.cmbPersonelBrans.Name = "cmbPersonelBrans";
             this.cmbPersonelBrans.Size = new System.Drawing.Size(135, 21);
             this.cmbPersonelBrans.TabIndex = 65;
@@ -94,7 +94,7 @@
             // lblPersonelMaas
             // 
             this.lblPersonelMaas.AutoSize = true;
-            this.lblPersonelMaas.Location = new System.Drawing.Point(16, 184);
+            this.lblPersonelMaas.Location = new System.Drawing.Point(16, 187);
             this.lblPersonelMaas.Name = "lblPersonelMaas";
             this.lblPersonelMaas.Size = new System.Drawing.Size(33, 13);
             this.lblPersonelMaas.TabIndex = 63;
@@ -103,7 +103,7 @@
             // lblPersonelBrans
             // 
             this.lblPersonelBrans.AutoSize = true;
-            this.lblPersonelBrans.Location = new System.Drawing.Point(16, 158);
+            this.lblPersonelBrans.Location = new System.Drawing.Point(16, 161);
             this.lblPersonelBrans.Name = "lblPersonelBrans";
             this.lblPersonelBrans.Size = new System.Drawing.Size(34, 13);
             this.lblPersonelBrans.TabIndex = 64;
@@ -111,7 +111,7 @@
             // 
             // txtPersonelMaas
             // 
-            this.txtPersonelMaas.Location = new System.Drawing.Point(62, 181);
+            this.txtPersonelMaas.Location = new System.Drawing.Point(62, 184);
             this.txtPersonelMaas.Name = "txtPersonelMaas";
             this.txtPersonelMaas.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelMaas.TabIndex = 62;
@@ -119,7 +119,7 @@
             // lblPersonelTCKN
             // 
             this.lblPersonelTCKN.AutoSize = true;
-            this.lblPersonelTCKN.Location = new System.Drawing.Point(16, 133);
+            this.lblPersonelTCKN.Location = new System.Drawing.Point(16, 136);
             this.lblPersonelTCKN.Name = "lblPersonelTCKN";
             this.lblPersonelTCKN.Size = new System.Drawing.Size(36, 13);
             this.lblPersonelTCKN.TabIndex = 57;
@@ -128,7 +128,7 @@
             // lblPersonelEmail
             // 
             this.lblPersonelEmail.AutoSize = true;
-            this.lblPersonelEmail.Location = new System.Drawing.Point(16, 108);
+            this.lblPersonelEmail.Location = new System.Drawing.Point(16, 111);
             this.lblPersonelEmail.Name = "lblPersonelEmail";
             this.lblPersonelEmail.Size = new System.Drawing.Size(32, 13);
             this.lblPersonelEmail.TabIndex = 58;
@@ -137,7 +137,7 @@
             // lblPersonelTelefon
             // 
             this.lblPersonelTelefon.AutoSize = true;
-            this.lblPersonelTelefon.Location = new System.Drawing.Point(16, 83);
+            this.lblPersonelTelefon.Location = new System.Drawing.Point(16, 86);
             this.lblPersonelTelefon.Name = "lblPersonelTelefon";
             this.lblPersonelTelefon.Size = new System.Drawing.Size(43, 13);
             this.lblPersonelTelefon.TabIndex = 59;
@@ -146,7 +146,7 @@
             // lblPersonelSoyad
             // 
             this.lblPersonelSoyad.AutoSize = true;
-            this.lblPersonelSoyad.Location = new System.Drawing.Point(16, 58);
+            this.lblPersonelSoyad.Location = new System.Drawing.Point(16, 61);
             this.lblPersonelSoyad.Name = "lblPersonelSoyad";
             this.lblPersonelSoyad.Size = new System.Drawing.Size(37, 13);
             this.lblPersonelSoyad.TabIndex = 60;
@@ -155,7 +155,7 @@
             // lblPersonelAd
             // 
             this.lblPersonelAd.AutoSize = true;
-            this.lblPersonelAd.Location = new System.Drawing.Point(16, 33);
+            this.lblPersonelAd.Location = new System.Drawing.Point(16, 36);
             this.lblPersonelAd.Name = "lblPersonelAd";
             this.lblPersonelAd.Size = new System.Drawing.Size(20, 13);
             this.lblPersonelAd.TabIndex = 61;
@@ -163,7 +163,7 @@
             // 
             // pbPersonel
             // 
-            this.pbPersonel.Location = new System.Drawing.Point(203, 30);
+            this.pbPersonel.Location = new System.Drawing.Point(203, 33);
             this.pbPersonel.Name = "pbPersonel";
             this.pbPersonel.Size = new System.Drawing.Size(139, 124);
             this.pbPersonel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,7 +172,7 @@
             // 
             // btnPersonelGuncelle
             // 
-            this.btnPersonelGuncelle.Location = new System.Drawing.Point(118, 207);
+            this.btnPersonelGuncelle.Location = new System.Drawing.Point(118, 210);
             this.btnPersonelGuncelle.Name = "btnPersonelGuncelle";
             this.btnPersonelGuncelle.Size = new System.Drawing.Size(79, 38);
             this.btnPersonelGuncelle.TabIndex = 54;
@@ -181,7 +181,7 @@
             // 
             // txtPersonelAra
             // 
-            this.txtPersonelAra.Location = new System.Drawing.Point(376, 26);
+            this.txtPersonelAra.Location = new System.Drawing.Point(376, 33);
             this.txtPersonelAra.Name = "txtPersonelAra";
             this.txtPersonelAra.Size = new System.Drawing.Size(168, 20);
             this.txtPersonelAra.TabIndex = 53;
@@ -189,14 +189,14 @@
             // lstPersonelKisiler
             // 
             this.lstPersonelKisiler.FormattingEnabled = true;
-            this.lstPersonelKisiler.Location = new System.Drawing.Point(348, 50);
+            this.lstPersonelKisiler.Location = new System.Drawing.Point(348, 57);
             this.lstPersonelKisiler.Name = "lstPersonelKisiler";
             this.lstPersonelKisiler.Size = new System.Drawing.Size(196, 147);
             this.lstPersonelKisiler.TabIndex = 52;
             // 
             // btnPersonelKaydet
             // 
-            this.btnPersonelKaydet.Location = new System.Drawing.Point(16, 207);
+            this.btnPersonelKaydet.Location = new System.Drawing.Point(16, 210);
             this.btnPersonelKaydet.Name = "btnPersonelKaydet";
             this.btnPersonelKaydet.Size = new System.Drawing.Size(79, 38);
             this.btnPersonelKaydet.TabIndex = 51;
@@ -205,35 +205,35 @@
             // 
             // txtPersonelTCKN
             // 
-            this.txtPersonelTCKN.Location = new System.Drawing.Point(62, 130);
+            this.txtPersonelTCKN.Location = new System.Drawing.Point(62, 133);
             this.txtPersonelTCKN.Name = "txtPersonelTCKN";
             this.txtPersonelTCKN.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelTCKN.TabIndex = 50;
             // 
             // txtPersonelEmail
             // 
-            this.txtPersonelEmail.Location = new System.Drawing.Point(62, 105);
+            this.txtPersonelEmail.Location = new System.Drawing.Point(62, 108);
             this.txtPersonelEmail.Name = "txtPersonelEmail";
             this.txtPersonelEmail.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelEmail.TabIndex = 49;
             // 
             // txtPersonelTelefon
             // 
-            this.txtPersonelTelefon.Location = new System.Drawing.Point(62, 80);
+            this.txtPersonelTelefon.Location = new System.Drawing.Point(62, 83);
             this.txtPersonelTelefon.Name = "txtPersonelTelefon";
             this.txtPersonelTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelTelefon.TabIndex = 48;
             // 
             // txtPersonelSoyad
             // 
-            this.txtPersonelSoyad.Location = new System.Drawing.Point(62, 55);
+            this.txtPersonelSoyad.Location = new System.Drawing.Point(62, 58);
             this.txtPersonelSoyad.Name = "txtPersonelSoyad";
             this.txtPersonelSoyad.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelSoyad.TabIndex = 47;
             // 
             // txtPersonelAd
             // 
-            this.txtPersonelAd.Location = new System.Drawing.Point(62, 30);
+            this.txtPersonelAd.Location = new System.Drawing.Point(62, 33);
             this.txtPersonelAd.Name = "txtPersonelAd";
             this.txtPersonelAd.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelAd.TabIndex = 46;
@@ -324,7 +324,7 @@
             // HastaAramaResim
             // 
             this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
-            this.HastaAramaResim.Location = new System.Drawing.Point(348, 26);
+            this.HastaAramaResim.Location = new System.Drawing.Point(348, 33);
             this.HastaAramaResim.Name = "HastaAramaResim";
             this.HastaAramaResim.Size = new System.Drawing.Size(22, 20);
             this.HastaAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -335,6 +335,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.OrangeRed;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.cmbPersonelBrans);

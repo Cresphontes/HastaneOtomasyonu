@@ -82,7 +82,7 @@
             // 
             // btnDoktorGuncelle
             // 
-            this.btnDoktorGuncelle.Location = new System.Drawing.Point(176, 283);
+            this.btnDoktorGuncelle.Location = new System.Drawing.Point(181, 283);
             this.btnDoktorGuncelle.Name = "btnDoktorGuncelle";
             this.btnDoktorGuncelle.Size = new System.Drawing.Size(79, 38);
             this.btnDoktorGuncelle.TabIndex = 33;
@@ -355,6 +355,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(665, 450);
             this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.lblDoktorHemsire);
@@ -379,6 +380,7 @@
             this.Controls.Add(this.txtDoktorSoyad);
             this.Controls.Add(this.txtDoktorAd);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDoktor";
             this.Text = "FormDoktor";
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).EndInit();

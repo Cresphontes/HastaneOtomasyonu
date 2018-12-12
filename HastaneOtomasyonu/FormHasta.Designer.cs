@@ -58,7 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRandevuAl = new System.Windows.Forms.Button();
             this.HastaAramaResim = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).BeginInit();
             this.cmsHastaListe.SuspendLayout();
@@ -116,7 +116,7 @@
             // 
             // btnHastaKaydet
             // 
-            this.btnHastaKaydet.Location = new System.Drawing.Point(21, 195);
+            this.btnHastaKaydet.Location = new System.Drawing.Point(24, 195);
             this.btnHastaKaydet.Name = "btnHastaKaydet";
             this.btnHastaKaydet.Size = new System.Drawing.Size(79, 38);
             this.btnHastaKaydet.TabIndex = 30;
@@ -286,16 +286,17 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Ad";
             // 
-            // button1
+            // btnRandevuAl
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(583, 40);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 130);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Randevu Al";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRandevuAl.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnRandevuAl.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRandevuAl.Location = new System.Drawing.Point(581, 50);
+            this.btnRandevuAl.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRandevuAl.Name = "btnRandevuAl";
+            this.btnRandevuAl.Size = new System.Drawing.Size(182, 130);
+            this.btnRandevuAl.TabIndex = 41;
+            this.btnRandevuAl.Text = "Randevu Al";
+            this.btnRandevuAl.UseVisualStyleBackColor = false;
             // 
             // HastaAramaResim
             // 
@@ -311,9 +312,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.HastaAramaResim);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRandevuAl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -330,9 +332,9 @@
             this.Controls.Add(this.txtHastaSoyad);
             this.Controls.Add(this.txtHastaAd);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHasta";
             this.Text = "FormHasta";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).EndInit();
             this.cmsHastaListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -373,7 +375,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRandevuAl;
         private System.Windows.Forms.PictureBox HastaAramaResim;
     }
 }
