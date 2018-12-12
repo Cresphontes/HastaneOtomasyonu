@@ -45,9 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoktorBranslari.cs" />
     <Compile Include="Class Lib\Doktor.cs" />
     <Compile Include="Class Lib\Kisi.cs" />
-    <Compile Include="DoktorBranslari.cs" />
     <Compile Include="FormDoktor.cs">
       <SubType>Form</SubType>
     </Compile>
