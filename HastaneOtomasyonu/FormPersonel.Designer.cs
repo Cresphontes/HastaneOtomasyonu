@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.cmsListe = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsPersonel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmbHemsireBrans = new System.Windows.Forms.ComboBox();
-            this.lblHemsireMaas = new System.Windows.Forms.Label();
-            this.lblHemsireBrans = new System.Windows.Forms.Label();
-            this.txtHemsireMaas = new System.Windows.Forms.TextBox();
-            this.lblHemsireTCKN = new System.Windows.Forms.Label();
-            this.lblHemsireEmail = new System.Windows.Forms.Label();
-            this.lblHemsireTelefon = new System.Windows.Forms.Label();
-            this.lblHemsireSoyad = new System.Windows.Forms.Label();
-            this.lblHemsireAd = new System.Windows.Forms.Label();
-            this.pbHemsire = new System.Windows.Forms.PictureBox();
-            this.btnHemsireGuncelle = new System.Windows.Forms.Button();
-            this.txtHemsirAra = new System.Windows.Forms.TextBox();
-            this.lstHemsireKisiler = new System.Windows.Forms.ListBox();
-            this.btnHemsireKaydet = new System.Windows.Forms.Button();
-            this.txtHemsireTCKN = new System.Windows.Forms.TextBox();
-            this.txtHemsireEmail = new System.Windows.Forms.TextBox();
-            this.txtHemsireTelefon = new System.Windows.Forms.TextBox();
-            this.txtHemsireSoyad = new System.Windows.Forms.TextBox();
-            this.txtHemsireAd = new System.Windows.Forms.TextBox();
+            this.cmbPersonelBrans = new System.Windows.Forms.ComboBox();
+            this.lblPersonelMaas = new System.Windows.Forms.Label();
+            this.lblPersonelBrans = new System.Windows.Forms.Label();
+            this.txtPersonelMaas = new System.Windows.Forms.TextBox();
+            this.lblPersonelTCKN = new System.Windows.Forms.Label();
+            this.lblPersonelEmail = new System.Windows.Forms.Label();
+            this.lblPersonelTelefon = new System.Windows.Forms.Label();
+            this.lblPersonelSoyad = new System.Windows.Forms.Label();
+            this.lblPersonelAd = new System.Windows.Forms.Label();
+            this.pbPersonel = new System.Windows.Forms.PictureBox();
+            this.btnPersonelGuncelle = new System.Windows.Forms.Button();
+            this.txtPersonelAra = new System.Windows.Forms.TextBox();
+            this.lstPersonelKisiler = new System.Windows.Forms.ListBox();
+            this.btnPersonelKaydet = new System.Windows.Forms.Button();
+            this.txtPersonelTCKN = new System.Windows.Forms.TextBox();
+            this.txtPersonelEmail = new System.Windows.Forms.TextBox();
+            this.txtPersonelTelefon = new System.Windows.Forms.TextBox();
+            this.txtPersonelSoyad = new System.Windows.Forms.TextBox();
+            this.txtPersonelAd = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,17 +61,17 @@
             this.denetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.cmsListe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHemsire)).BeginInit();
+            this.cmsPersonel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonel)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cmsListe
+            // cmsPersonel
             // 
-            this.cmsListe.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsPersonel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.silToolStripMenuItem});
-            this.cmsListe.Name = "cmsListe";
-            this.cmsListe.Size = new System.Drawing.Size(129, 26);
+            this.cmsPersonel.Name = "cmsListe";
+            this.cmsPersonel.Size = new System.Drawing.Size(129, 26);
             // 
             // silToolStripMenuItem
             // 
@@ -80,160 +80,160 @@
             this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.silToolStripMenuItem.Text = "Sil";
             // 
-            // cmbHemsireBrans
+            // cmbPersonelBrans
             // 
-            this.cmbHemsireBrans.FormattingEnabled = true;
-            this.cmbHemsireBrans.Location = new System.Drawing.Point(62, 155);
-            this.cmbHemsireBrans.Name = "cmbHemsireBrans";
-            this.cmbHemsireBrans.Size = new System.Drawing.Size(135, 21);
-            this.cmbHemsireBrans.TabIndex = 65;
+            this.cmbPersonelBrans.FormattingEnabled = true;
+            this.cmbPersonelBrans.Location = new System.Drawing.Point(62, 155);
+            this.cmbPersonelBrans.Name = "cmbPersonelBrans";
+            this.cmbPersonelBrans.Size = new System.Drawing.Size(135, 21);
+            this.cmbPersonelBrans.TabIndex = 65;
             // 
-            // lblHemsireMaas
+            // lblPersonelMaas
             // 
-            this.lblHemsireMaas.AutoSize = true;
-            this.lblHemsireMaas.Location = new System.Drawing.Point(16, 184);
-            this.lblHemsireMaas.Name = "lblHemsireMaas";
-            this.lblHemsireMaas.Size = new System.Drawing.Size(33, 13);
-            this.lblHemsireMaas.TabIndex = 63;
-            this.lblHemsireMaas.Text = "Maaş";
+            this.lblPersonelMaas.AutoSize = true;
+            this.lblPersonelMaas.Location = new System.Drawing.Point(16, 184);
+            this.lblPersonelMaas.Name = "lblPersonelMaas";
+            this.lblPersonelMaas.Size = new System.Drawing.Size(33, 13);
+            this.lblPersonelMaas.TabIndex = 63;
+            this.lblPersonelMaas.Text = "Maaş";
             // 
-            // lblHemsireBrans
+            // lblPersonelBrans
             // 
-            this.lblHemsireBrans.AutoSize = true;
-            this.lblHemsireBrans.Location = new System.Drawing.Point(16, 158);
-            this.lblHemsireBrans.Name = "lblHemsireBrans";
-            this.lblHemsireBrans.Size = new System.Drawing.Size(34, 13);
-            this.lblHemsireBrans.TabIndex = 64;
-            this.lblHemsireBrans.Text = "Branş";
+            this.lblPersonelBrans.AutoSize = true;
+            this.lblPersonelBrans.Location = new System.Drawing.Point(16, 158);
+            this.lblPersonelBrans.Name = "lblPersonelBrans";
+            this.lblPersonelBrans.Size = new System.Drawing.Size(34, 13);
+            this.lblPersonelBrans.TabIndex = 64;
+            this.lblPersonelBrans.Text = "Branş";
             // 
-            // txtHemsireMaas
+            // txtPersonelMaas
             // 
-            this.txtHemsireMaas.Location = new System.Drawing.Point(62, 181);
-            this.txtHemsireMaas.Name = "txtHemsireMaas";
-            this.txtHemsireMaas.Size = new System.Drawing.Size(135, 20);
-            this.txtHemsireMaas.TabIndex = 62;
+            this.txtPersonelMaas.Location = new System.Drawing.Point(62, 181);
+            this.txtPersonelMaas.Name = "txtPersonelMaas";
+            this.txtPersonelMaas.Size = new System.Drawing.Size(135, 20);
+            this.txtPersonelMaas.TabIndex = 62;
             // 
-            // lblHemsireTCKN
+            // lblPersonelTCKN
             // 
-            this.lblHemsireTCKN.AutoSize = true;
-            this.lblHemsireTCKN.Location = new System.Drawing.Point(16, 133);
-            this.lblHemsireTCKN.Name = "lblHemsireTCKN";
-            this.lblHemsireTCKN.Size = new System.Drawing.Size(36, 13);
-            this.lblHemsireTCKN.TabIndex = 57;
-            this.lblHemsireTCKN.Text = "TCKN";
+            this.lblPersonelTCKN.AutoSize = true;
+            this.lblPersonelTCKN.Location = new System.Drawing.Point(16, 133);
+            this.lblPersonelTCKN.Name = "lblPersonelTCKN";
+            this.lblPersonelTCKN.Size = new System.Drawing.Size(36, 13);
+            this.lblPersonelTCKN.TabIndex = 57;
+            this.lblPersonelTCKN.Text = "TCKN";
             // 
-            // lblHemsireEmail
+            // lblPersonelEmail
             // 
-            this.lblHemsireEmail.AutoSize = true;
-            this.lblHemsireEmail.Location = new System.Drawing.Point(16, 108);
-            this.lblHemsireEmail.Name = "lblHemsireEmail";
-            this.lblHemsireEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblHemsireEmail.TabIndex = 58;
-            this.lblHemsireEmail.Text = "Email";
+            this.lblPersonelEmail.AutoSize = true;
+            this.lblPersonelEmail.Location = new System.Drawing.Point(16, 108);
+            this.lblPersonelEmail.Name = "lblPersonelEmail";
+            this.lblPersonelEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblPersonelEmail.TabIndex = 58;
+            this.lblPersonelEmail.Text = "Email";
             // 
-            // lblHemsireTelefon
+            // lblPersonelTelefon
             // 
-            this.lblHemsireTelefon.AutoSize = true;
-            this.lblHemsireTelefon.Location = new System.Drawing.Point(16, 83);
-            this.lblHemsireTelefon.Name = "lblHemsireTelefon";
-            this.lblHemsireTelefon.Size = new System.Drawing.Size(43, 13);
-            this.lblHemsireTelefon.TabIndex = 59;
-            this.lblHemsireTelefon.Text = "Telefon";
+            this.lblPersonelTelefon.AutoSize = true;
+            this.lblPersonelTelefon.Location = new System.Drawing.Point(16, 83);
+            this.lblPersonelTelefon.Name = "lblPersonelTelefon";
+            this.lblPersonelTelefon.Size = new System.Drawing.Size(43, 13);
+            this.lblPersonelTelefon.TabIndex = 59;
+            this.lblPersonelTelefon.Text = "Telefon";
             // 
-            // lblHemsireSoyad
+            // lblPersonelSoyad
             // 
-            this.lblHemsireSoyad.AutoSize = true;
-            this.lblHemsireSoyad.Location = new System.Drawing.Point(16, 58);
-            this.lblHemsireSoyad.Name = "lblHemsireSoyad";
-            this.lblHemsireSoyad.Size = new System.Drawing.Size(37, 13);
-            this.lblHemsireSoyad.TabIndex = 60;
-            this.lblHemsireSoyad.Text = "Soyad";
+            this.lblPersonelSoyad.AutoSize = true;
+            this.lblPersonelSoyad.Location = new System.Drawing.Point(16, 58);
+            this.lblPersonelSoyad.Name = "lblPersonelSoyad";
+            this.lblPersonelSoyad.Size = new System.Drawing.Size(37, 13);
+            this.lblPersonelSoyad.TabIndex = 60;
+            this.lblPersonelSoyad.Text = "Soyad";
             // 
-            // lblHemsireAd
+            // lblPersonelAd
             // 
-            this.lblHemsireAd.AutoSize = true;
-            this.lblHemsireAd.Location = new System.Drawing.Point(16, 33);
-            this.lblHemsireAd.Name = "lblHemsireAd";
-            this.lblHemsireAd.Size = new System.Drawing.Size(20, 13);
-            this.lblHemsireAd.TabIndex = 61;
-            this.lblHemsireAd.Text = "Ad";
+            this.lblPersonelAd.AutoSize = true;
+            this.lblPersonelAd.Location = new System.Drawing.Point(16, 33);
+            this.lblPersonelAd.Name = "lblPersonelAd";
+            this.lblPersonelAd.Size = new System.Drawing.Size(20, 13);
+            this.lblPersonelAd.TabIndex = 61;
+            this.lblPersonelAd.Text = "Ad";
             // 
-            // pbHemsire
+            // pbPersonel
             // 
-            this.pbHemsire.Location = new System.Drawing.Point(203, 30);
-            this.pbHemsire.Name = "pbHemsire";
-            this.pbHemsire.Size = new System.Drawing.Size(139, 124);
-            this.pbHemsire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbHemsire.TabIndex = 55;
-            this.pbHemsire.TabStop = false;
+            this.pbPersonel.Location = new System.Drawing.Point(203, 30);
+            this.pbPersonel.Name = "pbPersonel";
+            this.pbPersonel.Size = new System.Drawing.Size(139, 124);
+            this.pbPersonel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPersonel.TabIndex = 55;
+            this.pbPersonel.TabStop = false;
             // 
-            // btnHemsireGuncelle
+            // btnPersonelGuncelle
             // 
-            this.btnHemsireGuncelle.Location = new System.Drawing.Point(118, 207);
-            this.btnHemsireGuncelle.Name = "btnHemsireGuncelle";
-            this.btnHemsireGuncelle.Size = new System.Drawing.Size(79, 38);
-            this.btnHemsireGuncelle.TabIndex = 54;
-            this.btnHemsireGuncelle.Text = "Güncelle";
-            this.btnHemsireGuncelle.UseVisualStyleBackColor = true;
+            this.btnPersonelGuncelle.Location = new System.Drawing.Point(118, 207);
+            this.btnPersonelGuncelle.Name = "btnPersonelGuncelle";
+            this.btnPersonelGuncelle.Size = new System.Drawing.Size(79, 38);
+            this.btnPersonelGuncelle.TabIndex = 54;
+            this.btnPersonelGuncelle.Text = "Güncelle";
+            this.btnPersonelGuncelle.UseVisualStyleBackColor = true;
             // 
-            // txtHemsirAra
+            // txtPersonelAra
             // 
-            this.txtHemsirAra.Location = new System.Drawing.Point(348, 205);
-            this.txtHemsirAra.Name = "txtHemsirAra";
-            this.txtHemsirAra.Size = new System.Drawing.Size(196, 20);
-            this.txtHemsirAra.TabIndex = 53;
+            this.txtPersonelAra.Location = new System.Drawing.Point(348, 205);
+            this.txtPersonelAra.Name = "txtPersonelAra";
+            this.txtPersonelAra.Size = new System.Drawing.Size(196, 20);
+            this.txtPersonelAra.TabIndex = 53;
             // 
-            // lstHemsireKisiler
+            // lstPersonelKisiler
             // 
-            this.lstHemsireKisiler.FormattingEnabled = true;
-            this.lstHemsireKisiler.Location = new System.Drawing.Point(348, 30);
-            this.lstHemsireKisiler.Name = "lstHemsireKisiler";
-            this.lstHemsireKisiler.Size = new System.Drawing.Size(196, 147);
-            this.lstHemsireKisiler.TabIndex = 52;
+            this.lstPersonelKisiler.FormattingEnabled = true;
+            this.lstPersonelKisiler.Location = new System.Drawing.Point(348, 30);
+            this.lstPersonelKisiler.Name = "lstPersonelKisiler";
+            this.lstPersonelKisiler.Size = new System.Drawing.Size(196, 147);
+            this.lstPersonelKisiler.TabIndex = 52;
             // 
-            // btnHemsireKaydet
+            // btnPersonelKaydet
             // 
-            this.btnHemsireKaydet.Location = new System.Drawing.Point(16, 207);
-            this.btnHemsireKaydet.Name = "btnHemsireKaydet";
-            this.btnHemsireKaydet.Size = new System.Drawing.Size(79, 38);
-            this.btnHemsireKaydet.TabIndex = 51;
-            this.btnHemsireKaydet.Text = "Kaydet";
-            this.btnHemsireKaydet.UseVisualStyleBackColor = true;
+            this.btnPersonelKaydet.Location = new System.Drawing.Point(16, 207);
+            this.btnPersonelKaydet.Name = "btnPersonelKaydet";
+            this.btnPersonelKaydet.Size = new System.Drawing.Size(79, 38);
+            this.btnPersonelKaydet.TabIndex = 51;
+            this.btnPersonelKaydet.Text = "Kaydet";
+            this.btnPersonelKaydet.UseVisualStyleBackColor = true;
             // 
-            // txtHemsireTCKN
+            // txtPersonelTCKN
             // 
-            this.txtHemsireTCKN.Location = new System.Drawing.Point(62, 130);
-            this.txtHemsireTCKN.Name = "txtHemsireTCKN";
-            this.txtHemsireTCKN.Size = new System.Drawing.Size(135, 20);
-            this.txtHemsireTCKN.TabIndex = 50;
+            this.txtPersonelTCKN.Location = new System.Drawing.Point(62, 130);
+            this.txtPersonelTCKN.Name = "txtPersonelTCKN";
+            this.txtPersonelTCKN.Size = new System.Drawing.Size(135, 20);
+            this.txtPersonelTCKN.TabIndex = 50;
             // 
-            // txtHemsireEmail
+            // txtPersonelEmail
             // 
-            this.txtHemsireEmail.Location = new System.Drawing.Point(62, 105);
-            this.txtHemsireEmail.Name = "txtHemsireEmail";
-            this.txtHemsireEmail.Size = new System.Drawing.Size(135, 20);
-            this.txtHemsireEmail.TabIndex = 49;
+            this.txtPersonelEmail.Location = new System.Drawing.Point(62, 105);
+            this.txtPersonelEmail.Name = "txtPersonelEmail";
+            this.txtPersonelEmail.Size = new System.Drawing.Size(135, 20);
+            this.txtPersonelEmail.TabIndex = 49;
             // 
-            // txtHemsireTelefon
+            // txtPersonelTelefon
             // 
-            this.txtHemsireTelefon.Location = new System.Drawing.Point(62, 80);
-            this.txtHemsireTelefon.Name = "txtHemsireTelefon";
-            this.txtHemsireTelefon.Size = new System.Drawing.Size(135, 20);
-            this.txtHemsireTelefon.TabIndex = 48;
+            this.txtPersonelTelefon.Location = new System.Drawing.Point(62, 80);
+            this.txtPersonelTelefon.Name = "txtPersonelTelefon";
+            this.txtPersonelTelefon.Size = new System.Drawing.Size(135, 20);
+            this.txtPersonelTelefon.TabIndex = 48;
             // 
-            // txtHemsireSoyad
+            // txtPersonelSoyad
             // 
-            this.txtHemsireSoyad.Location = new System.Drawing.Point(62, 55);
-            this.txtHemsireSoyad.Name = "txtHemsireSoyad";
-            this.txtHemsireSoyad.Size = new System.Drawing.Size(135, 20);
-            this.txtHemsireSoyad.TabIndex = 47;
+            this.txtPersonelSoyad.Location = new System.Drawing.Point(62, 55);
+            this.txtPersonelSoyad.Name = "txtPersonelSoyad";
+            this.txtPersonelSoyad.Size = new System.Drawing.Size(135, 20);
+            this.txtPersonelSoyad.TabIndex = 47;
             // 
-            // txtHemsireAd
+            // txtPersonelAd
             // 
-            this.txtHemsireAd.Location = new System.Drawing.Point(62, 30);
-            this.txtHemsireAd.Name = "txtHemsireAd";
-            this.txtHemsireAd.Size = new System.Drawing.Size(135, 20);
-            this.txtHemsireAd.TabIndex = 46;
+            this.txtPersonelAd.Location = new System.Drawing.Point(62, 30);
+            this.txtPersonelAd.Name = "txtPersonelAd";
+            this.txtPersonelAd.Size = new System.Drawing.Size(135, 20);
+            this.txtPersonelAd.TabIndex = 46;
             // 
             // menuStrip1
             // 
@@ -323,30 +323,30 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmbHemsireBrans);
-            this.Controls.Add(this.lblHemsireMaas);
-            this.Controls.Add(this.lblHemsireBrans);
-            this.Controls.Add(this.txtHemsireMaas);
-            this.Controls.Add(this.lblHemsireTCKN);
-            this.Controls.Add(this.lblHemsireEmail);
-            this.Controls.Add(this.lblHemsireTelefon);
-            this.Controls.Add(this.lblHemsireSoyad);
-            this.Controls.Add(this.lblHemsireAd);
-            this.Controls.Add(this.pbHemsire);
-            this.Controls.Add(this.btnHemsireGuncelle);
-            this.Controls.Add(this.txtHemsirAra);
-            this.Controls.Add(this.lstHemsireKisiler);
-            this.Controls.Add(this.btnHemsireKaydet);
-            this.Controls.Add(this.txtHemsireTCKN);
-            this.Controls.Add(this.txtHemsireEmail);
-            this.Controls.Add(this.txtHemsireTelefon);
-            this.Controls.Add(this.txtHemsireSoyad);
-            this.Controls.Add(this.txtHemsireAd);
+            this.Controls.Add(this.cmbPersonelBrans);
+            this.Controls.Add(this.lblPersonelMaas);
+            this.Controls.Add(this.lblPersonelBrans);
+            this.Controls.Add(this.txtPersonelMaas);
+            this.Controls.Add(this.lblPersonelTCKN);
+            this.Controls.Add(this.lblPersonelEmail);
+            this.Controls.Add(this.lblPersonelTelefon);
+            this.Controls.Add(this.lblPersonelSoyad);
+            this.Controls.Add(this.lblPersonelAd);
+            this.Controls.Add(this.pbPersonel);
+            this.Controls.Add(this.btnPersonelGuncelle);
+            this.Controls.Add(this.txtPersonelAra);
+            this.Controls.Add(this.lstPersonelKisiler);
+            this.Controls.Add(this.btnPersonelKaydet);
+            this.Controls.Add(this.txtPersonelTCKN);
+            this.Controls.Add(this.txtPersonelEmail);
+            this.Controls.Add(this.txtPersonelTelefon);
+            this.Controls.Add(this.txtPersonelSoyad);
+            this.Controls.Add(this.txtPersonelAd);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormPersonel";
             this.Text = "FormPersonel";
-            this.cmsListe.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbHemsire)).EndInit();
+            this.cmsPersonel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonel)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -355,27 +355,27 @@
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip cmsListe;
+        private System.Windows.Forms.ContextMenuStrip cmsPersonel;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
-        private System.Windows.Forms.ComboBox cmbHemsireBrans;
-        private System.Windows.Forms.Label lblHemsireMaas;
-        private System.Windows.Forms.Label lblHemsireBrans;
-        private System.Windows.Forms.TextBox txtHemsireMaas;
-        private System.Windows.Forms.Label lblHemsireTCKN;
-        private System.Windows.Forms.Label lblHemsireEmail;
-        private System.Windows.Forms.Label lblHemsireTelefon;
-        private System.Windows.Forms.Label lblHemsireSoyad;
-        private System.Windows.Forms.Label lblHemsireAd;
-        private System.Windows.Forms.PictureBox pbHemsire;
-        private System.Windows.Forms.Button btnHemsireGuncelle;
-        private System.Windows.Forms.TextBox txtHemsirAra;
-        private System.Windows.Forms.ListBox lstHemsireKisiler;
-        private System.Windows.Forms.Button btnHemsireKaydet;
-        private System.Windows.Forms.TextBox txtHemsireTCKN;
-        private System.Windows.Forms.TextBox txtHemsireEmail;
-        private System.Windows.Forms.TextBox txtHemsireTelefon;
-        private System.Windows.Forms.TextBox txtHemsireSoyad;
-        private System.Windows.Forms.TextBox txtHemsireAd;
+        private System.Windows.Forms.ComboBox cmbPersonelBrans;
+        private System.Windows.Forms.Label lblPersonelMaas;
+        private System.Windows.Forms.Label lblPersonelBrans;
+        private System.Windows.Forms.TextBox txtPersonelMaas;
+        private System.Windows.Forms.Label lblPersonelTCKN;
+        private System.Windows.Forms.Label lblPersonelEmail;
+        private System.Windows.Forms.Label lblPersonelTelefon;
+        private System.Windows.Forms.Label lblPersonelSoyad;
+        private System.Windows.Forms.Label lblPersonelAd;
+        private System.Windows.Forms.PictureBox pbPersonel;
+        private System.Windows.Forms.Button btnPersonelGuncelle;
+        private System.Windows.Forms.TextBox txtPersonelAra;
+        private System.Windows.Forms.ListBox lstPersonelKisiler;
+        private System.Windows.Forms.Button btnPersonelKaydet;
+        private System.Windows.Forms.TextBox txtPersonelTCKN;
+        private System.Windows.Forms.TextBox txtPersonelEmail;
+        private System.Windows.Forms.TextBox txtPersonelTelefon;
+        private System.Windows.Forms.TextBox txtPersonelSoyad;
+        private System.Windows.Forms.TextBox txtPersonelAd;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
