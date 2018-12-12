@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HastaneOtomasyonu
 {
-    public partial class Form1 : Form
+    public partial class FormGiris : Form
     {
-        public Form1()
+        public FormGiris()
         {
             InitializeComponent();
         }
