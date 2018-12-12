@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPersonel));
             this.cmsPersonel = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbPersonelBrans = new System.Windows.Forms.ComboBox();
@@ -61,9 +62,11 @@
             this.denetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.HastaAramaResim = new System.Windows.Forms.PictureBox();
             this.cmsPersonel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonel)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).BeginInit();
             this.SuspendLayout();
             // 
             // cmsPersonel
@@ -178,15 +181,15 @@
             // 
             // txtPersonelAra
             // 
-            this.txtPersonelAra.Location = new System.Drawing.Point(348, 205);
+            this.txtPersonelAra.Location = new System.Drawing.Point(376, 26);
             this.txtPersonelAra.Name = "txtPersonelAra";
-            this.txtPersonelAra.Size = new System.Drawing.Size(196, 20);
+            this.txtPersonelAra.Size = new System.Drawing.Size(168, 20);
             this.txtPersonelAra.TabIndex = 53;
             // 
             // lstPersonelKisiler
             // 
             this.lstPersonelKisiler.FormattingEnabled = true;
-            this.lstPersonelKisiler.Location = new System.Drawing.Point(348, 30);
+            this.lstPersonelKisiler.Location = new System.Drawing.Point(348, 50);
             this.lstPersonelKisiler.Name = "lstPersonelKisiler";
             this.lstPersonelKisiler.Size = new System.Drawing.Size(196, 147);
             this.lstPersonelKisiler.TabIndex = 52;
@@ -318,11 +321,22 @@
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
+            // HastaAramaResim
+            // 
+            this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
+            this.HastaAramaResim.Location = new System.Drawing.Point(348, 26);
+            this.HastaAramaResim.Name = "HastaAramaResim";
+            this.HastaAramaResim.Size = new System.Drawing.Size(22, 20);
+            this.HastaAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HastaAramaResim.TabIndex = 66;
+            this.HastaAramaResim.TabStop = false;
+            // 
             // FormPersonel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.cmbPersonelBrans);
             this.Controls.Add(this.lblPersonelMaas);
             this.Controls.Add(this.lblPersonelBrans);
@@ -349,6 +363,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonel)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,5 +402,6 @@
         private System.Windows.Forms.ToolStripMenuItem denetimToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.PictureBox HastaAramaResim;
     }
 }

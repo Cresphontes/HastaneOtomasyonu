@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoktor));
             this.pbDoktor = new System.Windows.Forms.PictureBox();
             this.btnDoktorGuncelle = new System.Windows.Forms.Button();
             this.txtDoktorAra = new System.Windows.Forms.TextBox();
@@ -63,9 +64,11 @@
             this.txtDoktorMaas = new System.Windows.Forms.TextBox();
             this.cmbDoktorHemsire = new System.Windows.Forms.ComboBox();
             this.lblDoktorHemsire = new System.Windows.Forms.Label();
+            this.HastaAramaResim = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).BeginInit();
             this.SuspendLayout();
             // 
             // pbDoktor
@@ -88,18 +91,18 @@
             // 
             // txtDoktorAra
             // 
-            this.txtDoktorAra.Location = new System.Drawing.Point(361, 229);
+            this.txtDoktorAra.Location = new System.Drawing.Point(389, 52);
             this.txtDoktorAra.Name = "txtDoktorAra";
-            this.txtDoktorAra.Size = new System.Drawing.Size(196, 20);
+            this.txtDoktorAra.Size = new System.Drawing.Size(170, 20);
             this.txtDoktorAra.TabIndex = 32;
             // 
             // lstDoktorlar
             // 
             this.lstDoktorlar.ContextMenuStrip = this.cmsListe;
             this.lstDoktorlar.FormattingEnabled = true;
-            this.lstDoktorlar.Location = new System.Drawing.Point(361, 52);
+            this.lstDoktorlar.Location = new System.Drawing.Point(363, 74);
             this.lstDoktorlar.Name = "lstDoktorlar";
-            this.lstDoktorlar.Size = new System.Drawing.Size(196, 147);
+            this.lstDoktorlar.Size = new System.Drawing.Size(196, 186);
             this.lstDoktorlar.TabIndex = 31;
             // 
             // cmsListe
@@ -338,11 +341,22 @@
             this.lblDoktorHemsire.TabIndex = 51;
             this.lblDoktorHemsire.Text = "Hemşire";
             // 
+            // HastaAramaResim
+            // 
+            this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
+            this.HastaAramaResim.Location = new System.Drawing.Point(363, 52);
+            this.HastaAramaResim.Name = "HastaAramaResim";
+            this.HastaAramaResim.Size = new System.Drawing.Size(22, 20);
+            this.HastaAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HastaAramaResim.TabIndex = 52;
+            this.HastaAramaResim.TabStop = false;
+            // 
             // FormDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 450);
+            this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.lblDoktorHemsire);
             this.Controls.Add(this.cmbDoktorHemsire);
             this.Controls.Add(this.cmbDoktorBrans);
@@ -371,6 +385,7 @@
             this.cmsListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +427,6 @@
         private System.Windows.Forms.TextBox txtDoktorMaas;
         private System.Windows.Forms.ComboBox cmbDoktorHemsire;
         private System.Windows.Forms.Label lblDoktorHemsire;
+        private System.Windows.Forms.PictureBox HastaAramaResim;
     }
 }
