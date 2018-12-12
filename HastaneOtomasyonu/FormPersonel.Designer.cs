@@ -202,6 +202,7 @@
             this.btnPersonelKaydet.TabIndex = 51;
             this.btnPersonelKaydet.Text = "Kaydet";
             this.btnPersonelKaydet.UseVisualStyleBackColor = true;
+            this.btnPersonelKaydet.Click += new System.EventHandler(this.btnPersonelKaydet_Click);
             // 
             // txtPersonelTCKN
             // 
@@ -360,6 +361,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormPersonel";
             this.Text = "FormPersonel";
+            this.Load += new System.EventHandler(this.FormPersonel_Load);
             this.cmsPersonel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonel)).EndInit();
             this.menuStrip1.ResumeLayout(false);

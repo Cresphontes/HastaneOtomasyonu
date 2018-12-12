@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HastaneOtomasyonu.ClassLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,7 @@ namespace HastaneOtomasyonu
         private FormHemsire _frmHemsire;
         private FormDoktor _frmDoktor;
         private FormPersonel _frmPersonel;
-
+        
         private void btnHastaKayit_Click(object sender, EventArgs e)
         {
           
@@ -30,7 +31,7 @@ namespace HastaneOtomasyonu
 
         private void FormGiris_Load(object sender, EventArgs e)
         {
-            
+            Personellerx = new List<Personel>();
         }
 
         #region HastaKayıtForm
@@ -58,19 +59,22 @@ namespace HastaneOtomasyonu
             }
            
 
-        } 
+        }
         #endregion
 
+       public List<Personel> Personellerx { get; set; }
         #region PersonelForm
         private void personelKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
             if (_frmPersonel == null || _frmPersonel.IsDisposed)
             {
                 _frmPersonel = new FormPersonel();
                 _frmPersonel.MdiParent = this;
                 _frmPersonel.Show();
+                
+
             }
-          
 
         } 
         #endregion

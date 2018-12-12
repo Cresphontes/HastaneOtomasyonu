@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HastaneOtomasyonu.ClassLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,43 @@ namespace HastaneOtomasyonu
         public FormPersonel()
         {
             InitializeComponent();
+        }
+
+       
+        private void btnPersonelKaydet_Click(object sender, EventArgs e)
+        {
+            
+            Personel yeniKisi = new Personel();
+            try
+            {
+                yeniKisi.Ad = txtPersonelAd.Text;
+                yeniKisi.Soyad = txtPersonelSoyad.Text;
+                yeniKisi.Email = txtPersonelEmail.Text;
+                yeniKisi.Telefon = txtPersonelTelefon.Text;
+                yeniKisi.TCKN = txtPersonelTCKN.Text;
+                (this.MdiParent as FormGiris).Personellerx.Add(yeniKisi);
+               
+                //if (memoryStream.Length > 0)
+                //{
+                //    yeniKisi.Fotograf = memoryStream.ToArray();
+                //}
+                //memoryStream = new MemoryStream();
+                //kisiler.Add(yeniKisi);
+                ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
+                //FormuTemizle();
+                lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).Personellerx.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void FormPersonel_Load(object sender, EventArgs e)
+        {
+         
+            lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).Personellerx).ToArray());
+          
         }
     }
 }
