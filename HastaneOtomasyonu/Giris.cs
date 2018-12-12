@@ -41,10 +41,19 @@ namespace HastaneOtomasyonu
                 _frmHasta = new FormHasta();
                 _frmHasta.MdiParent = this;
                 _frmHasta.Show();
-                _frmDoktor.Close();
-                _frmHasta.Close();
-                _frmHemsire.Close();
-                _frmPersonel.Close();
+
+                if (_frmPersonel != null)
+                {
+                    _frmPersonel.Dispose();
+                }
+                if (_frmHemsire != null)
+                {
+                    _frmHemsire.Dispose();
+                }
+                if (_frmDoktor != null)
+                {
+                    _frmDoktor.Dispose();
+                }
             }
            
 
@@ -59,6 +68,19 @@ namespace HastaneOtomasyonu
                 _frmDoktor = new FormDoktor();
                 _frmDoktor.MdiParent = this;
                 _frmDoktor.Show();
+
+                if (_frmHasta != null)
+                {
+                    _frmHasta.Dispose();
+                }
+                if (_frmHemsire != null)
+                {
+                    _frmHemsire.Dispose();
+                }
+                if (_frmPersonel != null)
+                {
+                    _frmPersonel.Dispose();
+                }
             }
            
 
@@ -73,6 +95,19 @@ namespace HastaneOtomasyonu
                 _frmPersonel = new FormPersonel();
                 _frmPersonel.MdiParent = this;
                 _frmPersonel.Show();
+
+                if (_frmHasta != null)
+                {
+                    _frmHasta.Dispose();
+                }
+                if (_frmHemsire != null)
+                {
+                    _frmHemsire.Dispose();
+                }
+                if (_frmDoktor != null)
+                {
+                    _frmDoktor.Dispose();
+                }
             }
           
 
@@ -88,6 +123,20 @@ namespace HastaneOtomasyonu
                 _frmHemsire = new FormHemsire();
                 _frmHemsire.MdiParent = this;
                 _frmHemsire.Show();
+
+                if(_frmHasta != null)
+                {
+                    _frmHasta.Dispose();
+                }
+                if (_frmPersonel != null)
+                {
+                    _frmPersonel.Dispose();
+                }
+                if (_frmDoktor != null)
+                {
+                    _frmDoktor.Dispose();
+                }
+             
             }
            
 
