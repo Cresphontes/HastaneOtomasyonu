@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HastaneOtomasyonu.ClassLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,41 @@ namespace HastaneOtomasyonu
         {
             InitializeComponent();
         }
+        //Gerekirse
+        //List<Hasta> Hastas = new List<Hasta>();
+        private void btnHastaKaydet_Click(object sender, EventArgs e)
+        {
+            Hasta yeniKisi = new Hasta();
+            try
+            {
+                yeniKisi.Ad = txtHastaAd.Text;
+                yeniKisi.Soyad = txtHastaSoyad.Text;
+                yeniKisi.Email = txtHastaEmail.Text;
+                yeniKisi.Telefon = txtHastaTelefon.Text;
+                yeniKisi.TCKN = txtHastaTCKN.Text;
+                //Gerekirse Diye
+               // Hastas.Add(yeniKisi);
+                (this.MdiParent as FormGiris).Hastalarx.Add(yeniKisi);
 
+                //if (memoryStream.Length > 0)
+                //{
+                //    yeniKisi.Fotograf = memoryStream.ToArray();
+                //}
+                //memoryStream = new MemoryStream();
+                //kisiler.Add(yeniKisi);
+                ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
+                //FormuTemizle();
+                lstHastaList.Items.AddRange((this.MdiParent as FormGiris).Hastalarx.ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void FormHasta_Load(object sender, EventArgs e)
+        {
+            lstHastaList.Items.AddRange((this.MdiParent as FormGiris).Hastalarx.ToArray());
+        }
     }
 }

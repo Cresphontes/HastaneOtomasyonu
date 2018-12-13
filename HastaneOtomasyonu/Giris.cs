@@ -32,8 +32,10 @@ namespace HastaneOtomasyonu
         private void FormGiris_Load(object sender, EventArgs e)
         {
             Personellerx = new List<Personel>();
+            Hastalarx = new List<Hasta>();
         }
 
+        public List<Hasta> Hastalarx { get; set; }
         #region HastaKayıtForm
         private void hastaKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {

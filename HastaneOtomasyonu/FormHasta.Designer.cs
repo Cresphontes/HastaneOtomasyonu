@@ -122,6 +122,7 @@
             this.btnHastaKaydet.TabIndex = 30;
             this.btnHastaKaydet.Text = "Kaydet";
             this.btnHastaKaydet.UseVisualStyleBackColor = true;
+            this.btnHastaKaydet.Click += new System.EventHandler(this.btnHastaKaydet_Click);
             // 
             // txtHastaTCKN
             // 
@@ -335,6 +336,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHasta";
             this.Text = "FormHasta";
+            this.Load += new System.EventHandler(this.FormHasta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).EndInit();
             this.cmsHastaListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
