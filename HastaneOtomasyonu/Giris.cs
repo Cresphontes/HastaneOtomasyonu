@@ -28,6 +28,7 @@ namespace HastaneOtomasyonu
         public List<Personel> personeller { get; set; }
         public List<Doktor> doktorlar { get; set; }
         public List<Hemsire> hemsireler { get; set; }
+        public List<Hasta> hastalar { get; set; }
 
         private void btnHastaKayit_Click(object sender, EventArgs e)
         {
@@ -39,10 +40,9 @@ namespace HastaneOtomasyonu
             personeller = new List<Personel>();
             doktorlar = new List<Doktor>();
             hemsireler = new List<Hemsire>();
-
+            hastalar = new List<Hasta>();
         }
-
-        public List<Hasta> Hastalarx { get; set; }
+        
 
         #region HastaKayıtForm
         private void hastaKayıtToolStripMenuItem_Click(object sender, EventArgs e)
