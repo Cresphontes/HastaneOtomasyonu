@@ -14,7 +14,7 @@ namespace HastaneOtomasyonu
         }
 
 
-
+        List<Hemsire> BransliHemsireler = new List<Hemsire>();
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
@@ -31,11 +31,23 @@ namespace HastaneOtomasyonu
 
             DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
 
+
+
+            //doktor.HemsireSec = (this.MdiParent as FormGiris).hemsireler
+
             switch (doktorBrans)
             {
 
                 case DoktorBranslari.GenelCerrahi:
                     doktor.DoktorBrans = DoktorBranslari.GenelCerrahi;
+                    foreach (Hemsire item in ((this.MdiParent as FormGiris).hemsireler))
+                    {
+                        if(item.HemsireBrans == doktor.DoktorBrans)
+                        {
+                            BransliHemsireler.Add(item);
+                        }
+                    }
+                    cmbDoktorHemsire.Items.AddRange(BransliHemsireler.ToArray());
                     break;
                 case DoktorBranslari.Ortopedi:
                     doktor.DoktorBrans = DoktorBranslari.Ortopedi;
@@ -117,6 +129,7 @@ namespace HastaneOtomasyonu
         {
             lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
+            
 
         }
     }
