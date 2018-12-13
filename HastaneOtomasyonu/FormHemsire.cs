@@ -1,13 +1,11 @@
 ﻿using HastaneOtomasyonu.ClassLib;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace HastaneOtomasyonu
 {
@@ -70,7 +68,8 @@ namespace HastaneOtomasyonu
 
             (this.MdiParent as FormGiris).hemsireler.Add(hemsire);
 
-            lstHemsireKisiler.Items.Clear();
+            //lstHemsireKisiler.Items.Clear();
+            FormuTemizle();
 
             lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
 
@@ -78,6 +77,37 @@ namespace HastaneOtomasyonu
 
         }
 
+        public void FormuTemizle()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    if (control.Name == "txtHemsirAra")
+                    {
+                        continue;
+                    }
+                    control.Text = string.Empty;
+                }
+                else if (control is ListBox lst)
+                {
+                    lst.Items.Clear();
+                }
+                else if (control is PictureBox pbox)
+                {
+                    pbox.Image = null;
+                }
+                else if (control is ComboBox cb)
+                {
+                    
+                        if (control.Name == "HastaAramaResim")
+                    {
+                        continue;
+                    }
+                    cb.Text = string.Empty; ;
+                }
+            }
+        }
         private void FormHemsire_Load(object sender, EventArgs e)
         {
             cmbHemsireBrans.Items.AddRange(Enum.GetNames((typeof(DoktorBranslari))));
@@ -97,6 +127,54 @@ namespace HastaneOtomasyonu
             txtHemsireTCKN.Text = secilikisi.TCKN;
             txtHemsireMaas.Text = secilikisi.Maas;
             cmbHemsireBrans.Text = secilikisi.HemsireBrans.ToString();
+        }
+
+      
+
+        private void içeriAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dosyaAc.Title = "Bir JSON dosyası seçiniz";
+            dosyaAc.Filter = "(JSON Dosyası) | *.json";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.FileName = "Kisiler.json"; // string.Empty;
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    FileStream dosya = File.OpenRead(dosyaAc.FileName);
+                    StreamReader reader = new StreamReader(dosya);
+                    string dosyaIcerigi = reader.ReadToEnd();
+                    reader.Close();
+                    dosya.Close();
+                    (this.MdiParent as FormGiris).hemsireler = JsonConvert.DeserializeObject<List<Hemsire>>(dosyaIcerigi);
+                    //Kisiler = JsonConvert.DeserializeObject(dosyaIcerigi) as List > Kisi >;
+                    //Kisiler = (list<Kisi>)JsonConvert.DeserializeObject(dosyaIcerigi);
+
+                    MessageBox.Show($"{(this.MdiParent as FormGiris).hemsireler.Count} kişi başarıyala aktarıldı");
+                    lstHemsireKisiler.Items.Clear();
+                    lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("bir hata oluştu " + ex.Message);
+                }
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dosyaKaydet.Title = "Bir JSON dosyası seçiniz";
+            dosyaKaydet.Filter = "(JSON Dosyası) | *.json";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaKaydet.FileName = "Kisiler.json"; // string.Empty;
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                writer.Write(JsonConvert.SerializeObject((this.MdiParent as FormGiris).hemsireler));
+                writer.Close();
+                writer.Dispose();
+            }
         }
     }
 }
