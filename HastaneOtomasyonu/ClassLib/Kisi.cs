@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HastaneOtomasyonu.Class_Lib
 {
@@ -99,7 +100,10 @@ namespace HastaneOtomasyonu.Class_Lib
                 _tckn = value;
             }
         }
-      
+
+        public IEnumerable<Control> Controls { get; private set; }
+        
+
 
     }
 }

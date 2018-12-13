@@ -18,7 +18,8 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-        
+
+        public List<Personel> Personellerx { get; set; }
         private FormHasta _frmHasta;
         private FormHemsire _frmHemsire;
         private FormDoktor _frmDoktor;
@@ -88,7 +89,6 @@ namespace HastaneOtomasyonu
         }
         #endregion
 
-       public List<Personel> Personellerx { get; set; }
         #region PersonelForm
         private void personelKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {

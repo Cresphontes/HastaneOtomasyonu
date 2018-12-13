@@ -1,12 +1,7 @@
-﻿using HastaneOtomasyonu.ClassLib;
+﻿using HastaneOtomasyonu.Class_Lib;
+using HastaneOtomasyonu.ClassLib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HastaneOtomasyonu
@@ -17,7 +12,7 @@ namespace HastaneOtomasyonu
         {
             InitializeComponent();
         }
-
+        
 
         public List<Doktor> doktorlar = new List<Doktor>();
 
@@ -68,7 +63,7 @@ namespace HastaneOtomasyonu
             doktorlar.Add(doktor);
 
             lstDoktorlar.Items.Clear();
-
+            
             foreach (var item in doktorlar)
             {
                
@@ -77,6 +72,7 @@ namespace HastaneOtomasyonu
             
 
         }
+        
 
         private void FormDoktor_Load(object sender, EventArgs e)
         {

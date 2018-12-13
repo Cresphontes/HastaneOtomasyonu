@@ -33,7 +33,7 @@ namespace HastaneOtomasyonu
                 yeniKisi.TCKN = txtPersonelTCKN.Text;
                 yeniKisi.Maas = txtPersonelMaas.Text;
                 (this.MdiParent as FormGiris).Personellerx.Add(yeniKisi);
-               
+
                 //if (memoryStream.Length > 0)
                 //{
                 //    yeniKisi.Fotograf = memoryStream.ToArray();
@@ -41,12 +41,39 @@ namespace HastaneOtomasyonu
                 //memoryStream = new MemoryStream();
                 //kisiler.Add(yeniKisi);
                 ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
-                //FormuTemizle();
+                (this.MdiParent as FormGiris).FormuTemizle();
                 lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).Personellerx.ToArray());
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void FormuTemizle()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    //if (control.Name == "txtSearch")
+                    //{
+                    //    continue;
+                    //}
+                    control.Text = string.Empty;
+                }
+                else if (control is ListBox lst)
+                {
+                    lst.Items.Clear();
+                }
+                else if (control is PictureBox pbox)
+                {
+                    pbox.Image = null;
+                }
+                else if (control is ComboBox cb)
+                {
+                    cb.Text = string.Empty; ;
+                }
             }
         }
 
