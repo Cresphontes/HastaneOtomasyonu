@@ -1,12 +1,7 @@
-﻿using HastaneOtomasyonu.ClassLib;
+﻿using HastaneOtomasyonu.Class_Lib;
+using HastaneOtomasyonu.ClassLib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HastaneOtomasyonu
@@ -19,12 +14,13 @@ namespace HastaneOtomasyonu
         }
 
 
-        public List<Doktor> doktorlar = new List<Doktor>();
+
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
 
             Doktor doktor = new Doktor();
+
 
             doktor.Ad = txtDoktorAd.Text;
             doktor.Soyad = txtDoktorSoyad.Text;
@@ -32,13 +28,10 @@ namespace HastaneOtomasyonu
             doktor.Telefon = txtDoktorTelefon.Text;
             doktor.TCKN = txtDoktorTCKN.Text;
             doktor.Maas = txtDoktorMaas.Text;
-           
-
-
 
             switch (cmbDoktorBrans.SelectedItem)
             {
-             
+
                 case DoktorBranslari.GenelCerrahi:
                     doktor.DoktorBrans = DoktorBranslari.GenelCerrahi;
                     break;
@@ -65,24 +58,67 @@ namespace HastaneOtomasyonu
             }
 
 
-            doktorlar.Add(doktor);
+            (this.MdiParent as FormGiris).doktorlar.Add(doktor);
 
-            lstDoktorlar.Items.Clear();
+            FormuTemizle();
 
-            foreach (var item in doktorlar)
-            {
-               
-                lstDoktorlar.Items.Add(item);
-            }
-            
+            lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
+
+
 
         }
 
         private void FormDoktor_Load(object sender, EventArgs e)
         {
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
-            
-            
+
+
+        }
+
+        public void FormuTemizle()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    //if (control.Name == "txtSearch")
+                    //{
+                    //    continue;
+                    //}
+                    control.Text = string.Empty;
+                }
+                else if (control is ListBox lst)
+                {
+                    lst.Items.Clear();
+                }
+                else if (control is PictureBox pbox)
+                {
+                    pbox.Image = null;
+                }
+                else if (control is ComboBox cb)
+                {
+                    cb.Text = string.Empty; ;
+                }
+            }
+        }
+
+        private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstDoktorlar.SelectedItem == null) return;
+
+            Personel secilikisi = lstDoktorlar.SelectedItem as Personel;
+            txtDoktorAd.Text = secilikisi.Ad;
+            txtDoktorSoyad.Text = secilikisi.Soyad;
+            txtDoktorEmail.Text = secilikisi.Email;
+            txtDoktorTelefon.Text = secilikisi.Telefon;
+            txtDoktorTCKN.Text = secilikisi.TCKN;
+            txtDoktorMaas.Text = secilikisi.Maas;
+            btnDoktorKaydet.Enabled = false;
         }
     }
 }
+
+
+
+

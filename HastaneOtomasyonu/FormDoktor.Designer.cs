@@ -104,6 +104,7 @@
             this.lstDoktorlar.Name = "lstDoktorlar";
             this.lstDoktorlar.Size = new System.Drawing.Size(196, 186);
             this.lstDoktorlar.TabIndex = 31;
+            this.lstDoktorlar.SelectedIndexChanged += new System.EventHandler(this.lstDoktorlar_SelectedIndexChanged);
             // 
             // cmsListe
             // 
@@ -385,7 +386,6 @@
             this.Name = "FormDoktor";
             this.Text = "FormDoktor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormDoktor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).EndInit();
             this.cmsListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

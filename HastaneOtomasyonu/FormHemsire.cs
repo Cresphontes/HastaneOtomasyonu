@@ -18,7 +18,7 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-        public List<Hemsire> hemsireler = new List<Hemsire>();
+        
 
         private void btnHemsireKaydet_Click(object sender, EventArgs e)
         {
@@ -30,15 +30,15 @@ namespace HastaneOtomasyonu
             hemsire.Telefon = txtHemsireTelefon.Text;
             hemsire.TCKN = txtHemsireTCKN.Text;
             hemsire.Maas = txtHemsireMaas.Text;
-            //hemsire.HemsireBrans =(DoktorBranslari)cmbHemsireBrans.SelectedItem;
+
+           
+
 
             switch (cmbHemsireBrans.SelectedItem)
             {
 
                 case DoktorBranslari.GenelCerrahi:
-                    
                     hemsire.HemsireBrans = DoktorBranslari.GenelCerrahi;
-
                     break;
                 case DoktorBranslari.Ortopedi:
                     hemsire.HemsireBrans = DoktorBranslari.Ortopedi;
@@ -62,23 +62,34 @@ namespace HastaneOtomasyonu
                     break;
             }
 
-           (this.MdiParent as FormGiris).Hemsirelerx.Add(hemsire);
-            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).Hemsirelerx.ToArray());
-            //hemsireler.Add(hemsire);
-            //lstHemsireKisiler.Items.Clear();
+            (this.MdiParent as FormGiris).hemsireler.Add(hemsire);
 
-            //foreach (var item in hemsireler)
-            //{
-            //    lstHemsireKisiler.Items.Add(item);
-            //}
+            lstHemsireKisiler.Items.Clear();
+
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+
+
 
         }
 
         private void FormHemsire_Load(object sender, EventArgs e)
         {
             cmbHemsireBrans.Items.AddRange(Enum.GetNames((typeof(DoktorBranslari))));
-            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).Hemsirelerx.ToArray());
-          
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+        }
+
+        private void lstHemsireKisiler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstHemsireKisiler.SelectedItem == null) return;
+
+            Hemsire secilikisi = lstHemsireKisiler.SelectedItem as Hemsire;
+
+            txtHemsireAd.Text = secilikisi.Ad;
+            txtHemsireSoyad.Text = secilikisi.Soyad;
+            txtHemsireEmail.Text = secilikisi.Email;
+            txtHemsireTelefon.Text = secilikisi.Telefon;
+            txtHemsireTCKN.Text = secilikisi.TCKN;
+            txtHemsireMaas.Text = secilikisi.Maas;
         }
     }
 }
