@@ -77,7 +77,7 @@ namespace HastaneOtomasyonu
                 //kisiler.Add(yeniKisi);
                 ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
                 FormuTemizle();
-                lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).Personellerx.ToArray());
+                lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).personeller.ToArray());
             }
             catch (Exception ex)
             {
