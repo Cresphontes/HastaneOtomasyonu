@@ -19,21 +19,55 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-        //List<Personel> Personel = new List<Personel>();
+        
+       
         private void btnPersonelKaydet_Click(object sender, EventArgs e)
         {
             
-            Personel yeniKisi = new Personel();
+            Personel personel = new Personel();
             try
             {
-                yeniKisi.Ad = txtPersonelAd.Text;
-                yeniKisi.Soyad = txtPersonelSoyad.Text;
-                yeniKisi.Email = txtPersonelEmail.Text;
-                yeniKisi.Telefon = txtPersonelTelefon.Text;
-                yeniKisi.TCKN = txtPersonelTCKN.Text;
-                yeniKisi.Maas = txtPersonelMaas.Text;
-                //Personel.Add(yeniKisi);
-                (this.MdiParent as FormGiris).Personellerx.Add(yeniKisi);
+                personel.Ad = txtPersonelAd.Text;
+                personel.Soyad = txtPersonelSoyad.Text;
+                personel.Email = txtPersonelEmail.Text;
+                personel.Telefon = txtPersonelTelefon.Text;
+                personel.TCKN = txtPersonelTCKN.Text;
+                personel.Maas = txtPersonelMaas.Text;
+
+                switch (cmbPersonelBrans.SelectedItem)
+                {
+
+                    case PersonelBranslari.HastaBakici:
+                        personel.PersonelBrans = PersonelBranslari.HastaBakici;
+                        break;
+                    case PersonelBranslari.HastaKayitci:
+                        personel.PersonelBrans = PersonelBranslari.HastaKayitci;
+                        break;
+                    case PersonelBranslari.Kantin:
+                        personel.PersonelBrans = PersonelBranslari.Kantin;
+                        break;
+                    case PersonelBranslari.Muhasebe:
+                        personel.PersonelBrans = PersonelBranslari.Muhasebe;
+                        break;
+                    case PersonelBranslari.Rontgenci:
+                        personel.PersonelBrans = PersonelBranslari.Rontgenci;
+                        break;
+                    case PersonelBranslari.Sofor:
+                        personel.PersonelBrans = PersonelBranslari.Sofor;
+                        break;
+                    case PersonelBranslari.Temizlik:
+                        personel.PersonelBrans = PersonelBranslari.Temizlik;
+                        break;
+                    default:
+                        break;
+                }
+
+                (this.MdiParent as FormGiris).personeller.Add(personel);
+
+                lstPersonelKisiler.Items.Clear();
+
+                lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
+
 
                 //if (memoryStream.Length > 0)
                 //{
@@ -81,8 +115,8 @@ namespace HastaneOtomasyonu
         private void FormPersonel_Load(object sender, EventArgs e)
         {
          
-            lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).Personellerx).ToArray());
-          
+            lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
+            cmbPersonelBrans.Items.AddRange(Enum.GetNames(typeof(PersonelBranslari)));          
         }
 
         private void lstPersonelKisiler_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,6 +124,7 @@ namespace HastaneOtomasyonu
             if (lstPersonelKisiler.SelectedItem ==null) return;
 
             Personel secilikisi = lstPersonelKisiler.SelectedItem as Personel;
+
             txtPersonelAd.Text = secilikisi.Ad;
             txtPersonelSoyad.Text = secilikisi.Soyad;
             txtPersonelEmail.Text = secilikisi.Email;

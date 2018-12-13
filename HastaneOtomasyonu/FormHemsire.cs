@@ -18,7 +18,7 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-        public List<Hemsire> hemsireler = new List<Hemsire>();
+        
 
         private void btnHemsireKaydet_Click(object sender, EventArgs e)
         {
@@ -62,19 +62,34 @@ namespace HastaneOtomasyonu
                     break;
             }
 
-            hemsireler.Add(hemsire);
+            (this.MdiParent as FormGiris).hemsireler.Add(hemsire);
+
             lstHemsireKisiler.Items.Clear();
 
-            foreach (var item in hemsireler)
-            {
-                lstHemsireKisiler.Items.Add(item);
-            }
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+
+
 
         }
 
         private void FormHemsire_Load(object sender, EventArgs e)
         {
             cmbHemsireBrans.Items.AddRange(Enum.GetNames((typeof(DoktorBranslari))));
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+        }
+
+        private void lstHemsireKisiler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstHemsireKisiler.SelectedItem == null) return;
+
+            Hemsire secilikisi = lstHemsireKisiler.SelectedItem as Hemsire;
+
+            txtHemsireAd.Text = secilikisi.Ad;
+            txtHemsireSoyad.Text = secilikisi.Soyad;
+            txtHemsireEmail.Text = secilikisi.Email;
+            txtHemsireTelefon.Text = secilikisi.Telefon;
+            txtHemsireTCKN.Text = secilikisi.TCKN;
+            txtHemsireMaas.Text = secilikisi.Maas;
         }
     }
 }

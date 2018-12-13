@@ -12,68 +12,67 @@ namespace HastaneOtomasyonu
         {
             InitializeComponent();
         }
-        
 
-        public List<Doktor> doktorlar = new List<Doktor>();
+
+
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
 
             Doktor doktor = new Doktor();
 
-            try
+
+            doktor.Ad = txtDoktorAd.Text;
+            doktor.Soyad = txtDoktorSoyad.Text;
+            doktor.Email = txtDoktorEmail.Text;
+            doktor.Telefon = txtDoktorTelefon.Text;
+            doktor.TCKN = txtDoktorTCKN.Text;
+            doktor.Maas = txtDoktorMaas.Text;
+
+            switch (cmbDoktorBrans.SelectedItem)
             {
-                doktor.Ad = txtDoktorAd.Text;
-                doktor.Soyad = txtDoktorSoyad.Text;
-                doktor.Email = txtDoktorEmail.Text;
-                doktor.Telefon = txtDoktorTelefon.Text;
-                doktor.TCKN = txtDoktorTCKN.Text;
-                doktor.Maas = txtDoktorMaas.Text;
 
-                switch (cmbDoktorBrans.SelectedItem)
-                {
-
-                    case DoktorBranslari.GenelCerrahi:
-                        doktor.DoktorBrans = DoktorBranslari.GenelCerrahi;
-                        break;
-                    case DoktorBranslari.Ortopedi:
-                        doktor.DoktorBrans = DoktorBranslari.Ortopedi;
-                        break;
-                    case DoktorBranslari.Uroloji:
-                        doktor.DoktorBrans = DoktorBranslari.Uroloji;
-                        break;
-                    case DoktorBranslari.KBB:
-                        doktor.DoktorBrans = DoktorBranslari.KBB;
-                        break;
-                    case DoktorBranslari.CocukSagligi:
-                        doktor.DoktorBrans = DoktorBranslari.CocukSagligi;
-                        break;
-                    case DoktorBranslari.Kardiyoloji:
-                        doktor.DoktorBrans = DoktorBranslari.Kardiyoloji;
-                        break;
-                    case DoktorBranslari.GozHastaliklari:
-                        doktor.DoktorBrans = DoktorBranslari.GozHastaliklari;
-                        break;
-                    default:
-                        break;
-                }
-
-
-                doktorlar.Add(doktor);
-
-                FormuTemizle();
-
-                foreach (var item in doktorlar)
-                {
-
-                    lstDoktorlar.Items.Add(item);
-                }
+                case DoktorBranslari.GenelCerrahi:
+                    doktor.DoktorBrans = DoktorBranslari.GenelCerrahi;
+                    break;
+                case DoktorBranslari.Ortopedi:
+                    doktor.DoktorBrans = DoktorBranslari.Ortopedi;
+                    break;
+                case DoktorBranslari.Uroloji:
+                    doktor.DoktorBrans = DoktorBranslari.Uroloji;
+                    break;
+                case DoktorBranslari.KBB:
+                    doktor.DoktorBrans = DoktorBranslari.KBB;
+                    break;
+                case DoktorBranslari.CocukSagligi:
+                    doktor.DoktorBrans = DoktorBranslari.CocukSagligi;
+                    break;
+                case DoktorBranslari.Kardiyoloji:
+                    doktor.DoktorBrans = DoktorBranslari.Kardiyoloji;
+                    break;
+                case DoktorBranslari.GozHastaliklari:
+                    doktor.DoktorBrans = DoktorBranslari.GozHastaliklari;
+                    break;
+                default:
+                    break;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+
+
+            (this.MdiParent as FormGiris).doktorlar.Add(doktor);
+
+            FormuTemizle();
+
+            lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
+
+
+
+        }
+
+        private void FormDoktor_Load(object sender, EventArgs e)
+        {
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
+
 
         }
 
@@ -104,13 +103,6 @@ namespace HastaneOtomasyonu
             }
         }
 
-        private void FormDoktor_Load(object sender, EventArgs e)
-        {
-            cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
-            
-            
-        }
-
         private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstDoktorlar.SelectedItem == null) return;
@@ -126,3 +118,7 @@ namespace HastaneOtomasyonu
         }
     }
 }
+
+
+
+

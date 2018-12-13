@@ -24,7 +24,11 @@ namespace HastaneOtomasyonu
         private FormHemsire _frmHemsire;
         private FormDoktor _frmDoktor;
         private FormPersonel _frmPersonel;
-        
+
+        public List<Personel> personeller { get; set; }
+        public List<Doktor> doktorlar { get; set; }
+        public List<Hemsire> hemsireler { get; set; }
+
         private void btnHastaKayit_Click(object sender, EventArgs e)
         {
               
@@ -32,8 +36,10 @@ namespace HastaneOtomasyonu
 
         private void FormGiris_Load(object sender, EventArgs e)
         {
-            Personellerx = new List<Personel>();
-            Hastalarx = new List<Hasta>();
+            personeller = new List<Personel>();
+            doktorlar = new List<Doktor>();
+            hemsireler = new List<Hemsire>();
+
         }
 
         public List<Hasta> Hastalarx { get; set; }
@@ -92,6 +98,7 @@ namespace HastaneOtomasyonu
         }
         #endregion
 
+       
         #region PersonelForm
         private void personelKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {
