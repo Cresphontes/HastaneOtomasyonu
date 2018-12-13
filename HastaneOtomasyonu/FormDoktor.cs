@@ -33,7 +33,15 @@ namespace HastaneOtomasyonu
 
             DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
 
-
+            foreach (Hemsire item in BransliHemsireler)
+            {
+                if (cmbDoktorHemsire.SelectedItem == item)
+                {
+                    doktor.HemsireSec = item;
+                    BransliHemsireler.Remove(item);
+                    break;
+                }
+            }
 
             //doktor.HemsireSec = (this.MdiParent as FormGiris).hemsireler
 
@@ -78,16 +86,15 @@ namespace HastaneOtomasyonu
 
         public void FormuTemizle()
         {
-            BransliHemsireler.Clear();
 
             foreach (Control control in this.Controls)
             {
                 if (control is TextBox)
                 {
-                    //if (control.Name == "txtSearch")
-                    //{
-                    //    continue;
-                    //}
+                    if (control.Name == "txtDoktorAra")
+                    {
+                        continue;
+                    }
                     control.Text = string.Empty;
                 }
                 else if (control is ListBox lst)
@@ -100,6 +107,10 @@ namespace HastaneOtomasyonu
                 }
                 else if (control is ComboBox cb)
                 {
+                    if (control.Name == "DoktorAramaResim")
+                    {
+                        continue;
+                    }
                     cb.Text = string.Empty; ;
                 }
             }
@@ -107,8 +118,7 @@ namespace HastaneOtomasyonu
 
         private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            BransliHemsireler.Clear();
+            
             cmbDoktorHemsire.Items.Clear();
 
             if (lstDoktorlar.SelectedItem == null) return;
@@ -121,26 +131,24 @@ namespace HastaneOtomasyonu
             txtDoktorTCKN.Text = secilikisi.TCKN;
             txtDoktorMaas.Text = secilikisi.Maas;
             cmbDoktorBrans.Text = secilikisi.DoktorBrans.ToString();
-
-            foreach (Hemsire item in ((this.MdiParent as FormGiris).hemsireler))
-            {
-                if (item.HemsireBrans == secilikisi.DoktorBrans)
-                {
-                    BransliHemsireler.Add(item);
-                }
-            }
-
-            cmbDoktorHemsire.Items.AddRange(BransliHemsireler.ToArray());
+            cmbDoktorHemsire.Text= secilikisi.HemsireSec.ToString();
+            //foreach (Hemsire item in BransliHemsireler)
+            //{
+            //    if (item.HemsireBrans == secilikisi.DoktorBrans)
+            //    {
+            //        cmbDoktorHemsire.Items.Add(item);
+            //    }
+            //}
 
 
-            //btnDoktorKaydet.Enabled = false;
+            btnDoktorKaydet.Enabled = false;
         }
 
         private void FormDoktor_Load(object sender, EventArgs e)
         {
             lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
-            
+            BransliHemsireler.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
 
         }
 
@@ -191,6 +199,49 @@ namespace HastaneOtomasyonu
             }
 
         }
+
+        private void cmbDoktorBrans_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbDoktorHemsire.Items.Clear();
+            
+            foreach (Hemsire item in BransliHemsireler)
+            {
+                if (item.HemsireBrans.ToString() == cmbDoktorBrans.Text)
+                {
+                    cmbDoktorHemsire.Items.Add(item);
+
+                }
+            }
+            
+        }
+
+        //private void btnDoktorGuncelle_Click(object sender, EventArgs e)
+        //{
+        //    if (lstDoktorlar.SelectedItem == null) return;
+
+        //    Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;// referans tip değişkenler !
+
+        //    //static metod yap orda ara varsa varde yoksa yokdersin.
+        //    try
+        //    {
+        //        seciliKisi.Ad = txtDoktorAd.Text;
+        //        seciliKisi.Soyad = txtDoktorSoyad.Text;
+        //        seciliKisi.Email = txtDoktorEmail.Text;
+        //        seciliKisi.Telefon = txtDoktorTelefon.Text;
+        //        seciliKisi.TCKN = txtDoktorTCKN.Text;
+        //        secilikisi.Maas = txtDoktorMaas.Text;
+        //        secilikisi.DoktorBrans.ToString() = cmbDoktorBrans.Text;
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+
+        //    FormuTemizle();
+        //    lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
+        //    btnDoktorKaydet.Enabled = true;
+        //}
     }
 }
 

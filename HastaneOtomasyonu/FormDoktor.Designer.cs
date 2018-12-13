@@ -64,13 +64,13 @@
             this.txtDoktorMaas = new System.Windows.Forms.TextBox();
             this.cmbDoktorHemsire = new System.Windows.Forms.ComboBox();
             this.lblDoktorHemsire = new System.Windows.Forms.Label();
-            this.HastaAramaResim = new System.Windows.Forms.PictureBox();
+            this.DoktorAramaResim = new System.Windows.Forms.PictureBox();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoktorAramaResim)).BeginInit();
             this.SuspendLayout();
             // 
             // pbDoktor
@@ -304,6 +304,7 @@
             this.cmbDoktorBrans.Name = "cmbDoktorBrans";
             this.cmbDoktorBrans.Size = new System.Drawing.Size(199, 21);
             this.cmbDoktorBrans.TabIndex = 49;
+            this.cmbDoktorBrans.SelectedIndexChanged += new System.EventHandler(this.cmbDoktorBrans_SelectedIndexChanged);
             // 
             // lblDoktorMaas
             // 
@@ -347,15 +348,15 @@
             this.lblDoktorHemsire.TabIndex = 51;
             this.lblDoktorHemsire.Text = "Hemşire";
             // 
-            // HastaAramaResim
+            // DoktorAramaResim
             // 
-            this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
-            this.HastaAramaResim.Location = new System.Drawing.Point(430, 59);
-            this.HastaAramaResim.Name = "HastaAramaResim";
-            this.HastaAramaResim.Size = new System.Drawing.Size(22, 20);
-            this.HastaAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.HastaAramaResim.TabIndex = 52;
-            this.HastaAramaResim.TabStop = false;
+            this.DoktorAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("DoktorAramaResim.Image")));
+            this.DoktorAramaResim.Location = new System.Drawing.Point(430, 59);
+            this.DoktorAramaResim.Name = "DoktorAramaResim";
+            this.DoktorAramaResim.Size = new System.Drawing.Size(22, 20);
+            this.DoktorAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DoktorAramaResim.TabIndex = 52;
+            this.DoktorAramaResim.TabStop = false;
             // 
             // dosyaAc
             // 
@@ -367,7 +368,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(785, 461);
-            this.Controls.Add(this.HastaAramaResim);
+            this.Controls.Add(this.DoktorAramaResim);
             this.Controls.Add(this.lblDoktorHemsire);
             this.Controls.Add(this.cmbDoktorHemsire);
             this.Controls.Add(this.cmbDoktorBrans);
@@ -399,7 +400,7 @@
             this.cmsListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DoktorAramaResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,7 +442,7 @@
         private System.Windows.Forms.TextBox txtDoktorMaas;
         private System.Windows.Forms.ComboBox cmbDoktorHemsire;
         private System.Windows.Forms.Label lblDoktorHemsire;
-        private System.Windows.Forms.PictureBox HastaAramaResim;
+        private System.Windows.Forms.PictureBox DoktorAramaResim;
         private System.Windows.Forms.SaveFileDialog dosyaKaydet;
         private System.Windows.Forms.OpenFileDialog dosyaAc;
     }

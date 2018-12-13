@@ -27,8 +27,9 @@ namespace HastaneOtomasyonu.ClassLib
             }
 
         }
+        public Hemsire HemsireSec { get; set; }
 
-  
+
 
         public override string ToString()
         {

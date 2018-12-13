@@ -124,7 +124,7 @@
     <value>119, 19</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="HastaAramaResim.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="DoktorAramaResim.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAxoAAALQCAYAAAAXRAY0AAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
         fQd4VNX2/T+AUmwovSSBJJSEEmrogdB7772IgAIiRVBBERUUVBQp9oY+67Mrlmfv/dl7712xoiTzX+u8
