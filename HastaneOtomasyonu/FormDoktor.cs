@@ -57,8 +57,8 @@ namespace HastaneOtomasyonu
                 case DoktorBranslari.Kardiyoloji:
                     doktor.DoktorBrans = DoktorBranslari.Kardiyoloji;
                     break;
-                case DoktorBranslari.GözHastaliklaari:
-                    doktor.DoktorBrans = DoktorBranslari.GözHastaliklaari;
+                case DoktorBranslari.GozHastaliklari:
+                    doktor.DoktorBrans = DoktorBranslari.GozHastaliklari;
                     break;
                 default:
                     break;
