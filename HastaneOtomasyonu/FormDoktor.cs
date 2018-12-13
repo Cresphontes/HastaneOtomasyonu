@@ -70,7 +70,8 @@ namespace HastaneOtomasyonu
 
         private void FormDoktor_Load(object sender, EventArgs e)
         {
-            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            
+            lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
             cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
 
 

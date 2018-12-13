@@ -91,6 +91,7 @@
             this.txtHastaAra.Name = "txtHastaAra";
             this.txtHastaAra.Size = new System.Drawing.Size(175, 20);
             this.txtHastaAra.TabIndex = 32;
+            this.txtHastaAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtHastaAra_KeyUp);
             // 
             // lstHastaList
             // 
@@ -113,7 +114,7 @@
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
             this.silToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 

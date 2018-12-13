@@ -20,6 +20,7 @@ namespace HastaneOtomasyonu
         }
         //Gerekirse
         //List<Hasta> Hastas = new List<Hasta>();
+        List<Kisi> aramalar = new List<Kisi>();
         private void btnHastaKaydet_Click(object sender, EventArgs e)
         {
             Hasta yeniKisi = new Hasta();
@@ -56,10 +57,10 @@ namespace HastaneOtomasyonu
             {
                 if (control is TextBox)
                 {
-                    //if (control.Name == "txtSearch")
-                    //{
-                    //    continue;
-                    //}
+                    if (control.Name == "txtHastaAra")
+                    {
+                        continue;
+                    }
                     control.Text = string.Empty;
                 }
                 else if (control is ListBox lst)
@@ -68,6 +69,10 @@ namespace HastaneOtomasyonu
                 }
                 else if (control is PictureBox pbox)
                 {
+                    if (control.Name == "HastaAramaResim")
+                    {
+                        continue;
+                    }
                     pbox.Image = null;
                 }
                 else if (control is ComboBox cb)
@@ -81,7 +86,7 @@ namespace HastaneOtomasyonu
             lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
         }
 
-        
+
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -124,6 +129,17 @@ namespace HastaneOtomasyonu
             FormuTemizle();
             lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
             btnHastaKaydet.Enabled = true;
+        }
+
+        private void txtHastaAra_KeyUp(object sender, KeyEventArgs e)
+        {
+            string ara = txtHastaAra.Text.ToLower();
+            aramalar = new List<Kisi>();
+            (this.MdiParent as FormGiris).hastalar.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara)
+            || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
+
+            FormuTemizle();
+            lstHastaList.Items.AddRange(aramalar.ToArray());
         }
     }
 }
