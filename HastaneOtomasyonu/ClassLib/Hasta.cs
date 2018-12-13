@@ -13,5 +13,10 @@ namespace HastaneOtomasyonu.ClassLib
         {
            
         }
+
+        public override string ToString()
+        {
+            return TCKN + " " + Ad + " " + Soyad;
+        }
     }
 }

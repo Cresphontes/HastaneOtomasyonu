@@ -68,7 +68,16 @@ namespace HastaneOtomasyonu
 
                 lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
 
-               
+
+                //if (memoryStream.Length > 0)
+                //{
+                //    yeniKisi.Fotograf = memoryStream.ToArray();
+                //}
+                //memoryStream = new MemoryStream();
+                //kisiler.Add(yeniKisi);
+                ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
+                FormuTemizle();
+                lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).Personellerx.ToArray());
             }
             catch (Exception ex)
             {
@@ -76,7 +85,32 @@ namespace HastaneOtomasyonu
             }
         }
 
-        
+        public void FormuTemizle()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    //if (control.Name == "txtSearch")
+                    //{
+                    //    continue;
+                    //}
+                    control.Text = string.Empty;
+                }
+                else if (control is ListBox lst)
+                {
+                    lst.Items.Clear();
+                }
+                else if (control is PictureBox pbox)
+                {
+                    pbox.Image = null;
+                }
+                else if (control is ComboBox cb)
+                {
+                    cb.Text = string.Empty; ;
+                }
+            }
+        }
 
         private void FormPersonel_Load(object sender, EventArgs e)
         {
@@ -97,6 +131,7 @@ namespace HastaneOtomasyonu
             txtPersonelTelefon.Text = secilikisi.Telefon;
             txtPersonelTCKN.Text = secilikisi.TCKN;
             txtPersonelMaas.Text = secilikisi.Maas;
+            btnPersonelKaydet.Enabled = false;
 
         }
     }
