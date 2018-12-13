@@ -104,6 +104,7 @@
             this.lstDoktorlar.Name = "lstDoktorlar";
             this.lstDoktorlar.Size = new System.Drawing.Size(196, 186);
             this.lstDoktorlar.TabIndex = 31;
+            this.lstDoktorlar.SelectedIndexChanged += new System.EventHandler(this.lstDoktorlar_SelectedIndexChanged);
             // 
             // cmsListe
             // 

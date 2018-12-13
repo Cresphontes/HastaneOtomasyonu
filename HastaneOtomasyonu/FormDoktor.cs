@@ -19,7 +19,7 @@ namespace HastaneOtomasyonu
         }
 
 
-        public List<Doktor> doktorlar = new List<Doktor>();
+      
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
@@ -65,24 +65,37 @@ namespace HastaneOtomasyonu
             }
 
 
-            doktorlar.Add(doktor);
+            (this.MdiParent as FormGiris).doktorlar.Add(doktor);
 
             lstDoktorlar.Items.Clear();
 
-            foreach (var item in doktorlar)
-            {
-               
-                lstDoktorlar.Items.Add(item);
-            }
-            
+            lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
+
 
         }
 
         private void FormDoktor_Load(object sender, EventArgs e)
         {
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
             
             
+        }
+
+        private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstDoktorlar.SelectedItem == null) return;
+
+            Doktor secilikisi = lstDoktorlar.SelectedItem as Doktor;
+
+            txtDoktorAd.Text = secilikisi.Ad;
+            txtDoktorSoyad.Text = secilikisi.Soyad;
+            txtDoktorEmail.Text = secilikisi.Email;
+            txtDoktorTelefon.Text = secilikisi.Telefon;
+            txtDoktorTCKN.Text = secilikisi.TCKN;
+            txtDoktorMaas.Text = secilikisi.Maas;
+           
+
         }
     }
 }

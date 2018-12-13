@@ -13,8 +13,8 @@ namespace HastaneOtomasyonu.Class_Lib
     {
 
         private string _ad, _soyad, _email, _telefon, _tckn;
-        Regex rgxAd = new Regex(@"^[a-zA-Z\s]*$");
-        Regex rgxSoyad = new Regex(@"^[a-zA-Z]*$");
+        Regex rgxAd = new Regex(@"^[a-zA-Z\sğüşıöçĞÜŞİÖÇ]*$");
+        Regex rgxSoyad = new Regex(@"^[a-zA-ZğüşıöçĞÜŞİÖÇ]*$");
         Regex rgxEmail = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
         Regex rgxTelefon = new Regex(@"^[0-9]*$");
 

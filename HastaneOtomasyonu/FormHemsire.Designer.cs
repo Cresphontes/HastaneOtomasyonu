@@ -102,6 +102,7 @@
             this.lstHemsireKisiler.Name = "lstHemsireKisiler";
             this.lstHemsireKisiler.Size = new System.Drawing.Size(196, 160);
             this.lstHemsireKisiler.TabIndex = 31;
+            this.lstHemsireKisiler.SelectedIndexChanged += new System.EventHandler(this.lstHemsireKisiler_SelectedIndexChanged);
             // 
             // cmsHemsire
             // 
