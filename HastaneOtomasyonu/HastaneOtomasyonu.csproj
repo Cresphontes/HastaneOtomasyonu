@@ -107,6 +107,9 @@
     <EmbeddedResource Include="FormPersonel.resx">
       <DependentUpon>FormPersonel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRandevu.resx">
+      <DependentUpon>FormRandevu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>

@@ -34,6 +34,7 @@
             this.doktorKayıtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personelKayıtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hemşireKayıtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.randevuAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGirisler.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,10 +45,11 @@
             this.hastaKayıtToolStripMenuItem,
             this.doktorKayıtToolStripMenuItem,
             this.personelKayıtToolStripMenuItem,
-            this.hemşireKayıtToolStripMenuItem});
+            this.hemşireKayıtToolStripMenuItem,
+            this.randevuAlToolStripMenuItem});
             this.menuGirisler.Location = new System.Drawing.Point(0, 0);
             this.menuGirisler.Name = "menuGirisler";
-            this.menuGirisler.Size = new System.Drawing.Size(484, 24);
+            this.menuGirisler.Size = new System.Drawing.Size(573, 24);
             this.menuGirisler.TabIndex = 6;
             this.menuGirisler.Text = "MenuKayıtlar";
             // 
@@ -79,12 +81,19 @@
             this.hemşireKayıtToolStripMenuItem.Text = "Hemşire Kayıt";
             this.hemşireKayıtToolStripMenuItem.Click += new System.EventHandler(this.hemşireKayıtToolStripMenuItem_Click);
             // 
+            // randevuAlToolStripMenuItem
+            // 
+            this.randevuAlToolStripMenuItem.Name = "randevuAlToolStripMenuItem";
+            this.randevuAlToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.randevuAlToolStripMenuItem.Text = "Randevu Al";
+            this.randevuAlToolStripMenuItem.Click += new System.EventHandler(this.randevuAlToolStripMenuItem_Click);
+            // 
             // FormGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(573, 461);
             this.Controls.Add(this.menuGirisler);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -108,6 +117,7 @@
         private System.Windows.Forms.ToolStripMenuItem doktorKayıtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personelKayıtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hemşireKayıtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem randevuAlToolStripMenuItem;
     }
 }
 

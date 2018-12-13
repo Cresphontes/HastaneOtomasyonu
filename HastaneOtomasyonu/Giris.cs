@@ -24,17 +24,12 @@ namespace HastaneOtomasyonu
         private FormHemsire _frmHemsire;
         private FormDoktor _frmDoktor;
         private FormPersonel _frmPersonel;
+        public FormRandevu _frmRandevu;
 
         public List<Personel> personeller { get; set; }
         public List<Doktor> doktorlar { get; set; }
         public List<Hemsire> hemsireler { get; set; }
-        public List<Hasta> hastalar { get; set; }
-        
-
-        private void btnHastaKayit_Click(object sender, EventArgs e)
-        {
-              
-        }
+        public List<Hasta> hastalar { get; set; }  
 
         private void FormGiris_Load(object sender, EventArgs e)
         {
@@ -99,8 +94,7 @@ namespace HastaneOtomasyonu
 
         }
         #endregion
-
-       
+      
         #region PersonelForm
         private void personelKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -155,8 +149,34 @@ namespace HastaneOtomasyonu
            
 
         }
+
         #endregion
 
-       
+        private void randevuAlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_frmRandevu == null || _frmHasta.IsDisposed)
+            {
+                _frmRandevu = new FormRandevu();
+                _frmRandevu.MdiParent = this;
+                _frmRandevu.Show();
+
+                if (_frmPersonel != null)
+                {
+                    _frmPersonel.Dispose();
+                }
+                if (_frmHemsire != null)
+                {
+                    _frmHemsire.Dispose();
+                }
+                if (_frmDoktor != null)
+                {
+                    _frmDoktor.Dispose();
+                }
+                if (_frmHasta != null)
+                {
+                    _frmHasta.Dispose();
+                }
+            }
+        }
     }
 }

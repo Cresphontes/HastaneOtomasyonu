@@ -146,5 +146,6 @@ namespace HastaneOtomasyonu
             FormuTemizle();
             lstHastaList.Items.AddRange(aramalar.ToArray());
         }
+ 
     }
 }

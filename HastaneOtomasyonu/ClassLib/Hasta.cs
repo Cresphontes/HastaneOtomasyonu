@@ -14,6 +14,7 @@ namespace HastaneOtomasyonu.ClassLib
            
         }
 
+        public string RandevuSaati { get; set; }
         public override string ToString()
         {
             return TCKN + " " + Ad + " " + Soyad;

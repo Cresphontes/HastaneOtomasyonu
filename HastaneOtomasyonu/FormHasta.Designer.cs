@@ -58,7 +58,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRandevuAl = new System.Windows.Forms.Button();
             this.HastaAramaResim = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).BeginInit();
             this.cmsHastaListe.SuspendLayout();
@@ -291,18 +290,6 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Ad";
             // 
-            // btnRandevuAl
-            // 
-            this.btnRandevuAl.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnRandevuAl.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRandevuAl.Location = new System.Drawing.Point(581, 50);
-            this.btnRandevuAl.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRandevuAl.Name = "btnRandevuAl";
-            this.btnRandevuAl.Size = new System.Drawing.Size(182, 130);
-            this.btnRandevuAl.TabIndex = 41;
-            this.btnRandevuAl.Text = "Randevu Al";
-            this.btnRandevuAl.UseVisualStyleBackColor = false;
-            // 
             // HastaAramaResim
             // 
             this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
@@ -320,7 +307,6 @@
             this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.HastaAramaResim);
-            this.Controls.Add(this.btnRandevuAl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -381,7 +367,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRandevuAl;
         private System.Windows.Forms.PictureBox HastaAramaResim;
     }
 }
