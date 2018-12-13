@@ -15,11 +15,11 @@ namespace HastaneOtomasyonu
 
 
 
-        Doktor doktor = new Doktor();
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
 
+            Doktor doktor = new Doktor();
 
 
             doktor.Ad = txtDoktorAd.Text;
@@ -29,7 +29,9 @@ namespace HastaneOtomasyonu
             doktor.TCKN = txtDoktorTCKN.Text;
             doktor.Maas = txtDoktorMaas.Text;
 
-            switch (cmbDoktorBrans.SelectedItem)
+            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
+
+            switch (doktorBrans)
             {
 
                 case DoktorBranslari.GenelCerrahi:
@@ -68,14 +70,6 @@ namespace HastaneOtomasyonu
 
         }
 
-        private void FormDoktor_Load(object sender, EventArgs e)
-        {
-            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
-            cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
-
-
-        }
-
         public void FormuTemizle()
         {
             foreach (Control control in this.Controls)
@@ -107,23 +101,24 @@ namespace HastaneOtomasyonu
         {
             if (lstDoktorlar.SelectedItem == null) return;
 
-            //Doktor secilikisi = lstDoktorlar.SelectedItem as Doktor;
-            txtDoktorAd.Text = doktor.Ad;
-            txtDoktorSoyad.Text = doktor.Soyad;
-            txtDoktorEmail.Text = doktor.Email;
-            txtDoktorTelefon.Text = doktor.Telefon;
-            txtDoktorTCKN.Text = doktor.TCKN;
-            txtDoktorMaas.Text = doktor.Maas;
-            cmbDoktorBrans.SelectedItem = doktor.DoktorBrans;
+            Doktor secilikisi = lstDoktorlar.SelectedItem as Doktor;
+            txtDoktorAd.Text = secilikisi.Ad;
+            txtDoktorSoyad.Text = secilikisi.Soyad;
+            txtDoktorEmail.Text = secilikisi.Email;
+            txtDoktorTelefon.Text = secilikisi.Telefon;
+            txtDoktorTCKN.Text = secilikisi.TCKN;
+            txtDoktorMaas.Text = secilikisi.Maas;
+            cmbDoktorBrans.Text = secilikisi.DoktorBrans.ToString();
+          
             //btnDoktorKaydet.Enabled = false;
         }
 
-        //private void FormDoktor_Load(object sender, EventArgs e)
-        //{
-        //    lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
-        //    cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
+        private void FormDoktor_Load(object sender, EventArgs e)
+        {
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
 
-        //}
+        }
     }
 }
 

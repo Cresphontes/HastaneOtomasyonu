@@ -23,7 +23,7 @@ namespace HastaneOtomasyonu.ClassLib
                 if (value.Length>5)
                     throw new Exception("Maas 99.999 TL den fazla olamaz. ");
 
-             this._maas = Maas;
+             this._maas = value;
             }
 
         }
