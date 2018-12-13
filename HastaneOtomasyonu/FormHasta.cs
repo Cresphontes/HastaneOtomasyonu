@@ -116,10 +116,15 @@ namespace HastaneOtomasyonu
 
             Hasta seciliKisi = (Hasta)lstHastaList.SelectedItem;// referans tip değişkenler !
 
+            //static metod yap orda ara varsa varde yoksa yokdersin.
             try
             {
-                seciliKisi.Ad = txtHastaAd.Text;
-                seciliKisi.Soyad = txtHastaSoyad.Text;
+                txtHastaAd.Text = seciliKisi.Ad;
+                txtHastaSoyad.Text = seciliKisi.Soyad;
+                txtHastaEmail.Text = seciliKisi.Email;
+                txtHastaTelefon.Text = seciliKisi.Telefon;
+                txtHastaTCKN.Text = seciliKisi.TCKN;
+
             }
             catch (Exception ex)
             {
