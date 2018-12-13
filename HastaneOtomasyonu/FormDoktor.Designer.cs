@@ -75,7 +75,7 @@
             // 
             // pbDoktor
             // 
-            this.pbDoktor.Location = new System.Drawing.Point(216, 52);
+            this.pbDoktor.Location = new System.Drawing.Point(283, 59);
             this.pbDoktor.Name = "pbDoktor";
             this.pbDoktor.Size = new System.Drawing.Size(139, 124);
             this.pbDoktor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -84,7 +84,7 @@
             // 
             // btnDoktorGuncelle
             // 
-            this.btnDoktorGuncelle.Location = new System.Drawing.Point(181, 283);
+            this.btnDoktorGuncelle.Location = new System.Drawing.Point(195, 283);
             this.btnDoktorGuncelle.Name = "btnDoktorGuncelle";
             this.btnDoktorGuncelle.Size = new System.Drawing.Size(79, 38);
             this.btnDoktorGuncelle.TabIndex = 33;
@@ -93,7 +93,7 @@
             // 
             // txtDoktorAra
             // 
-            this.txtDoktorAra.Location = new System.Drawing.Point(389, 52);
+            this.txtDoktorAra.Location = new System.Drawing.Point(456, 59);
             this.txtDoktorAra.Name = "txtDoktorAra";
             this.txtDoktorAra.Size = new System.Drawing.Size(170, 20);
             this.txtDoktorAra.TabIndex = 32;
@@ -102,7 +102,7 @@
             // 
             this.lstDoktorlar.ContextMenuStrip = this.cmsListe;
             this.lstDoktorlar.FormattingEnabled = true;
-            this.lstDoktorlar.Location = new System.Drawing.Point(363, 74);
+            this.lstDoktorlar.Location = new System.Drawing.Point(430, 81);
             this.lstDoktorlar.Name = "lstDoktorlar";
             this.lstDoktorlar.Size = new System.Drawing.Size(196, 186);
             this.lstDoktorlar.TabIndex = 31;
@@ -136,35 +136,35 @@
             // 
             this.txtDoktorTCKN.Location = new System.Drawing.Point(75, 156);
             this.txtDoktorTCKN.Name = "txtDoktorTCKN";
-            this.txtDoktorTCKN.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorTCKN.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorTCKN.TabIndex = 29;
             // 
             // txtDoktorEmail
             // 
             this.txtDoktorEmail.Location = new System.Drawing.Point(75, 130);
             this.txtDoktorEmail.Name = "txtDoktorEmail";
-            this.txtDoktorEmail.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorEmail.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorEmail.TabIndex = 28;
             // 
             // txtDoktorTelefon
             // 
             this.txtDoktorTelefon.Location = new System.Drawing.Point(75, 104);
             this.txtDoktorTelefon.Name = "txtDoktorTelefon";
-            this.txtDoktorTelefon.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorTelefon.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorTelefon.TabIndex = 27;
             // 
             // txtDoktorSoyad
             // 
             this.txtDoktorSoyad.Location = new System.Drawing.Point(75, 78);
             this.txtDoktorSoyad.Name = "txtDoktorSoyad";
-            this.txtDoktorSoyad.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorSoyad.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorSoyad.TabIndex = 26;
             // 
             // txtDoktorAd
             // 
             this.txtDoktorAd.Location = new System.Drawing.Point(75, 52);
             this.txtDoktorAd.Name = "txtDoktorAd";
-            this.txtDoktorAd.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorAd.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorAd.TabIndex = 25;
             // 
             // menuStrip1
@@ -176,7 +176,7 @@
             this.toolStripComboBox1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(721, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(785, 27);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -195,21 +195,21 @@
             this.içeriAktarToolStripMenuItem,
             this.dışarıAktarToolStripMenuItem});
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.xMLToolStripMenuItem.Text = "&XML";
             // 
             // içeriAktarToolStripMenuItem
             // 
             this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
             this.içeriAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.içeriAktarToolStripMenuItem.Text = "&İçeri Aktar";
             // 
             // dışarıAktarToolStripMenuItem
             // 
             this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
             this.dışarıAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.dışarıAktarToolStripMenuItem.Text = "&Dışarı Aktar";
             // 
             // jSONToolStripMenuItem
@@ -218,20 +218,20 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
             // 
             this.içeriAktarToolStripMenuItem1.Name = "içeriAktarToolStripMenuItem1";
-            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.içeriAktarToolStripMenuItem1.Text = "&İçeri Aktar";
             this.içeriAktarToolStripMenuItem1.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem1_Click_1);
             // 
             // dışarıAktarToolStripMenuItem1
             // 
             this.dışarıAktarToolStripMenuItem1.Name = "dışarıAktarToolStripMenuItem1";
-            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.dışarıAktarToolStripMenuItem1.Text = "&Dışarı Aktar";
             this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click_1);
             // 
@@ -302,7 +302,7 @@
             this.cmbDoktorBrans.FormattingEnabled = true;
             this.cmbDoktorBrans.Location = new System.Drawing.Point(75, 186);
             this.cmbDoktorBrans.Name = "cmbDoktorBrans";
-            this.cmbDoktorBrans.Size = new System.Drawing.Size(135, 21);
+            this.cmbDoktorBrans.Size = new System.Drawing.Size(199, 21);
             this.cmbDoktorBrans.TabIndex = 49;
             // 
             // lblDoktorMaas
@@ -327,7 +327,7 @@
             // 
             this.txtDoktorMaas.Location = new System.Drawing.Point(75, 248);
             this.txtDoktorMaas.Name = "txtDoktorMaas";
-            this.txtDoktorMaas.Size = new System.Drawing.Size(135, 20);
+            this.txtDoktorMaas.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorMaas.TabIndex = 46;
             // 
             // cmbDoktorHemsire
@@ -335,7 +335,7 @@
             this.cmbDoktorHemsire.FormattingEnabled = true;
             this.cmbDoktorHemsire.Location = new System.Drawing.Point(75, 218);
             this.cmbDoktorHemsire.Name = "cmbDoktorHemsire";
-            this.cmbDoktorHemsire.Size = new System.Drawing.Size(135, 21);
+            this.cmbDoktorHemsire.Size = new System.Drawing.Size(199, 21);
             this.cmbDoktorHemsire.TabIndex = 50;
             // 
             // lblDoktorHemsire
@@ -350,7 +350,7 @@
             // HastaAramaResim
             // 
             this.HastaAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("HastaAramaResim.Image")));
-            this.HastaAramaResim.Location = new System.Drawing.Point(363, 52);
+            this.HastaAramaResim.Location = new System.Drawing.Point(430, 59);
             this.HastaAramaResim.Name = "HastaAramaResim";
             this.HastaAramaResim.Size = new System.Drawing.Size(22, 20);
             this.HastaAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -366,7 +366,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Sienna;
-            this.ClientSize = new System.Drawing.Size(721, 461);
+            this.ClientSize = new System.Drawing.Size(785, 461);
             this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.lblDoktorHemsire);
             this.Controls.Add(this.cmbDoktorHemsire);
