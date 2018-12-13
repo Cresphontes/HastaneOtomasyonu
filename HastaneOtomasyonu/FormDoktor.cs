@@ -114,8 +114,7 @@ namespace HastaneOtomasyonu
             txtDoktorTelefon.Text = secilikisi.Telefon;
             txtDoktorTCKN.Text = secilikisi.TCKN;
             txtDoktorMaas.Text = secilikisi.Maas;
-            //cmbDoktorBrans.DataSource = secilikisi.
-            btnDoktorKaydet.Enabled = false;
+            //btnDoktorKaydet.Enabled = false;
         }
     }
 }

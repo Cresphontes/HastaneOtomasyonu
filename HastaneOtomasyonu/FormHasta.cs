@@ -1,4 +1,5 @@
-﻿using HastaneOtomasyonu.ClassLib;
+﻿using HastaneOtomasyonu.Class_Lib;
+using HastaneOtomasyonu.ClassLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace HastaneOtomasyonu
                 yeniKisi.Telefon = txtHastaTelefon.Text;
                 yeniKisi.TCKN = txtHastaTCKN.Text;
                 //Gerekirse Diye
-               // Hastas.Add(yeniKisi);
+                // Hastas.Add(yeniKisi);
                 (this.MdiParent as FormGiris).Hastalarx.Add(yeniKisi);
 
                 //if (memoryStream.Length > 0)
@@ -80,11 +81,22 @@ namespace HastaneOtomasyonu
             lstHastaList.Items.AddRange((this.MdiParent as FormGiris).Hastalarx.ToArray());
         }
 
-        private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstHastaList.SelectedItem == null) return;
+            Hasta seciliKisi = (Hasta)lstHastaList.SelectedItem;
+            (this.MdiParent as FormGiris).Hastalarx.Remove(seciliKisi);
+            FormuTemizle();
+            lstHastaList.Items.AddRange((this.MdiParent as FormGiris).Hastalarx.ToArray());
+        }
+
+        private void lstHastaList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstHastaList.SelectedItem == null) return;
 
-            Personel secilikisi = lstHastaList.SelectedItem as Personel;
+            Hasta secilikisi = lstHastaList.SelectedItem as Hasta;
             txtHastaAd.Text = secilikisi.Ad;
             txtHastaSoyad.Text = secilikisi.Soyad;
             txtHastaEmail.Text = secilikisi.Email;

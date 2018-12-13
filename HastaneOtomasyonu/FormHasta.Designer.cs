@@ -99,6 +99,7 @@
             this.lstHastaList.Name = "lstHastaList";
             this.lstHastaList.Size = new System.Drawing.Size(196, 147);
             this.lstHastaList.TabIndex = 31;
+            this.lstHastaList.SelectedIndexChanged += new System.EventHandler(this.lstHastaList_SelectedIndexChanged);
             // 
             // cmsHastaListe
             // 
@@ -111,8 +112,9 @@
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
             this.silToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // btnHastaKaydet
             // 
