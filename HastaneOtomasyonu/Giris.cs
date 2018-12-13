@@ -33,6 +33,7 @@ namespace HastaneOtomasyonu
         {
             Personellerx = new List<Personel>();
             Hastalarx = new List<Hasta>();
+            Hemsirelerx = new List<Hemsire>();
         }
 
         public List<Hasta> Hastalarx { get; set; }
@@ -115,9 +116,9 @@ namespace HastaneOtomasyonu
                 }
             }
 
-        } 
+        }
         #endregion
-
+        public List<Hemsire> Hemsirelerx { get; set; }
         #region Hemşire Form
         private void hemşireKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {

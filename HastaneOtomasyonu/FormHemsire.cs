@@ -30,15 +30,15 @@ namespace HastaneOtomasyonu
             hemsire.Telefon = txtHemsireTelefon.Text;
             hemsire.TCKN = txtHemsireTCKN.Text;
             hemsire.Maas = txtHemsireMaas.Text;
-
-           
-
+            //hemsire.HemsireBrans =(DoktorBranslari)cmbHemsireBrans.SelectedItem;
 
             switch (cmbHemsireBrans.SelectedItem)
             {
 
                 case DoktorBranslari.GenelCerrahi:
+                    
                     hemsire.HemsireBrans = DoktorBranslari.GenelCerrahi;
+
                     break;
                 case DoktorBranslari.Ortopedi:
                     hemsire.HemsireBrans = DoktorBranslari.Ortopedi;
@@ -62,19 +62,23 @@ namespace HastaneOtomasyonu
                     break;
             }
 
-            hemsireler.Add(hemsire);
-            lstHemsireKisiler.Items.Clear();
+           (this.MdiParent as FormGiris).Hemsirelerx.Add(hemsire);
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).Hemsirelerx.ToArray());
+            //hemsireler.Add(hemsire);
+            //lstHemsireKisiler.Items.Clear();
 
-            foreach (var item in hemsireler)
-            {
-                lstHemsireKisiler.Items.Add(item);
-            }
+            //foreach (var item in hemsireler)
+            //{
+            //    lstHemsireKisiler.Items.Add(item);
+            //}
 
         }
 
         private void FormHemsire_Load(object sender, EventArgs e)
         {
             cmbHemsireBrans.Items.AddRange(Enum.GetNames((typeof(DoktorBranslari))));
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).Hemsirelerx.ToArray());
+          
         }
     }
 }
