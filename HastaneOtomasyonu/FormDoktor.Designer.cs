@@ -386,7 +386,6 @@
             this.Name = "FormDoktor";
             this.Text = "FormDoktor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormDoktor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).EndInit();
             this.cmsListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
