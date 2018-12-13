@@ -122,7 +122,7 @@ namespace HastaneOtomasyonu
             txtDoktorTelefon.Text = secilikisi.Telefon;
             txtDoktorTCKN.Text = secilikisi.TCKN;
             txtDoktorMaas.Text = secilikisi.Maas;
-            btnDoktorKaydet.Enabled = false;
+            //btnDoktorKaydet.Enabled = false;
         }
     }
 }

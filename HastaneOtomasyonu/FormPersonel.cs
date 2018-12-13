@@ -99,5 +99,7 @@ namespace HastaneOtomasyonu
             btnPersonelKaydet.Enabled = false;
 
         }
+
+        
     }
 }
