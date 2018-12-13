@@ -83,6 +83,7 @@
             this.btnHastaGuncelle.TabIndex = 33;
             this.btnHastaGuncelle.Text = "Güncelle";
             this.btnHastaGuncelle.UseVisualStyleBackColor = true;
+            this.btnHastaGuncelle.Click += new System.EventHandler(this.btnHastaGuncelle_Click);
             // 
             // txtHastaAra
             // 

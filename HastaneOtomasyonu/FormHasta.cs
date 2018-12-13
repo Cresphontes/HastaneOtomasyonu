@@ -32,7 +32,7 @@ namespace HastaneOtomasyonu
                 yeniKisi.TCKN = txtHastaTCKN.Text;
                 //Gerekirse Diye
                 // Hastas.Add(yeniKisi);
-                (this.MdiParent as FormGiris).Hastalarx.Add(yeniKisi);
+                (this.MdiParent as FormGiris).hastalar.Add(yeniKisi);
 
                 //if (memoryStream.Length > 0)
                 //{
@@ -42,7 +42,7 @@ namespace HastaneOtomasyonu
                 //kisiler.Add(yeniKisi);
                 ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
                 FormuTemizle();
-                lstHastaList.Items.AddRange((this.MdiParent as FormGiris).Hastalarx.ToArray());
+                lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
             }
             catch (Exception ex)
             {
@@ -78,7 +78,7 @@ namespace HastaneOtomasyonu
         }
         private void FormHasta_Load(object sender, EventArgs e)
         {
-            lstHastaList.Items.AddRange((this.MdiParent as FormGiris).Hastalarx.ToArray());
+            lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
         }
 
         
@@ -87,9 +87,9 @@ namespace HastaneOtomasyonu
         {
             if (lstHastaList.SelectedItem == null) return;
             Hasta seciliKisi = (Hasta)lstHastaList.SelectedItem;
-            (this.MdiParent as FormGiris).Hastalarx.Remove(seciliKisi);
+            (this.MdiParent as FormGiris).hastalar.Remove(seciliKisi);
             FormuTemizle();
-            lstHastaList.Items.AddRange((this.MdiParent as FormGiris).Hastalarx.ToArray());
+            lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
         }
 
         private void lstHastaList_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,6 +103,27 @@ namespace HastaneOtomasyonu
             txtHastaTelefon.Text = secilikisi.Telefon;
             txtHastaTCKN.Text = secilikisi.TCKN;
             btnHastaKaydet.Enabled = false;
+        }
+
+        private void btnHastaGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lstHastaList.SelectedItem == null) return;
+
+            Hasta seciliKisi = (Hasta)lstHastaList.SelectedItem;// referans tip değişkenler !
+
+            try
+            {
+                seciliKisi.Ad = txtHastaAd.Text;
+                seciliKisi.Soyad = txtHastaSoyad.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            FormuTemizle();
+            lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
+            btnHastaKaydet.Enabled = true;
         }
     }
 }
