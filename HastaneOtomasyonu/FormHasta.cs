@@ -119,11 +119,11 @@ namespace HastaneOtomasyonu
             //static metod yap orda ara varsa varde yoksa yokdersin.
             try
             {
-                txtHastaAd.Text = seciliKisi.Ad;
-                txtHastaSoyad.Text = seciliKisi.Soyad;
-                txtHastaEmail.Text = seciliKisi.Email;
-                txtHastaTelefon.Text = seciliKisi.Telefon;
-                txtHastaTCKN.Text = seciliKisi.TCKN;
+                seciliKisi.Ad = txtHastaAd.Text;
+                seciliKisi.Soyad = txtHastaSoyad.Text;
+                seciliKisi.Email = txtHastaEmail.Text;
+                 seciliKisi.Telefon= txtHastaTelefon.Text;
+                 seciliKisi.TCKN= txtHastaTCKN.Text;
 
             }
             catch (Exception ex)
