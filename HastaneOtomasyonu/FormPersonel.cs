@@ -19,7 +19,7 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-       
+        //List<Personel> Personel = new List<Personel>();
         private void btnPersonelKaydet_Click(object sender, EventArgs e)
         {
             
@@ -32,6 +32,7 @@ namespace HastaneOtomasyonu
                 yeniKisi.Telefon = txtPersonelTelefon.Text;
                 yeniKisi.TCKN = txtPersonelTCKN.Text;
                 yeniKisi.Maas = txtPersonelMaas.Text;
+                //Personel.Add(yeniKisi);
                 (this.MdiParent as FormGiris).Personellerx.Add(yeniKisi);
 
                 //if (memoryStream.Length > 0)
