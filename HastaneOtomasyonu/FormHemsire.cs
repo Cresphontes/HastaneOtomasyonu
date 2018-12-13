@@ -136,7 +136,7 @@ namespace HastaneOtomasyonu
             dosyaAc.Title = "Bir JSON dosyası seçiniz";
             dosyaAc.Filter = "(JSON Dosyası) | *.json";
             dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            dosyaAc.FileName = "Kisiler.json"; // string.Empty;
+            dosyaAc.FileName = "Hemsireler.json"; // string.Empty;
             if (dosyaAc.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -166,7 +166,7 @@ namespace HastaneOtomasyonu
             dosyaKaydet.Title = "Bir JSON dosyası seçiniz";
             dosyaKaydet.Filter = "(JSON Dosyası) | *.json";
             dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            dosyaKaydet.FileName = "Kisiler.json"; // string.Empty;
+            dosyaKaydet.FileName = "Hemsireler.json"; // string.Empty;
             if (dosyaKaydet.ShowDialog() == DialogResult.OK)
             {
                 FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);

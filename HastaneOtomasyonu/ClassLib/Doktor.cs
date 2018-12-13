@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HastaneOtomasyonu.ClassLib
 {
-    public class Doktor : Kisi, IMaasAlabilir,IHemsireSecebilir
+    public class Doktor : Kisi, IMaasAlabilir
     {
         private string _maas;
 
@@ -28,11 +28,7 @@ namespace HastaneOtomasyonu.ClassLib
 
         }
 
-        public string HemsireSec
-        {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }
+  
 
         public override string ToString()
         {

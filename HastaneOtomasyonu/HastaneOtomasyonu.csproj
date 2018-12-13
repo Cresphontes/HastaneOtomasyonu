@@ -91,7 +91,6 @@
     <Compile Include="Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassLib\IHemsireSecebilir.cs" />
     <Compile Include="ClassLib\IMaasAlabilir.cs" />
     <Compile Include="ClassLib\PersonelBranslari.cs" />
     <Compile Include="Program.cs" />

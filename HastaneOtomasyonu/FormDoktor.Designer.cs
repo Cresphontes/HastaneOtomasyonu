@@ -65,6 +65,8 @@
             this.cmbDoktorHemsire = new System.Windows.Forms.ComboBox();
             this.lblDoktorHemsire = new System.Windows.Forms.Label();
             this.HastaAramaResim = new System.Windows.Forms.PictureBox();
+            this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
+            this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -193,21 +195,21 @@
             this.içeriAktarToolStripMenuItem,
             this.dışarıAktarToolStripMenuItem});
             this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.xMLToolStripMenuItem.Text = "&XML";
             // 
             // içeriAktarToolStripMenuItem
             // 
             this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
             this.içeriAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.içeriAktarToolStripMenuItem.Text = "&İçeri Aktar";
             // 
             // dışarıAktarToolStripMenuItem
             // 
             this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
             this.dışarıAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dışarıAktarToolStripMenuItem.Text = "&Dışarı Aktar";
             // 
             // jSONToolStripMenuItem
@@ -216,20 +218,22 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
             // 
             this.içeriAktarToolStripMenuItem1.Name = "içeriAktarToolStripMenuItem1";
-            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.içeriAktarToolStripMenuItem1.Text = "&İçeri Aktar";
+            this.içeriAktarToolStripMenuItem1.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem1_Click_1);
             // 
             // dışarıAktarToolStripMenuItem1
             // 
             this.dışarıAktarToolStripMenuItem1.Name = "dışarıAktarToolStripMenuItem1";
-            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.dışarıAktarToolStripMenuItem1.Text = "&Dışarı Aktar";
+            this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click_1);
             // 
             // denetimToolStripMenuItem
             // 
@@ -353,6 +357,10 @@
             this.HastaAramaResim.TabIndex = 52;
             this.HastaAramaResim.TabStop = false;
             // 
+            // dosyaAc
+            // 
+            this.dosyaAc.FileName = "openFileDialog1";
+            // 
             // FormDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,5 +442,7 @@
         private System.Windows.Forms.ComboBox cmbDoktorHemsire;
         private System.Windows.Forms.Label lblDoktorHemsire;
         private System.Windows.Forms.PictureBox HastaAramaResim;
+        private System.Windows.Forms.SaveFileDialog dosyaKaydet;
+        private System.Windows.Forms.OpenFileDialog dosyaAc;
     }
 }
