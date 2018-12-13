@@ -29,7 +29,9 @@ namespace HastaneOtomasyonu
             doktor.TCKN = txtDoktorTCKN.Text;
             doktor.Maas = txtDoktorMaas.Text;
 
-            switch (cmbDoktorBrans.SelectedItem)
+            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
+
+            switch (doktorBrans)
             {
 
                 case DoktorBranslari.GenelCerrahi:
@@ -67,8 +69,6 @@ namespace HastaneOtomasyonu
 
 
         }
-
-    
 
         public void FormuTemizle()
         {
@@ -108,7 +108,8 @@ namespace HastaneOtomasyonu
             txtDoktorTelefon.Text = secilikisi.Telefon;
             txtDoktorTCKN.Text = secilikisi.TCKN;
             txtDoktorMaas.Text = secilikisi.Maas;
-            cmbDoktorBrans.DataSource = secilikisi.DoktorBrans;
+            cmbDoktorBrans.Text = secilikisi.DoktorBrans.ToString();
+          
             //btnDoktorKaydet.Enabled = false;
         }
 
