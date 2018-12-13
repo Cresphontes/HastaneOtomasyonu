@@ -68,13 +68,7 @@ namespace HastaneOtomasyonu
 
         }
 
-        private void FormDoktor_Load(object sender, EventArgs e)
-        {
-            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
-            cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
-
-
-        }
+    
 
         public void FormuTemizle()
         {
@@ -107,14 +101,22 @@ namespace HastaneOtomasyonu
         {
             if (lstDoktorlar.SelectedItem == null) return;
 
-            Personel secilikisi = lstDoktorlar.SelectedItem as Personel;
+            Doktor secilikisi = lstDoktorlar.SelectedItem as Doktor;
             txtDoktorAd.Text = secilikisi.Ad;
             txtDoktorSoyad.Text = secilikisi.Soyad;
             txtDoktorEmail.Text = secilikisi.Email;
             txtDoktorTelefon.Text = secilikisi.Telefon;
             txtDoktorTCKN.Text = secilikisi.TCKN;
             txtDoktorMaas.Text = secilikisi.Maas;
+            cmbDoktorBrans.DataSource = secilikisi.DoktorBrans;
             //btnDoktorKaydet.Enabled = false;
+        }
+
+        private void FormDoktor_Load(object sender, EventArgs e)
+        {
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
+
         }
     }
 }
