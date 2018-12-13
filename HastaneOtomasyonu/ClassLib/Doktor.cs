@@ -13,6 +13,7 @@ namespace HastaneOtomasyonu.ClassLib
 
         public DoktorBranslari DoktorBrans { get; set; }
 
+        public Hemsire HemsireSec { get; set; }
         public string Maas
         {
             get => this._maas;
@@ -27,7 +28,7 @@ namespace HastaneOtomasyonu.ClassLib
             }
 
         }
-        public Hemsire HemsireSec { get; set; }
+    
 
 
 
