@@ -29,10 +29,16 @@ namespace HastaneOtomasyonu
             hemsire.TCKN = txtHemsireTCKN.Text;
             hemsire.Maas = txtHemsireMaas.Text;
 
-           
 
 
-            switch (cmbHemsireBrans.SelectedItem)
+
+            DoktorBranslari hemsireBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbHemsireBrans.SelectedItem.ToString());
+
+
+
+            //doktor.HemsireSec = (this.MdiParent as FormGiris).hemsireler
+
+            switch (hemsireBrans)
             {
 
                 case DoktorBranslari.GenelCerrahi:
@@ -120,6 +126,7 @@ namespace HastaneOtomasyonu
             txtHemsireTelefon.Text = secilikisi.Telefon;
             txtHemsireTCKN.Text = secilikisi.TCKN;
             txtHemsireMaas.Text = secilikisi.Maas;
+            cmbHemsireBrans.Text = secilikisi.HemsireBrans.ToString();
         }
 
       

@@ -29,6 +29,7 @@ namespace HastaneOtomasyonu
         public List<Doktor> doktorlar { get; set; }
         public List<Hemsire> hemsireler { get; set; }
         public List<Hasta> hastalar { get; set; }
+        
 
         private void btnHastaKayit_Click(object sender, EventArgs e)
         {
@@ -41,6 +42,7 @@ namespace HastaneOtomasyonu
             doktorlar = new List<Doktor>();
             hemsireler = new List<Hemsire>();
             hastalar = new List<Hasta>();
+           
         }
         
 
