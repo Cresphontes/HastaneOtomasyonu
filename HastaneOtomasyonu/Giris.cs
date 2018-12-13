@@ -19,7 +19,7 @@ namespace HastaneOtomasyonu
         }
 
 
-        public List<Personel> Personellerx { get; set; }
+        
         private FormHasta _frmHasta;
         private FormHemsire _frmHemsire;
         private FormDoktor _frmDoktor;
