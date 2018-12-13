@@ -37,6 +37,7 @@ namespace HastaneOtomasyonu
         }
 
         public List<Hasta> Hastalarx { get; set; }
+
         #region HastaKayıtForm
         private void hastaKayıtToolStripMenuItem_Click(object sender, EventArgs e)
         {

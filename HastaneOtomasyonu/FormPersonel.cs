@@ -42,7 +42,7 @@ namespace HastaneOtomasyonu
                 //memoryStream = new MemoryStream();
                 //kisiler.Add(yeniKisi);
                 ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
-                (this.MdiParent as FormGiris).FormuTemizle();
+                FormuTemizle();
                 lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).Personellerx.ToArray());
             }
             catch (Exception ex)
@@ -96,6 +96,7 @@ namespace HastaneOtomasyonu
             txtPersonelTelefon.Text = secilikisi.Telefon;
             txtPersonelTCKN.Text = secilikisi.TCKN;
             txtPersonelMaas.Text = secilikisi.Maas;
+            btnPersonelKaydet.Enabled = false;
 
         }
     }
