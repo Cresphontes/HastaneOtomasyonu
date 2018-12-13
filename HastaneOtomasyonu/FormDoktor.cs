@@ -15,11 +15,11 @@ namespace HastaneOtomasyonu
 
 
 
+        Doktor doktor = new Doktor();
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
 
-            Doktor doktor = new Doktor();
 
 
             doktor.Ad = txtDoktorAd.Text;
@@ -108,17 +108,16 @@ namespace HastaneOtomasyonu
             txtDoktorTelefon.Text = secilikisi.Telefon;
             txtDoktorTCKN.Text = secilikisi.TCKN;
             txtDoktorMaas.Text = secilikisi.Maas;
-            cmbDoktorBrans.Text = secilikisi.DoktorBrans.ToString();
-          
+            cmbDoktorBrans.DataSource = secilikisi.DoktorBrans;
             //btnDoktorKaydet.Enabled = false;
         }
 
-        private void FormDoktor_Load(object sender, EventArgs e)
-        {
-            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
-            cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
+        //private void FormDoktor_Load(object sender, EventArgs e)
+        //{
+        //    lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+        //    cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
 
-        }
+        //}
     }
 }
 
