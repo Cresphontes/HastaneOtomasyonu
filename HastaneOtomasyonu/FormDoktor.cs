@@ -112,12 +112,12 @@ namespace HastaneOtomasyonu
             //btnDoktorKaydet.Enabled = false;
         }
 
-        //private void FormDoktor_Load(object sender, EventArgs e)
-        //{
-        //    lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
-        //    cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
+        private void FormDoktor_Load(object sender, EventArgs e)
+        {
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
 
-        //}
+        }
     }
 }
 
