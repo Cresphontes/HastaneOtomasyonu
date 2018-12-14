@@ -44,15 +44,9 @@
             this.txtHemsireAd = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.içeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.içeriAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.denetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.lblHemsireTCKN = new System.Windows.Forms.Label();
             this.lblHemsireEmail = new System.Windows.Forms.Label();
             this.lblHemsireTelefon = new System.Windows.Forms.Label();
@@ -95,6 +89,7 @@
             this.txtHemsirAra.Name = "txtHemsirAra";
             this.txtHemsirAra.Size = new System.Drawing.Size(171, 20);
             this.txtHemsirAra.TabIndex = 32;
+            this.txtHemsirAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtHemsirAra_KeyUp);
             // 
             // lstHemsireKisiler
             // 
@@ -119,6 +114,7 @@
             this.silToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // btnHemsireKaydet
             // 
@@ -168,47 +164,20 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dosyaToolStripMenuItem,
-            this.denetimToolStripMenuItem,
-            this.toolStripTextBox1,
-            this.toolStripComboBox1});
+            this.dosyaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(813, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(813, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // dosyaToolStripMenuItem
             // 
             this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xMLToolStripMenuItem,
             this.jSONToolStripMenuItem});
             this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
-            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
-            this.dosyaToolStripMenuItem.Text = "&Dosya";
-            // 
-            // xMLToolStripMenuItem
-            // 
-            this.xMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.içeriAktarToolStripMenuItem,
-            this.dışarıAktarToolStripMenuItem});
-            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.xMLToolStripMenuItem.Text = "&XML";
-            // 
-            // içeriAktarToolStripMenuItem
-            // 
-            this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
-            this.içeriAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.içeriAktarToolStripMenuItem.Text = "&İçeri Aktar";
-            // 
-            // dışarıAktarToolStripMenuItem
-            // 
-            this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
-            this.dışarıAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dışarıAktarToolStripMenuItem.Text = "&Dışarı Aktar";
+            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.dosyaToolStripMenuItem.Text = "&Kaydet";
             // 
             // jSONToolStripMenuItem
             // 
@@ -222,33 +191,16 @@
             // içeriAktarToolStripMenuItem1
             // 
             this.içeriAktarToolStripMenuItem1.Name = "içeriAktarToolStripMenuItem1";
-            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.içeriAktarToolStripMenuItem1.Text = "&İçeri Aktar";
             this.içeriAktarToolStripMenuItem1.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem1_Click);
             // 
             // dışarıAktarToolStripMenuItem1
             // 
             this.dışarıAktarToolStripMenuItem1.Name = "dışarıAktarToolStripMenuItem1";
-            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.dışarıAktarToolStripMenuItem1.Text = "&Dışarı Aktar";
             this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click);
-            // 
-            // denetimToolStripMenuItem
-            // 
-            this.denetimToolStripMenuItem.Name = "denetimToolStripMenuItem";
-            this.denetimToolStripMenuItem.Size = new System.Drawing.Size(64, 23);
-            this.denetimToolStripMenuItem.Text = "Dene&tim";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(200, 23);
-            this.toolStripTextBox1.ToolTipText = "Kisi Ara";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
             // lblHemsireTCKN
             // 
@@ -398,15 +350,9 @@
         private System.Windows.Forms.TextBox txtHemsireAd;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem denetimToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.Label lblHemsireTCKN;
         private System.Windows.Forms.Label lblHemsireEmail;
         private System.Windows.Forms.Label lblHemsireTelefon;

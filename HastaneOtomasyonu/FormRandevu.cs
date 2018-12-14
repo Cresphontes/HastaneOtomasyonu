@@ -1,19 +1,12 @@
-﻿using HastaneOtomasyonu.ClassLib;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HastaneOtomasyonu
 {
     public partial class FormRandevu : Form
     {
-        Button btn = new Button();
+        
         public FormRandevu()
         {
             InitializeComponent();
@@ -23,13 +16,14 @@ namespace HastaneOtomasyonu
 
 
         }
-
+        Button btn = new Button();
         private void Btn_MouseClick(object sender, MouseEventArgs e)
         {
-
+            string tut = btn.Text;
+            MessageBox.Show(tut);
 
         }
-
+        
         private void FormRandevu_Load(object sender, EventArgs e)
         {
             //Kayıtlı hastalar combobox'a eklendi.

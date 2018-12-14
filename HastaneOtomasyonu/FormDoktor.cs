@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HastaneOtomasyonu
@@ -15,7 +16,7 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-
+        List<Kisi> aramalar = new List<Kisi>();
         List<Hemsire> BransliHemsireler = new List<Hemsire>();
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
@@ -213,6 +214,25 @@ namespace HastaneOtomasyonu
                 }
             }
             
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstDoktorlar.SelectedItem == null) return;
+            Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;
+            (this.MdiParent as FormGiris).doktorlar.Remove(seciliKisi);
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
+        }
+
+        private void txtDoktorAra_KeyUp(object sender, KeyEventArgs e)
+        {
+            string ara = txtDoktorAra.Text.ToLower();
+            aramalar = new List<Kisi>();
+            (this.MdiParent as FormGiris).doktorlar.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara) || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
+
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange(aramalar.ToArray());
         }
 
         //private void btnDoktorGuncelle_Click(object sender, EventArgs e)

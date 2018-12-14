@@ -1,10 +1,12 @@
 ﻿using HastaneOtomasyonu.Class_Lib;
 using HastaneOtomasyonu.ClassLib;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -146,6 +148,51 @@ namespace HastaneOtomasyonu
             FormuTemizle();
             lstHastaList.Items.AddRange(aramalar.ToArray());
         }
- 
+
+        private void içeriAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dosyaAc.Title = "Bir JSON dosyası seçiniz";
+            dosyaAc.Filter = "(JSON Dosyası) | *.json";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.FileName = "Hastalar.json"; // string.Empty;
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    FileStream dosya = File.OpenRead(dosyaAc.FileName);
+                    StreamReader reader = new StreamReader(dosya);
+                    string dosyaIcerigi = reader.ReadToEnd();
+                    reader.Close();
+                    dosya.Close();
+                    (this.MdiParent as FormGiris).hastalar = JsonConvert.DeserializeObject<List<Hasta>>(dosyaIcerigi);
+                    //Kisiler = JsonConvert.DeserializeObject(dosyaIcerigi) as List > Kisi >;
+                    //Kisiler = (list<Kisi>)JsonConvert.DeserializeObject(dosyaIcerigi);
+
+                    MessageBox.Show($"{(this.MdiParent as FormGiris).hastalar.Count} kişi başarıyala aktarıldı");
+                    lstHastaList.Items.Clear();
+                    lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("bir hata oluştu " + ex.Message);
+                }
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dosyaKaydet.Title = "Bir JSON dosyası seçiniz";
+            dosyaKaydet.Filter = "(JSON Dosyası) | *.json";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaKaydet.FileName = "Hastalar.json"; // string.Empty;
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                writer.Write(JsonConvert.SerializeObject((this.MdiParent as FormGiris).hastalar));
+                writer.Close();
+                writer.Dispose();
+            }
+        }
     }
 }

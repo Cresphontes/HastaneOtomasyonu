@@ -1,8 +1,10 @@
-﻿using HastaneOtomasyonu.ClassLib;
+﻿using HastaneOtomasyonu.Class_Lib;
+using HastaneOtomasyonu.ClassLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
@@ -16,8 +18,8 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-        
 
+        List<Kisi> aramalar = new List<Kisi>();
         private void btnHemsireKaydet_Click(object sender, EventArgs e)
         {
             Hemsire hemsire = new Hemsire();
@@ -175,6 +177,25 @@ namespace HastaneOtomasyonu
                 writer.Close();
                 writer.Dispose();
             }
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstHemsireKisiler.SelectedItem == null) return;
+            Hemsire seciliKisi = (Hemsire)lstHemsireKisiler.SelectedItem;
+            (this.MdiParent as FormGiris).hemsireler.Remove(seciliKisi);
+            FormuTemizle();
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
+        }
+
+        private void txtHemsirAra_KeyUp(object sender, KeyEventArgs e)
+        {
+            string ara = txtHemsirAra.Text.ToLower();
+            aramalar = new List<Kisi>();
+            (this.MdiParent as FormGiris).doktorlar.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara) || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
+
+            FormuTemizle();
+            lstHemsireKisiler.Items.AddRange(aramalar.ToArray());
         }
     }
 }

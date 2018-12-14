@@ -44,15 +44,9 @@
             this.txtDoktorAd = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.içeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.içeriAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.denetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.lblDoktorTCKN = new System.Windows.Forms.Label();
             this.lblDoktorEmail = new System.Windows.Forms.Label();
             this.lblDoktorTelefon = new System.Windows.Forms.Label();
@@ -97,6 +91,7 @@
             this.txtDoktorAra.Name = "txtDoktorAra";
             this.txtDoktorAra.Size = new System.Drawing.Size(170, 20);
             this.txtDoktorAra.TabIndex = 32;
+            this.txtDoktorAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDoktorAra_KeyUp);
             // 
             // lstDoktorlar
             // 
@@ -121,6 +116,7 @@
             this.silToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // btnDoktorKaydet
             // 
@@ -170,47 +166,20 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dosyaToolStripMenuItem,
-            this.denetimToolStripMenuItem,
-            this.toolStripTextBox1,
-            this.toolStripComboBox1});
+            this.dosyaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(785, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(785, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // dosyaToolStripMenuItem
             // 
             this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xMLToolStripMenuItem,
             this.jSONToolStripMenuItem});
             this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
-            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
-            this.dosyaToolStripMenuItem.Text = "&Dosya";
-            // 
-            // xMLToolStripMenuItem
-            // 
-            this.xMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.içeriAktarToolStripMenuItem,
-            this.dışarıAktarToolStripMenuItem});
-            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.xMLToolStripMenuItem.Text = "&XML";
-            // 
-            // içeriAktarToolStripMenuItem
-            // 
-            this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
-            this.içeriAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.içeriAktarToolStripMenuItem.Text = "&İçeri Aktar";
-            // 
-            // dışarıAktarToolStripMenuItem
-            // 
-            this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
-            this.dışarıAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.dışarıAktarToolStripMenuItem.Text = "&Dışarı Aktar";
+            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.dosyaToolStripMenuItem.Text = "&Kaydet";
             // 
             // jSONToolStripMenuItem
             // 
@@ -218,7 +187,7 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
@@ -234,23 +203,6 @@
             this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.dışarıAktarToolStripMenuItem1.Text = "&Dışarı Aktar";
             this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click_1);
-            // 
-            // denetimToolStripMenuItem
-            // 
-            this.denetimToolStripMenuItem.Name = "denetimToolStripMenuItem";
-            this.denetimToolStripMenuItem.Size = new System.Drawing.Size(64, 23);
-            this.denetimToolStripMenuItem.Text = "Dene&tim";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(200, 23);
-            this.toolStripTextBox1.ToolTipText = "Kisi Ara";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
             // lblDoktorTCKN
             // 
@@ -422,15 +374,9 @@
         private System.Windows.Forms.TextBox txtDoktorAd;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem denetimToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.Label lblDoktorTCKN;
         private System.Windows.Forms.Label lblDoktorEmail;
         private System.Windows.Forms.Label lblDoktorTelefon;
