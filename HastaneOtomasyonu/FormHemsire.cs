@@ -74,8 +74,7 @@ namespace HastaneOtomasyonu
             FormuTemizle();
 
             lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
-            btnHemsireKaydet.Enabled = false;
-            btnHemsireGuncelle.Enabled = true;
+            btnHemsireGuncelle.Enabled = false;
 
 
         }
@@ -133,6 +132,8 @@ namespace HastaneOtomasyonu
             txtHemsireTCKN.Text = secilikisi.TCKN;
             txtHemsireMaas.Text = secilikisi.Maas;
             cmbHemsireBrans.Text = secilikisi.HemsireBrans.ToString();
+            btnHemsireKaydet.Enabled = false;
+            btnHemsireGuncelle.Enabled = true;
         }
 
       

@@ -78,7 +78,7 @@ namespace HastaneOtomasyonu
                 ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
                 FormuTemizle();
                 lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).personeller.ToArray());
-                btnPersonelKaydet.Enabled = false;
+                btnPersonelGuncelle.Enabled = false;
                 
             }
             catch (Exception ex)

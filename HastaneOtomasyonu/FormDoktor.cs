@@ -82,7 +82,7 @@ namespace HastaneOtomasyonu
 
             lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
 
-            btnDoktorKaydet.Enabled = false;
+            btnDoktorGuncelle.Enabled = false;
 
         }
 
@@ -152,6 +152,7 @@ namespace HastaneOtomasyonu
 
 
             btnDoktorKaydet.Enabled = false;
+            btnDoktorGuncelle.Enabled = true;
         }
 
         private void FormDoktor_Load(object sender, EventArgs e)

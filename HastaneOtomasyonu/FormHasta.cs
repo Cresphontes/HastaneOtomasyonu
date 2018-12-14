@@ -46,7 +46,7 @@ namespace HastaneOtomasyonu
                 ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
                 FormuTemizle();
                 lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
-                btnHastaKaydet.Enabled = false;
+                btnHastaGuncelle.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -113,6 +113,7 @@ namespace HastaneOtomasyonu
             txtHastaTelefon.Text = secilikisi.Telefon;
             txtHastaTCKN.Text = secilikisi.TCKN;
             btnHastaKaydet.Enabled = false;
+            btnHastaGuncelle.Enabled = true;
         }
 
         private void btnHastaGuncelle_Click(object sender, EventArgs e)
