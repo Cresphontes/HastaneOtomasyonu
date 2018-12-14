@@ -1,4 +1,5 @@
 ﻿using HastaneOtomasyonu.Class_Lib;
+using System;
 
 namespace HastaneOtomasyonu.ClassLib
 {
@@ -10,6 +11,10 @@ namespace HastaneOtomasyonu.ClassLib
         { get => this._maas;
             set
             {
+                if (value.Length < 0)
+                    throw new Exception(" Maas Boş Geçilemez ");
+                if (value.Length > 5)
+                    throw new Exception("Maas 99.999 TL den fazla olamaz. ");              
                 _maas = value;
             }
         }

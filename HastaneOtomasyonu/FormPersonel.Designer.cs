@@ -60,6 +60,7 @@
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
             this.btnPersonelTemizle = new System.Windows.Forms.Button();
+            this.btnPersonelFotograf = new System.Windows.Forms.Button();
             this.cmsPersonel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonel)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -113,6 +114,7 @@
             this.txtPersonelMaas.Name = "txtPersonelMaas";
             this.txtPersonelMaas.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelMaas.TabIndex = 62;
+            this.txtPersonelMaas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonelMaas_KeyPress);
             // 
             // lblPersonelTCKN
             // 
@@ -212,6 +214,7 @@
             this.txtPersonelTCKN.Name = "txtPersonelTCKN";
             this.txtPersonelTCKN.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelTCKN.TabIndex = 50;
+            this.txtPersonelTCKN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonelTCKN_KeyPress);
             // 
             // txtPersonelEmail
             // 
@@ -226,6 +229,7 @@
             this.txtPersonelTelefon.Name = "txtPersonelTelefon";
             this.txtPersonelTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelTelefon.TabIndex = 48;
+            this.txtPersonelTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonelTelefon_KeyPress);
             // 
             // txtPersonelSoyad
             // 
@@ -306,12 +310,23 @@
             this.btnPersonelTemizle.UseVisualStyleBackColor = true;
             this.btnPersonelTemizle.Click += new System.EventHandler(this.btnPersonelTemizle_Click);
             // 
+            // btnPersonelFotograf
+            // 
+            this.btnPersonelFotograf.Location = new System.Drawing.Point(644, 187);
+            this.btnPersonelFotograf.Name = "btnPersonelFotograf";
+            this.btnPersonelFotograf.Size = new System.Drawing.Size(79, 23);
+            this.btnPersonelFotograf.TabIndex = 68;
+            this.btnPersonelFotograf.Text = "Fotoğraf Ekle";
+            this.btnPersonelFotograf.UseVisualStyleBackColor = true;
+            this.btnPersonelFotograf.Click += new System.EventHandler(this.btnPersonelFotograf_Click);
+            // 
             // FormPersonel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OrangeRed;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPersonelFotograf);
             this.Controls.Add(this.btnPersonelTemizle);
             this.Controls.Add(this.PersonelAramaResim);
             this.Controls.Add(this.cmbPersonelBrans);
@@ -379,5 +394,6 @@
         private System.Windows.Forms.OpenFileDialog dosyaAc;
         private System.Windows.Forms.SaveFileDialog dosyaKaydet;
         private System.Windows.Forms.Button btnPersonelTemizle;
+        private System.Windows.Forms.Button btnPersonelFotograf;
     }
 }

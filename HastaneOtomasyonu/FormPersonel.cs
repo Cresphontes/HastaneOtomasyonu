@@ -37,6 +37,14 @@ namespace HastaneOtomasyonu
                 personel.TCKN = txtPersonelTCKN.Text;
                 personel.Maas = txtPersonelMaas.Text;
 
+
+                if (memoryStream.Length > 0)
+                {
+                    personel.Fotograf = memoryStream.ToArray();
+                }
+
+                memoryStream = new MemoryStream();
+
                 PersonelBranslari personelBrans = (PersonelBranslari)Enum.Parse(typeof(PersonelBranslari), cmbPersonelBrans.SelectedItem.ToString());
 
                 switch (personelBrans)
@@ -129,6 +137,9 @@ namespace HastaneOtomasyonu
 
         private void lstPersonelKisiler_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            pbPersonel.Image = null;
+
             if (lstPersonelKisiler.SelectedItem ==null) return;
 
             Personel secilikisi = lstPersonelKisiler.SelectedItem as Personel;
@@ -142,6 +153,11 @@ namespace HastaneOtomasyonu
             cmbPersonelBrans.Text = (lstPersonelKisiler.SelectedItem as Personel).PersonelBrans.ToString();
             btnPersonelKaydet.Enabled = false;
             btnPersonelGuncelle.Enabled = true;
+
+            if (secilikisi.Fotograf != null && secilikisi.Fotograf.Length > 0)
+            {
+                pbPersonel.Image = new Bitmap(new MemoryStream(secilikisi.Fotograf));
+            }
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
@@ -227,6 +243,12 @@ namespace HastaneOtomasyonu
                 seciliKisi.TCKN = txtPersonelTCKN.Text;
                 seciliKisi.Maas = txtPersonelMaas.Text;
 
+                if (memoryStream.Length > 0)
+                {
+                    seciliKisi.Fotograf = memoryStream.ToArray();
+                }
+                memoryStream = new MemoryStream();
+
 
                 PersonelBranslari personelBrans = (PersonelBranslari)Enum.Parse(typeof(PersonelBranslari), cmbPersonelBrans.SelectedItem.ToString());
 
@@ -282,6 +304,57 @@ namespace HastaneOtomasyonu
             lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
             btnPersonelKaydet.Enabled = true;
             btnPersonelGuncelle.Enabled = false;
+        }
+        MemoryStream memoryStream = new MemoryStream();
+        int bufferSize = 64;
+        byte[] resimArray = new byte[64];
+
+        private void btnPersonelFotograf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dosyaAc.Title = "Bir fotoğraf dosyasını seçiniz";
+                dosyaAc.Filter = "JPG | *.jpg;*.png";
+                dosyaAc.Multiselect = false;
+                dosyaAc.FileName = string.Empty;
+                dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                if (dosyaAc.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream dosya = File.Open(dosyaAc.FileName, FileMode.Open);
+                    while (dosya.Read(resimArray, 0, bufferSize) != 0)
+                    {
+                        memoryStream.Write(resimArray, 0, resimArray.Length);
+                    }
+                    dosya.Close();
+                    dosya.Dispose();
+                    pbPersonel.Image = new Bitmap(memoryStream);
+                }
+
+                MessageBox.Show($"Fotoğraf kaydedildi.");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void txtPersonelMaas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtPersonelTCKN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtPersonelTelefon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

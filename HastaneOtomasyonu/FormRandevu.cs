@@ -11,7 +11,7 @@ namespace HastaneOtomasyonu
 {
     public partial class FormRandevu : Form
     {
-      
+
 
         public FormRandevu()
         {
@@ -20,8 +20,9 @@ namespace HastaneOtomasyonu
 
         }
 
-        Hasta h = new Hasta();
-        MyButton b;
+       
+        Randevular Randevu = new Randevular();
+        MyButton button;
         public class MyButton : Button
         {
             protected override Size DefaultSize => Size = new Size(65, 60);
@@ -52,42 +53,49 @@ namespace HastaneOtomasyonu
                 for (int dakika = 0; dakika <= 45; dakika += 15)
                 {
 
-                    b = new MyButton();
-                    b.Text = saat.ToString("00") + ":" + dakika.ToString("00");
-                    flwRandevu.Controls.Add(b);
-                    b.Click += B_Click;
-             }
+                    button = new MyButton();
+                    button.Text = saat.ToString("00") + ":" + dakika.ToString("00");
+                    flwRandevu.Controls.Add(button);
+                    button.Click += Button_Click;
+                }
 
             }
 
-
-
         }
 
-        private void B_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
-
-            h.RandevuSaati = (sender as MyButton).Text;
-
+            Randevu.RandevuSaat = (sender as MyButton).Text;
         }
 
         private void cmbHastaSec_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbHastaSec.SelectedItem == null) return;
             cmbServisSec.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
+            Randevu.RandevuHasta = cmbHastaSec.SelectedItem as Hasta; 
             lblServisSec.Visible = true;
             cmbServisSec.Visible = true;
         }
 
         private void cmbServisSec_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbServisSec.SelectedItem == null) return;
             //Kayıtlı doktorlar Alındı.
             cmbDoktorSec.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            //enum doktor bransları eklendi
+            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbServisSec.SelectedItem.ToString());
+            //secilen doktor bransını randevu hastaya kaydetti
+            Randevu.RandevuBrans = doktorBrans;
+         
             lblDoktorSec.Visible = true;
             cmbDoktorSec.Visible = true;
         }
 
         private void cmbDoktorSec_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbDoktorSec.SelectedItem == null) return;
+            //secilen doktoru randevulu doktor'a kaydetti.
+            Randevu.RandevuDoktor = cmbDoktorSec.SelectedItem as Doktor;
             flwRandevu.Visible = true;
             btnRandevuKaydet.Visible = true;
         }

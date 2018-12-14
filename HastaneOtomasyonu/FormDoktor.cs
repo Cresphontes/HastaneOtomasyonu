@@ -47,35 +47,11 @@ namespace HastaneOtomasyonu
             memoryStream = new MemoryStream();
 
             DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
-            
-            switch (doktorBrans)
-            {
+            //brans doktora eklendi.
+            doktor.DoktorBrans = doktorBrans;
+         
 
-                case DoktorBranslari.GenelCerrahi:
-                    doktor.DoktorBrans = DoktorBranslari.GenelCerrahi;
-                    break;
-                case DoktorBranslari.Ortopedi:
-                    doktor.DoktorBrans = DoktorBranslari.Ortopedi;
-                    break;
-                case DoktorBranslari.Uroloji:
-                    doktor.DoktorBrans = DoktorBranslari.Uroloji;
-                    break;
-                case DoktorBranslari.KBB:
-                    doktor.DoktorBrans = DoktorBranslari.KBB;
-                    break;
-                case DoktorBranslari.CocukSagligi:
-                    doktor.DoktorBrans = DoktorBranslari.CocukSagligi;
-                    break;
-                case DoktorBranslari.Kardiyoloji:
-                    doktor.DoktorBrans = DoktorBranslari.Kardiyoloji;
-                    break;
-                case DoktorBranslari.GozHastaliklari:
-                    doktor.DoktorBrans = DoktorBranslari.GozHastaliklari;
-                    break;
-                default:
-                    break;
-            }
-            
+
             (this.MdiParent as FormGiris).doktorlar.Add(doktor);
             FormuTemizle();
             lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
@@ -120,6 +96,7 @@ namespace HastaneOtomasyonu
 
             tut = (lstDoktorlar.SelectedItem as Doktor).HemsireSec;
             cmbDoktorHemsire.Items.Clear();
+            pbDoktor.Image = null;
 
             if (lstDoktorlar.SelectedItem == null) return;
 
@@ -267,6 +244,11 @@ namespace HastaneOtomasyonu
                 seciliKisi.TCKN = txtDoktorTCKN.Text;
                 seciliKisi.Maas = txtDoktorMaas.Text;
                 seciliKisi.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
+                if (memoryStream.Length > 0)
+                {
+                    seciliKisi.Fotograf = memoryStream.ToArray();
+                }
+                memoryStream = new MemoryStream();
 
                 BransliHemsireler.Remove(cmbDoktorHemsire.SelectedItem as Hemsire);
 
@@ -330,13 +312,12 @@ namespace HastaneOtomasyonu
         int bufferSize = 64;
         byte[] resimArray = new byte[64];
 
-
-        private void btnFotograf_Click(object sender, EventArgs e)
+        private void btnFotografDoktor_Click(object sender, EventArgs e)
         {
             try
             {
                 dosyaAc.Title = "Bir fotoğraf dosyasını seçiniz";
-                dosyaAc.Filter = "JPG | *.jpg";
+                dosyaAc.Filter = "JPG | *.jpg;*.png";
                 dosyaAc.Multiselect = false;
                 dosyaAc.FileName = string.Empty;
                 dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -359,6 +340,24 @@ namespace HastaneOtomasyonu
 
                 throw new Exception(ex.Message);
             }
+        }
+
+        private void txtDoktorTCKN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtDoktorTelefon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtDoktorMaas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

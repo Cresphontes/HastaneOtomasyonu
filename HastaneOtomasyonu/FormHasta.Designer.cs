@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHasta));
-            this.pbHasta = new System.Windows.Forms.PictureBox();
             this.btnHastaGuncelle = new System.Windows.Forms.Button();
             this.txtHastaAra = new System.Windows.Forms.TextBox();
             this.lstHastaList = new System.Windows.Forms.ListBox();
@@ -56,20 +55,10 @@
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
             this.btnHastaTemizle = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).BeginInit();
             this.cmsHastaListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HastaAramaResim)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbHasta
-            // 
-            this.pbHasta.Location = new System.Drawing.Point(208, 60);
-            this.pbHasta.Name = "pbHasta";
-            this.pbHasta.Size = new System.Drawing.Size(139, 124);
-            this.pbHasta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbHasta.TabIndex = 34;
-            this.pbHasta.TabStop = false;
             // 
             // btnHastaGuncelle
             // 
@@ -130,6 +119,7 @@
             this.txtHastaTCKN.Name = "txtHastaTCKN";
             this.txtHastaTCKN.Size = new System.Drawing.Size(135, 20);
             this.txtHastaTCKN.TabIndex = 29;
+            this.txtHastaTCKN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHastaTCKN_KeyPress);
             // 
             // txtHastaEmail
             // 
@@ -144,6 +134,7 @@
             this.txtHastaTelefon.Name = "txtHastaTelefon";
             this.txtHastaTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtHastaTelefon.TabIndex = 27;
+            this.txtHastaTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHastaTelefon_KeyPress);
             // 
             // txtHastaSoyad
             // 
@@ -282,7 +273,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbHasta);
             this.Controls.Add(this.btnHastaGuncelle);
             this.Controls.Add(this.txtHastaAra);
             this.Controls.Add(this.lstHastaList);
@@ -298,7 +288,6 @@
             this.Text = "FormHasta";
             this.Load += new System.EventHandler(this.FormHasta_Load);
             this.Click += new System.EventHandler(this.FormHasta_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).EndInit();
             this.cmsHastaListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -309,8 +298,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pbHasta;
         private System.Windows.Forms.Button btnHastaGuncelle;
         private System.Windows.Forms.TextBox txtHastaAra;
         private System.Windows.Forms.ListBox lstHastaList;

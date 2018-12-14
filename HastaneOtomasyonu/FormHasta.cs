@@ -212,5 +212,17 @@ namespace HastaneOtomasyonu
         {
             lstHastaList.SelectedItem = null;
         }
+
+        private void txtHastaTCKN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtHastaTelefon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }
