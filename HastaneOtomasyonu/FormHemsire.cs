@@ -263,17 +263,19 @@ namespace HastaneOtomasyonu
             lstHemsireKisiler.Items.AddRange(aramalar.ToArray());
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormuTemizle();
-            lstHemsireKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
-            btnHemsireKaydet.Enabled = true;
-            btnHemsireGuncelle.Enabled = false;
-        }
+       
 
         private void FormHemsire_Click(object sender, EventArgs e)
         {
             lstHemsireKisiler.SelectedItem = null;
+        }
+
+        private void btnHemsireTemizle_Click(object sender, EventArgs e)
+        {
+            FormuTemizle();
+            lstHemsireKisiler.Items.AddRange(((this.MdiParent as FormGiris).hemsireler).ToArray());
+            btnHemsireKaydet.Enabled = true;
+            btnHemsireGuncelle.Enabled = false;
         }
     }
 }

@@ -265,7 +265,7 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
@@ -304,7 +304,7 @@
             this.btnPersonelTemizle.TabIndex = 67;
             this.btnPersonelTemizle.Text = "Temizle";
             this.btnPersonelTemizle.UseVisualStyleBackColor = true;
-            this.btnPersonelTemizle.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnPersonelTemizle.Click += new System.EventHandler(this.btnPersonelTemizle_Click);
             // 
             // FormPersonel
             // 

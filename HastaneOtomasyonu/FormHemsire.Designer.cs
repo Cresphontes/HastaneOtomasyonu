@@ -304,7 +304,7 @@
             this.btnHemsireTemizle.TabIndex = 68;
             this.btnHemsireTemizle.Text = "Temizle";
             this.btnHemsireTemizle.UseVisualStyleBackColor = true;
-            this.btnHemsireTemizle.Click += new System.EventHandler(this.button1_Click);
+            this.btnHemsireTemizle.Click += new System.EventHandler(this.btnHemsireTemizle_Click);
             // 
             // FormHemsire
             // 

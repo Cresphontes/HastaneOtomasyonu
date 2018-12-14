@@ -1,37 +1,38 @@
-﻿using System;
+﻿using HastaneOtomasyonu.ClassLib;
+using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HastaneOtomasyonu
 {
     public partial class FormRandevu : Form
     {
-        
+      
+
         public FormRandevu()
         {
             InitializeComponent();
             this.Load += FormRandevu_Load;
 
-            btn.MouseClick += Btn_MouseClick;
-
-
         }
-        Button btn = new Button();
-        private void Btn_MouseClick(object sender, MouseEventArgs e)
+
+        Hasta h = new Hasta();
+        MyButton b;
+        public class MyButton : Button
         {
-            string tut = btn.Text;
-            MessageBox.Show(tut);
+            protected override Size DefaultSize => Size = new Size(65, 60);
+            public override Color BackColor { get => Color.Peru; }
 
         }
-        
         private void FormRandevu_Load(object sender, EventArgs e)
         {
             //Kayıtlı hastalar combobox'a eklendi.
             cmbHastaSec.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
             //checkedListBox1.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
-            
-        
-
             lblServisSec.Visible = false;
             cmbServisSec.Visible = false;
             lblDoktorSec.Visible = false;
@@ -40,6 +41,7 @@ namespace HastaneOtomasyonu
             btnRandevuKaydet.Visible = false;
 
             //Butonların üstlerine saatleri yazıyoruz.
+
             for (int saat = 9; saat <= 16; saat++)
             {
 
@@ -49,20 +51,23 @@ namespace HastaneOtomasyonu
                 }
                 for (int dakika = 0; dakika <= 45; dakika += 15)
                 {
-                    int i = 0;
-                    Button btn = new Button();
-                    //Button btn = (Button)sender;
-                    btn.BackColor = Color.Peru;
-                    btn.Size = new Size(65, 60);
-                    btn.Text = saat.ToString("00") + ":" + dakika.ToString("00");
-                    btn.Name = i.ToString();
-                    flwRandevu.Controls.Add(btn);
 
-                }
+                    b = new MyButton();
+                    b.Text = saat.ToString("00") + ":" + dakika.ToString("00");
+                    flwRandevu.Controls.Add(b);
+                    b.Click += B_Click;
+             }
 
             }
 
 
+
+        }
+
+        private void B_Click(object sender, EventArgs e)
+        {
+
+            h.RandevuSaati = (sender as MyButton).Text;
 
         }
 
@@ -75,7 +80,7 @@ namespace HastaneOtomasyonu
 
         private void cmbServisSec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ////Kayıtlı doktorlar Alındı.
+            //Kayıtlı doktorlar Alındı.
             cmbDoktorSec.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             lblDoktorSec.Visible = true;
             cmbDoktorSec.Visible = true;
