@@ -22,10 +22,8 @@ namespace HastaneOtomasyonu
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
-
             Doktor doktor = new Doktor();
-
-
+            
             doktor.Ad = txtDoktorAd.Text;
             doktor.Soyad = txtDoktorSoyad.Text;
             doktor.Email = txtDoktorEmail.Text;
@@ -33,6 +31,13 @@ namespace HastaneOtomasyonu
             doktor.TCKN = txtDoktorTCKN.Text;
             doktor.Maas = txtDoktorMaas.Text;
             doktor.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
+
+            BransliHemsireler.Remove(cmbDoktorHemsire.SelectedItem as Hemsire);
+
+
+
+            //BransliHemsireler.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+
 
             if (memoryStream.Length > 0)
             {
@@ -42,11 +47,7 @@ namespace HastaneOtomasyonu
             memoryStream = new MemoryStream();
 
             DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
-
-           
-
-
-
+            
             switch (doktorBrans)
             {
 
@@ -74,16 +75,11 @@ namespace HastaneOtomasyonu
                 default:
                     break;
             }
-
-
+            
             (this.MdiParent as FormGiris).doktorlar.Add(doktor);
-
             FormuTemizle();
-
             lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
-
             btnDoktorGuncelle.Enabled = false;
-
         }
 
         public void FormuTemizle()
@@ -118,10 +114,11 @@ namespace HastaneOtomasyonu
                 }
             }
         }
-
+        Hemsire tut = new Hemsire();
         private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+            tut = (lstDoktorlar.SelectedItem as Doktor).HemsireSec;
             cmbDoktorHemsire.Items.Clear();
 
             if (lstDoktorlar.SelectedItem == null) return;
@@ -215,14 +212,19 @@ namespace HastaneOtomasyonu
         private void cmbDoktorBrans_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbDoktorHemsire.Items.Clear();
+            cmbDoktorHemsire.Text = string.Empty;
             
             foreach (Hemsire item in BransliHemsireler)
             {
+                if (item == null)
+                {
+                    break;
+                }
                 if (item.HemsireBrans.ToString() == cmbDoktorBrans.Text)
                 {
                     cmbDoktorHemsire.Items.Add(item);
-
                 }
+              
             }
             
         }
@@ -257,6 +259,7 @@ namespace HastaneOtomasyonu
             //static metod yap orda ara varsa varde yoksa yokdersin.
             try
             {
+                BransliHemsireler.Add(tut as Hemsire);
                 seciliKisi.Ad = txtDoktorAd.Text;
                 seciliKisi.Soyad = txtDoktorSoyad.Text;
                 seciliKisi.Email = txtDoktorEmail.Text;
@@ -265,6 +268,7 @@ namespace HastaneOtomasyonu
                 seciliKisi.Maas = txtDoktorMaas.Text;
                 seciliKisi.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
 
+                BransliHemsireler.Remove(cmbDoktorHemsire.SelectedItem as Hemsire);
 
                 DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbDoktorBrans.SelectedItem.ToString());
 
