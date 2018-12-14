@@ -264,6 +264,11 @@ namespace HastaneOtomasyonu
                 seciliKisi.TCKN = txtDoktorTCKN.Text;
                 seciliKisi.Maas = txtDoktorMaas.Text;
                 seciliKisi.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
+                if (memoryStream.Length > 0)
+                {
+                    seciliKisi.Fotograf = memoryStream.ToArray();
+                }
+                memoryStream = new MemoryStream();
 
 
                 DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbDoktorBrans.SelectedItem.ToString());
