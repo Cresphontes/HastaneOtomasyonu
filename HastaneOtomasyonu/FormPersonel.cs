@@ -78,6 +78,8 @@ namespace HastaneOtomasyonu
                 ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
                 FormuTemizle();
                 lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).personeller.ToArray());
+                btnPersonelKaydet.Enabled = false;
+                
             }
             catch (Exception ex)
             {
@@ -103,14 +105,15 @@ namespace HastaneOtomasyonu
                 }
                 else if (control is PictureBox pbox)
                 {
-                    pbox.Image = null;
-                }
-                else if (control is ComboBox cb)
-                {
                     if (control.Name == "PersonelAramaResim")
                     {
                         continue;
                     }
+                    pbox.Image = null;
+                }
+                else if (control is ComboBox cb)
+                {
+                    
                     cb.Text = string.Empty; ;
                 }
             }
@@ -118,7 +121,8 @@ namespace HastaneOtomasyonu
 
         private void FormPersonel_Load(object sender, EventArgs e)
         {
-         
+            this.WindowState = FormWindowState.Maximized;
+            btnPersonelGuncelle.Enabled = false;
             lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
             cmbPersonelBrans.Items.AddRange(Enum.GetNames(typeof(PersonelBranslari)));          
         }
@@ -137,7 +141,7 @@ namespace HastaneOtomasyonu
             txtPersonelMaas.Text = secilikisi.Maas;
             cmbPersonelBrans.Text = (lstPersonelKisiler.SelectedItem as Personel).PersonelBrans.ToString();
             btnPersonelKaydet.Enabled = false;
-
+            btnPersonelGuncelle.Enabled = true;
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
@@ -205,13 +209,10 @@ namespace HastaneOtomasyonu
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormuTemizle();
-            lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
-        }
+       
         private void btnPersonelGuncelle_Click(object sender, EventArgs e)
         {
+            
             if (lstPersonelKisiler.SelectedItem == null) return;
 
             Personel seciliKisi = (Personel)lstPersonelKisiler.SelectedItem;// referans tip değişkenler !
@@ -267,12 +268,20 @@ namespace HastaneOtomasyonu
             FormuTemizle();
             lstPersonelKisiler.Items.AddRange((this.MdiParent as FormGiris).personeller.ToArray());
             btnPersonelKaydet.Enabled = true;
+            btnPersonelGuncelle.Enabled = false;
         }
 
         private void FormPersonel_Click(object sender, EventArgs e)
         {
             lstPersonelKisiler.SelectedItem = null;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FormuTemizle();
+            lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
             btnPersonelKaydet.Enabled = true;
+            btnPersonelGuncelle.Enabled = false;
         }
     }
 }

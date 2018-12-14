@@ -46,6 +46,7 @@ namespace HastaneOtomasyonu
                 ////MessageBox.Show($"Hosgeldin {yeniKisi.Ad} {yeniKisi.Soyad}");
                 FormuTemizle();
                 lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
+                btnHastaKaydet.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -85,6 +86,8 @@ namespace HastaneOtomasyonu
         }
         private void FormHasta_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+            btnHastaGuncelle.Enabled = false;
             lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
         }
 
@@ -136,6 +139,7 @@ namespace HastaneOtomasyonu
             FormuTemizle();
             lstHastaList.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
             btnHastaKaydet.Enabled = true;
+            btnHastaGuncelle.Enabled = false;
         }
 
         private void txtHastaAra_KeyUp(object sender, KeyEventArgs e)
@@ -193,6 +197,19 @@ namespace HastaneOtomasyonu
                 writer.Close();
                 writer.Dispose();
             }
+        }
+
+        private void btnHastaTemizle_Click(object sender, EventArgs e)
+        {
+            FormuTemizle();
+            lstHastaList.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
+            btnHastaKaydet.Enabled = true;
+            btnHastaGuncelle.Enabled = false;
+        }
+
+        private void FormHasta_Click(object sender, EventArgs e)
+        {
+            lstHastaList.SelectedItem = null;
         }
     }
 }

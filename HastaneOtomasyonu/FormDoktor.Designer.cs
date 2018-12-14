@@ -61,6 +61,7 @@
             this.DoktorAramaResim = new System.Windows.Forms.PictureBox();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
+            this.btnDoktorTemizle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -188,7 +189,7 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
@@ -315,12 +316,23 @@
             // 
             this.dosyaAc.FileName = "openFileDialog1";
             // 
+            // btnDoktorTemizle
+            // 
+            this.btnDoktorTemizle.Location = new System.Drawing.Point(135, 327);
+            this.btnDoktorTemizle.Name = "btnDoktorTemizle";
+            this.btnDoktorTemizle.Size = new System.Drawing.Size(79, 38);
+            this.btnDoktorTemizle.TabIndex = 68;
+            this.btnDoktorTemizle.Text = "Temizle";
+            this.btnDoktorTemizle.UseVisualStyleBackColor = true;
+            this.btnDoktorTemizle.Click += new System.EventHandler(this.btnDoktorTemizle_Click);
+            // 
             // FormDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(785, 461);
+            this.Controls.Add(this.btnDoktorTemizle);
             this.Controls.Add(this.DoktorAramaResim);
             this.Controls.Add(this.lblDoktorHemsire);
             this.Controls.Add(this.cmbDoktorHemsire);
@@ -349,6 +361,7 @@
             this.Text = "FormDoktor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormDoktor_Load);
+            this.Click += new System.EventHandler(this.FormDoktor_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).EndInit();
             this.cmsListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -392,5 +405,6 @@
         private System.Windows.Forms.PictureBox DoktorAramaResim;
         private System.Windows.Forms.SaveFileDialog dosyaKaydet;
         private System.Windows.Forms.OpenFileDialog dosyaAc;
+        private System.Windows.Forms.Button btnDoktorTemizle;
     }
 }
