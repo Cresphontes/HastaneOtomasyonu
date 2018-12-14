@@ -178,6 +178,7 @@
             this.btnPersonelGuncelle.TabIndex = 54;
             this.btnPersonelGuncelle.Text = "Güncelle";
             this.btnPersonelGuncelle.UseVisualStyleBackColor = true;
+            this.btnPersonelGuncelle.Click += new System.EventHandler(this.btnPersonelGuncelle_Click);
             // 
             // txtPersonelAra
             // 
@@ -191,6 +192,7 @@
             this.lstPersonelKisiler.FormattingEnabled = true;
             this.lstPersonelKisiler.Location = new System.Drawing.Point(348, 57);
             this.lstPersonelKisiler.Name = "lstPersonelKisiler";
+            this.lstPersonelKisiler.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstPersonelKisiler.Size = new System.Drawing.Size(196, 147);
             this.lstPersonelKisiler.TabIndex = 52;
             this.lstPersonelKisiler.SelectedIndexChanged += new System.EventHandler(this.lstPersonelKisiler_SelectedIndexChanged);
@@ -363,6 +365,7 @@
             this.Name = "FormPersonel";
             this.Text = "FormPersonel";
             this.Load += new System.EventHandler(this.FormPersonel_Load);
+            this.Click += new System.EventHandler(this.FormPersonel_Click);
             this.cmsPersonel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonel)).EndInit();
             this.menuStrip1.ResumeLayout(false);

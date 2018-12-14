@@ -30,20 +30,13 @@ namespace HastaneOtomasyonu
             doktor.Telefon = txtDoktorTelefon.Text;
             doktor.TCKN = txtDoktorTCKN.Text;
             doktor.Maas = txtDoktorMaas.Text;
+            doktor.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
 
             DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
 
-            foreach (Hemsire item in BransliHemsireler)
-            {
-                if (cmbDoktorHemsire.SelectedItem == item)
-                {
-                    doktor.HemsireSec = item;
-                    BransliHemsireler.Remove(item);
-                    break;
-                }
-            }
+            MessageBox.Show($"{doktor.HemsireSec}");
 
-            //doktor.HemsireSec = (this.MdiParent as FormGiris).hemsireler
+
 
             switch (doktorBrans)
             {
@@ -139,7 +132,7 @@ namespace HastaneOtomasyonu
             //        cmbDoktorHemsire.Items.Add(item);
             //    }
             //}
-
+            
 
             btnDoktorKaydet.Enabled = false;
         }
@@ -215,33 +208,67 @@ namespace HastaneOtomasyonu
             
         }
 
-        //private void btnDoktorGuncelle_Click(object sender, EventArgs e)
-        //{
-        //    if (lstDoktorlar.SelectedItem == null) return;
 
-        //    Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;// referans tip değişkenler !
+        private void btnDoktorGuncelle_Click_1(object sender, EventArgs e)
+        {
 
-        //    //static metod yap orda ara varsa varde yoksa yokdersin.
-        //    try
-        //    {
-        //        seciliKisi.Ad = txtDoktorAd.Text;
-        //        seciliKisi.Soyad = txtDoktorSoyad.Text;
-        //        seciliKisi.Email = txtDoktorEmail.Text;
-        //        seciliKisi.Telefon = txtDoktorTelefon.Text;
-        //        seciliKisi.TCKN = txtDoktorTCKN.Text;
-        //        secilikisi.Maas = txtDoktorMaas.Text;
-        //        secilikisi.DoktorBrans.ToString() = cmbDoktorBrans.Text;
+            if (lstDoktorlar.SelectedItem == null) return;
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
+            Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;// referans tip değişkenler !
 
-        //    FormuTemizle();
-        //    lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
-        //    btnDoktorKaydet.Enabled = true;
-        //}
+            //static metod yap orda ara varsa varde yoksa yokdersin.
+            try
+            {
+                seciliKisi.Ad = txtDoktorAd.Text;
+                seciliKisi.Soyad = txtDoktorSoyad.Text;
+                seciliKisi.Email = txtDoktorEmail.Text;
+                seciliKisi.Telefon = txtDoktorTelefon.Text;
+                seciliKisi.TCKN = txtDoktorTCKN.Text;
+                seciliKisi.Maas = txtDoktorMaas.Text;
+                seciliKisi.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
+
+
+                DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbDoktorBrans.SelectedItem.ToString());
+
+                switch (doktorBrans)
+                {
+
+                    case DoktorBranslari.GenelCerrahi:
+                        seciliKisi.DoktorBrans = DoktorBranslari.GenelCerrahi;
+                        break;
+                    case DoktorBranslari.Ortopedi:
+                        seciliKisi.DoktorBrans = DoktorBranslari.Ortopedi;
+                        break;
+                    case DoktorBranslari.Uroloji:
+                        seciliKisi.DoktorBrans = DoktorBranslari.Uroloji;
+                        break;
+                    case DoktorBranslari.KBB:
+                        seciliKisi.DoktorBrans = DoktorBranslari.KBB;
+                        break;
+                    case DoktorBranslari.CocukSagligi:
+                        seciliKisi.DoktorBrans = DoktorBranslari.CocukSagligi;
+                        break;
+                    case DoktorBranslari.Kardiyoloji:
+                        seciliKisi.DoktorBrans = DoktorBranslari.Kardiyoloji;
+                        break;
+                    case DoktorBranslari.GozHastaliklari:
+                        seciliKisi.DoktorBrans = DoktorBranslari.GozHastaliklari;
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            btnDoktorKaydet.Enabled = true;
+        }
     }
 }
 

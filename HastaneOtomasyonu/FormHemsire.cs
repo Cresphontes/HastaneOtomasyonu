@@ -176,5 +176,65 @@ namespace HastaneOtomasyonu
                 writer.Dispose();
             }
         }
+
+        private void btnHemsireGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lstHemsireKisiler.SelectedItem == null) return;
+
+            Hemsire seciliKisi = (Hemsire)lstHemsireKisiler.SelectedItem;// referans tip değişkenler !
+
+            //static metod yap orda ara varsa varde yoksa yokdersin.
+            try
+            {
+                seciliKisi.Ad = txtHemsireAd.Text;
+                seciliKisi.Soyad = txtHemsireSoyad.Text;
+                seciliKisi.Email = txtHemsireEmail.Text;
+                seciliKisi.Telefon = txtHemsireTelefon.Text;
+                seciliKisi.TCKN = txtHemsireTCKN.Text;
+                seciliKisi.Maas = txtHemsireMaas.Text;
+             
+
+
+                DoktorBranslari hemsireBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbHemsireBrans.SelectedItem.ToString());
+
+                switch (hemsireBrans)
+                {
+
+                    case DoktorBranslari.GenelCerrahi:
+                        seciliKisi.HemsireBrans = DoktorBranslari.GenelCerrahi;
+                        break;
+                    case DoktorBranslari.Ortopedi:
+                        seciliKisi.HemsireBrans = DoktorBranslari.Ortopedi;
+                        break;
+                    case DoktorBranslari.Uroloji:
+                        seciliKisi.HemsireBrans = DoktorBranslari.Uroloji;
+                        break;
+                    case DoktorBranslari.KBB:
+                        seciliKisi.HemsireBrans = DoktorBranslari.KBB;
+                        break;
+                    case DoktorBranslari.CocukSagligi:
+                        seciliKisi.HemsireBrans = DoktorBranslari.CocukSagligi;
+                        break;
+                    case DoktorBranslari.Kardiyoloji:
+                        seciliKisi.HemsireBrans = DoktorBranslari.Kardiyoloji;
+                        break;
+                    case DoktorBranslari.GozHastaliklari:
+                        seciliKisi.HemsireBrans = DoktorBranslari.GozHastaliklari;
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            FormuTemizle();
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+            btnHemsireKaydet.Enabled = true;
+        }
     }
 }
