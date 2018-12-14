@@ -3,7 +3,9 @@ using HastaneOtomasyonu.ClassLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HastaneOtomasyonu
@@ -15,7 +17,7 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-
+        List<Kisi> aramalar = new List<Kisi>();
         List<Hemsire> BransliHemsireler = new List<Hemsire>();
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
@@ -30,20 +32,20 @@ namespace HastaneOtomasyonu
             doktor.Telefon = txtDoktorTelefon.Text;
             doktor.TCKN = txtDoktorTCKN.Text;
             doktor.Maas = txtDoktorMaas.Text;
+            doktor.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
+
+            if (memoryStream.Length > 0)
+            {
+                doktor.Fotograf = memoryStream.ToArray();
+            }
+
+            memoryStream = new MemoryStream();
 
             DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
 
-            foreach (Hemsire item in BransliHemsireler)
-            {
-                if (cmbDoktorHemsire.SelectedItem == item)
-                {
-                    doktor.HemsireSec = item;
-                    BransliHemsireler.Remove(item);
-                    break;
-                }
-            }
+           
 
-            //doktor.HemsireSec = (this.MdiParent as FormGiris).hemsireler
+
 
             switch (doktorBrans)
             {
@@ -80,7 +82,7 @@ namespace HastaneOtomasyonu
 
             lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
 
-
+            btnDoktorKaydet.Enabled = false;
 
         }
 
@@ -103,14 +105,15 @@ namespace HastaneOtomasyonu
                 }
                 else if (control is PictureBox pbox)
                 {
-                    pbox.Image = null;
-                }
-                else if (control is ComboBox cb)
-                {
                     if (control.Name == "DoktorAramaResim")
                     {
                         continue;
                     }
+                    pbox.Image = null;
+                }
+                else if (control is ComboBox cb)
+                {
+                    
                     cb.Text = string.Empty; ;
                 }
             }
@@ -132,6 +135,12 @@ namespace HastaneOtomasyonu
             txtDoktorMaas.Text = secilikisi.Maas;
             cmbDoktorBrans.Text = secilikisi.DoktorBrans.ToString();
             cmbDoktorHemsire.Text= secilikisi.HemsireSec.ToString();
+            if (secilikisi.Fotograf != null && secilikisi.Fotograf.Length > 0)
+            {
+                pbDoktor.Image = new Bitmap(new MemoryStream(secilikisi.Fotograf));
+            }
+
+
             //foreach (Hemsire item in BransliHemsireler)
             //{
             //    if (item.HemsireBrans == secilikisi.DoktorBrans)
@@ -146,6 +155,8 @@ namespace HastaneOtomasyonu
 
         private void FormDoktor_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+            btnDoktorGuncelle.Enabled = false;
             lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
             BransliHemsireler.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
@@ -215,33 +226,135 @@ namespace HastaneOtomasyonu
             
         }
 
-        //private void btnDoktorGuncelle_Click(object sender, EventArgs e)
-        //{
-        //    if (lstDoktorlar.SelectedItem == null) return;
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstDoktorlar.SelectedItem == null) return;
+            Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;
+            (this.MdiParent as FormGiris).doktorlar.Remove(seciliKisi);
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
+        }
 
-        //    Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;// referans tip değişkenler !
+        private void txtDoktorAra_KeyUp(object sender, KeyEventArgs e)
+        {
+            string ara = txtDoktorAra.Text.ToLower();
+            aramalar = new List<Kisi>();
+            (this.MdiParent as FormGiris).doktorlar.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara) || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
 
-        //    //static metod yap orda ara varsa varde yoksa yokdersin.
-        //    try
-        //    {
-        //        seciliKisi.Ad = txtDoktorAd.Text;
-        //        seciliKisi.Soyad = txtDoktorSoyad.Text;
-        //        seciliKisi.Email = txtDoktorEmail.Text;
-        //        seciliKisi.Telefon = txtDoktorTelefon.Text;
-        //        seciliKisi.TCKN = txtDoktorTCKN.Text;
-        //        secilikisi.Maas = txtDoktorMaas.Text;
-        //        secilikisi.DoktorBrans.ToString() = cmbDoktorBrans.Text;
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange(aramalar.ToArray());
+        }
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
 
-        //    FormuTemizle();
-        //    lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
-        //    btnDoktorKaydet.Enabled = true;
-        //}
+        private void btnDoktorGuncelle_Click_1(object sender, EventArgs e)
+        {
+
+            if (lstDoktorlar.SelectedItem == null) return;
+
+            Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;// referans tip değişkenler !
+
+            //static metod yap orda ara varsa varde yoksa yokdersin.
+            try
+            {
+                seciliKisi.Ad = txtDoktorAd.Text;
+                seciliKisi.Soyad = txtDoktorSoyad.Text;
+                seciliKisi.Email = txtDoktorEmail.Text;
+                seciliKisi.Telefon = txtDoktorTelefon.Text;
+                seciliKisi.TCKN = txtDoktorTCKN.Text;
+                seciliKisi.Maas = txtDoktorMaas.Text;
+                seciliKisi.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
+
+
+                DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbDoktorBrans.SelectedItem.ToString());
+
+                switch (doktorBrans)
+                {
+
+                    case DoktorBranslari.GenelCerrahi:
+                        seciliKisi.DoktorBrans = DoktorBranslari.GenelCerrahi;
+                        break;
+                    case DoktorBranslari.Ortopedi:
+                        seciliKisi.DoktorBrans = DoktorBranslari.Ortopedi;
+                        break;
+                    case DoktorBranslari.Uroloji:
+                        seciliKisi.DoktorBrans = DoktorBranslari.Uroloji;
+                        break;
+                    case DoktorBranslari.KBB:
+                        seciliKisi.DoktorBrans = DoktorBranslari.KBB;
+                        break;
+                    case DoktorBranslari.CocukSagligi:
+                        seciliKisi.DoktorBrans = DoktorBranslari.CocukSagligi;
+                        break;
+                    case DoktorBranslari.Kardiyoloji:
+                        seciliKisi.DoktorBrans = DoktorBranslari.Kardiyoloji;
+                        break;
+                    case DoktorBranslari.GozHastaliklari:
+                        seciliKisi.DoktorBrans = DoktorBranslari.GozHastaliklari;
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            btnDoktorKaydet.Enabled = true;
+            btnDoktorGuncelle.Enabled = false;
+        }
+
+        private void btnDoktorTemizle_Click(object sender, EventArgs e)
+        {
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
+            btnDoktorKaydet.Enabled = true;
+            btnDoktorGuncelle.Enabled = false;
+        }
+
+        private void FormDoktor_Click(object sender, EventArgs e)
+        {
+            lstDoktorlar.SelectedItem = null;
+        }
+
+        MemoryStream memoryStream = new MemoryStream();
+        int bufferSize = 64;
+        byte[] resimArray = new byte[64];
+
+
+        private void btnFotograf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dosyaAc.Title = "Bir fotoğraf dosyasını seçiniz";
+                dosyaAc.Filter = "JPG | *.jpg";
+                dosyaAc.Multiselect = false;
+                dosyaAc.FileName = string.Empty;
+                dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                if (dosyaAc.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream dosya = File.Open(dosyaAc.FileName, FileMode.Open);
+                    while (dosya.Read(resimArray, 0, bufferSize) != 0)
+                    {
+                        memoryStream.Write(resimArray, 0, resimArray.Length);
+                    }
+                    dosya.Close();
+                    dosya.Dispose();
+                    pbDoktor.Image = new Bitmap(memoryStream);
+                }
+
+                MessageBox.Show($"Fotoğraf kaydedildi.");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
 

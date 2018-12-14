@@ -1,8 +1,10 @@
-﻿using HastaneOtomasyonu.ClassLib;
+﻿using HastaneOtomasyonu.Class_Lib;
+using HastaneOtomasyonu.ClassLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
@@ -16,8 +18,8 @@ namespace HastaneOtomasyonu
             InitializeComponent();
         }
 
-        
 
+        List<Kisi> aramalar = new List<Kisi>();
         private void btnHemsireKaydet_Click(object sender, EventArgs e)
         {
             Hemsire hemsire = new Hemsire();
@@ -72,7 +74,8 @@ namespace HastaneOtomasyonu
             FormuTemizle();
 
             lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
-
+            btnHemsireKaydet.Enabled = false;
+            btnHemsireGuncelle.Enabled = true;
 
 
         }
@@ -95,21 +98,24 @@ namespace HastaneOtomasyonu
                 }
                 else if (control is PictureBox pbox)
                 {
+
+                    if (control.Name == "HastaAramaResim")
+                    {
+                        continue;
+                    }
                     pbox.Image = null;
                 }
                 else if (control is ComboBox cb)
                 {
                     
-                        if (control.Name == "HastaAramaResim")
-                    {
-                        continue;
-                    }
                     cb.Text = string.Empty; ;
                 }
             }
         }
         private void FormHemsire_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+            btnHemsireGuncelle.Enabled = false;
             cmbHemsireBrans.Items.AddRange(Enum.GetNames((typeof(DoktorBranslari))));
             lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
         }
@@ -175,6 +181,99 @@ namespace HastaneOtomasyonu
                 writer.Close();
                 writer.Dispose();
             }
+        }
+
+        private void btnHemsireGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lstHemsireKisiler.SelectedItem == null) return;
+
+            Hemsire seciliKisi = (Hemsire)lstHemsireKisiler.SelectedItem;// referans tip değişkenler !
+
+            //static metod yap orda ara varsa varde yoksa yokdersin.
+            try
+            {
+                seciliKisi.Ad = txtHemsireAd.Text;
+                seciliKisi.Soyad = txtHemsireSoyad.Text;
+                seciliKisi.Email = txtHemsireEmail.Text;
+                seciliKisi.Telefon = txtHemsireTelefon.Text;
+                seciliKisi.TCKN = txtHemsireTCKN.Text;
+                seciliKisi.Maas = txtHemsireMaas.Text;
+             
+
+
+                DoktorBranslari hemsireBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbHemsireBrans.SelectedItem.ToString());
+
+                switch (hemsireBrans)
+                {
+
+                    case DoktorBranslari.GenelCerrahi:
+                        seciliKisi.HemsireBrans = DoktorBranslari.GenelCerrahi;
+                        break;
+                    case DoktorBranslari.Ortopedi:
+                        seciliKisi.HemsireBrans = DoktorBranslari.Ortopedi;
+                        break;
+                    case DoktorBranslari.Uroloji:
+                        seciliKisi.HemsireBrans = DoktorBranslari.Uroloji;
+                        break;
+                    case DoktorBranslari.KBB:
+                        seciliKisi.HemsireBrans = DoktorBranslari.KBB;
+                        break;
+                    case DoktorBranslari.CocukSagligi:
+                        seciliKisi.HemsireBrans = DoktorBranslari.CocukSagligi;
+                        break;
+                    case DoktorBranslari.Kardiyoloji:
+                        seciliKisi.HemsireBrans = DoktorBranslari.Kardiyoloji;
+                        break;
+                    case DoktorBranslari.GozHastaliklari:
+                        seciliKisi.HemsireBrans = DoktorBranslari.GozHastaliklari;
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            FormuTemizle();
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+            btnHemsireKaydet.Enabled = true;
+            btnHemsireGuncelle.Enabled = false;
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstHemsireKisiler.SelectedItem == null) return;
+            Hemsire seciliKisi = (Hemsire)lstHemsireKisiler.SelectedItem;
+            (this.MdiParent as FormGiris).hemsireler.Remove(seciliKisi);
+            FormuTemizle();
+            lstHemsireKisiler.Items.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
+        }
+
+        private void txtHemsirAra_KeyUp(object sender, KeyEventArgs e)
+        {
+            string ara = txtHemsirAra.Text.ToLower();
+            aramalar = new List<Kisi>();
+            (this.MdiParent as FormGiris).hemsireler.Where(kisi => kisi.Ad.ToLower().Contains(ara) || kisi.Soyad.ToLower().Contains(ara) || kisi.TCKN.StartsWith(ara)).ToList().ForEach(kisi => aramalar.Add(kisi));
+
+            FormuTemizle();
+            lstHemsireKisiler.Items.AddRange(aramalar.ToArray());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormuTemizle();
+            lstHemsireKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
+            btnHemsireKaydet.Enabled = true;
+            btnHemsireGuncelle.Enabled = false;
+        }
+
+        private void FormHemsire_Click(object sender, EventArgs e)
+        {
+            lstHemsireKisiler.SelectedItem = null;
         }
     }
 }

@@ -44,15 +44,9 @@
             this.txtDoktorAd = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.içeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.içeriAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.denetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.lblDoktorTCKN = new System.Windows.Forms.Label();
             this.lblDoktorEmail = new System.Windows.Forms.Label();
             this.lblDoktorTelefon = new System.Windows.Forms.Label();
@@ -67,6 +61,8 @@
             this.DoktorAramaResim = new System.Windows.Forms.PictureBox();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
+            this.btnFotograf = new System.Windows.Forms.Button();
+            this.btnDoktorTemizle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -75,12 +71,13 @@
             // 
             // pbDoktor
             // 
-            this.pbDoktor.Location = new System.Drawing.Point(283, 59);
+            this.pbDoktor.Location = new System.Drawing.Point(603, 52);
             this.pbDoktor.Name = "pbDoktor";
             this.pbDoktor.Size = new System.Drawing.Size(139, 124);
             this.pbDoktor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDoktor.TabIndex = 34;
             this.pbDoktor.TabStop = false;
+
             // 
             // btnDoktorGuncelle
             // 
@@ -90,19 +87,21 @@
             this.btnDoktorGuncelle.TabIndex = 33;
             this.btnDoktorGuncelle.Text = "Güncelle";
             this.btnDoktorGuncelle.UseVisualStyleBackColor = true;
+            this.btnDoktorGuncelle.Click += new System.EventHandler(this.btnDoktorGuncelle_Click_1);
             // 
             // txtDoktorAra
             // 
-            this.txtDoktorAra.Location = new System.Drawing.Point(456, 59);
+            this.txtDoktorAra.Location = new System.Drawing.Point(382, 55);
             this.txtDoktorAra.Name = "txtDoktorAra";
             this.txtDoktorAra.Size = new System.Drawing.Size(170, 20);
             this.txtDoktorAra.TabIndex = 32;
+            this.txtDoktorAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDoktorAra_KeyUp);
             // 
             // lstDoktorlar
             // 
             this.lstDoktorlar.ContextMenuStrip = this.cmsListe;
             this.lstDoktorlar.FormattingEnabled = true;
-            this.lstDoktorlar.Location = new System.Drawing.Point(430, 81);
+            this.lstDoktorlar.Location = new System.Drawing.Point(356, 81);
             this.lstDoktorlar.Name = "lstDoktorlar";
             this.lstDoktorlar.Size = new System.Drawing.Size(196, 186);
             this.lstDoktorlar.TabIndex = 31;
@@ -121,6 +120,7 @@
             this.silToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // btnDoktorKaydet
             // 
@@ -170,47 +170,20 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dosyaToolStripMenuItem,
-            this.denetimToolStripMenuItem,
-            this.toolStripTextBox1,
-            this.toolStripComboBox1});
+            this.dosyaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(785, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(785, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // dosyaToolStripMenuItem
             // 
             this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xMLToolStripMenuItem,
             this.jSONToolStripMenuItem});
             this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
-            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
-            this.dosyaToolStripMenuItem.Text = "&Dosya";
-            // 
-            // xMLToolStripMenuItem
-            // 
-            this.xMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.içeriAktarToolStripMenuItem,
-            this.dışarıAktarToolStripMenuItem});
-            this.xMLToolStripMenuItem.Name = "xMLToolStripMenuItem";
-            this.xMLToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.xMLToolStripMenuItem.Text = "&XML";
-            // 
-            // içeriAktarToolStripMenuItem
-            // 
-            this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
-            this.içeriAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.içeriAktarToolStripMenuItem.Text = "&İçeri Aktar";
-            // 
-            // dışarıAktarToolStripMenuItem
-            // 
-            this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
-            this.dışarıAktarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.dışarıAktarToolStripMenuItem.Text = "&Dışarı Aktar";
+            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.dosyaToolStripMenuItem.Text = "&Kaydet";
             // 
             // jSONToolStripMenuItem
             // 
@@ -234,23 +207,6 @@
             this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.dışarıAktarToolStripMenuItem1.Text = "&Dışarı Aktar";
             this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click_1);
-            // 
-            // denetimToolStripMenuItem
-            // 
-            this.denetimToolStripMenuItem.Name = "denetimToolStripMenuItem";
-            this.denetimToolStripMenuItem.Size = new System.Drawing.Size(64, 23);
-            this.denetimToolStripMenuItem.Text = "Dene&tim";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(200, 23);
-            this.toolStripTextBox1.ToolTipText = "Kisi Ara";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
             // lblDoktorTCKN
             // 
@@ -351,7 +307,7 @@
             // DoktorAramaResim
             // 
             this.DoktorAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("DoktorAramaResim.Image")));
-            this.DoktorAramaResim.Location = new System.Drawing.Point(430, 59);
+            this.DoktorAramaResim.Location = new System.Drawing.Point(356, 55);
             this.DoktorAramaResim.Name = "DoktorAramaResim";
             this.DoktorAramaResim.Size = new System.Drawing.Size(22, 20);
             this.DoktorAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -362,12 +318,34 @@
             // 
             this.dosyaAc.FileName = "openFileDialog1";
             // 
+            // btnDoktorTemizle
+            // 
+            this.btnDoktorTemizle.Location = new System.Drawing.Point(135, 327);
+            this.btnDoktorTemizle.Name = "btnDoktorTemizle";
+            this.btnDoktorTemizle.Size = new System.Drawing.Size(79, 38);
+            this.btnDoktorTemizle.TabIndex = 68;
+            this.btnDoktorTemizle.Text = "Temizle";
+            this.btnDoktorTemizle.UseVisualStyleBackColor = true;
+            this.btnDoktorTemizle.Click += new System.EventHandler(this.btnDoktorTemizle_Click);
+            // 
+            // btnFotograf
+            // 
+            this.btnFotograf.Location = new System.Drawing.Point(624, 184);
+            this.btnFotograf.Name = "btnFotograf";
+            this.btnFotograf.Size = new System.Drawing.Size(90, 23);
+            this.btnFotograf.TabIndex = 53;
+            this.btnFotograf.Text = "Fotoğraf Ekle";
+            this.btnFotograf.UseVisualStyleBackColor = true;
+            this.btnFotograf.Click += new System.EventHandler(this.btnFotograf_Click);
+            // 
             // FormDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(785, 461);
+            this.Controls.Add(this.btnDoktorTemizle);
+            this.Controls.Add(this.btnFotograf);
             this.Controls.Add(this.DoktorAramaResim);
             this.Controls.Add(this.lblDoktorHemsire);
             this.Controls.Add(this.cmbDoktorHemsire);
@@ -396,6 +374,7 @@
             this.Text = "FormDoktor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormDoktor_Load);
+            this.Click += new System.EventHandler(this.FormDoktor_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).EndInit();
             this.cmsListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -422,15 +401,9 @@
         private System.Windows.Forms.TextBox txtDoktorAd;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem denetimToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.Label lblDoktorTCKN;
         private System.Windows.Forms.Label lblDoktorEmail;
         private System.Windows.Forms.Label lblDoktorTelefon;
@@ -445,5 +418,7 @@
         private System.Windows.Forms.PictureBox DoktorAramaResim;
         private System.Windows.Forms.SaveFileDialog dosyaKaydet;
         private System.Windows.Forms.OpenFileDialog dosyaAc;
+        private System.Windows.Forms.Button btnFotograf;
+        private System.Windows.Forms.Button btnDoktorTemizle;
     }
 }

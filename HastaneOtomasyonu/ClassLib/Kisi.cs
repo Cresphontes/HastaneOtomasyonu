@@ -19,6 +19,8 @@ namespace HastaneOtomasyonu.Class_Lib
         Regex rgxEmail = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
         Regex rgxTelefon = new Regex(@"^[0-9]*$");
 
+        public byte[] Fotograf { get; set; }
+
 
         public string Ad
         {
