@@ -332,13 +332,12 @@ namespace HastaneOtomasyonu
         int bufferSize = 64;
         byte[] resimArray = new byte[64];
 
-
-        private void btnFotograf_Click(object sender, EventArgs e)
+        private void btnFotografDoktor_Click(object sender, EventArgs e)
         {
             try
             {
                 dosyaAc.Title = "Bir fotoğraf dosyasını seçiniz";
-                dosyaAc.Filter = "JPG | *.jpg";
+                dosyaAc.Filter = "JPG | *.jpg;*.png";
                 dosyaAc.Multiselect = false;
                 dosyaAc.FileName = string.Empty;
                 dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);

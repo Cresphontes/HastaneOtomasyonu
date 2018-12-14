@@ -3,6 +3,7 @@ using HastaneOtomasyonu.ClassLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -31,7 +32,12 @@ namespace HastaneOtomasyonu
             hemsire.TCKN = txtHemsireTCKN.Text;
             hemsire.Maas = txtHemsireMaas.Text;
 
-
+            if (memoryStream.Length > 0)
+            {
+                hemsire.Fotograf = memoryStream.ToArray();
+            }
+                
+            memoryStream = new MemoryStream();
 
 
             DoktorBranslari hemsireBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbHemsireBrans.SelectedItem.ToString());
@@ -121,6 +127,9 @@ namespace HastaneOtomasyonu
 
         private void lstHemsireKisiler_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            pbHemsire.Image = null;
+
             if (lstHemsireKisiler.SelectedItem == null) return;
 
             Hemsire secilikisi = lstHemsireKisiler.SelectedItem as Hemsire;
@@ -134,6 +143,11 @@ namespace HastaneOtomasyonu
             cmbHemsireBrans.Text = secilikisi.HemsireBrans.ToString();
             btnHemsireKaydet.Enabled = false;
             btnHemsireGuncelle.Enabled = true;
+
+            if (secilikisi.Fotograf != null && secilikisi.Fotograf.Length > 0)
+            {
+                pbHemsire.Image = new Bitmap(new MemoryStream(secilikisi.Fotograf));
+            }
         }
 
       
@@ -199,8 +213,12 @@ namespace HastaneOtomasyonu
                 seciliKisi.Telefon = txtHemsireTelefon.Text;
                 seciliKisi.TCKN = txtHemsireTCKN.Text;
                 seciliKisi.Maas = txtHemsireMaas.Text;
-             
 
+                if (memoryStream.Length > 0)
+                {
+                    seciliKisi.Fotograf = memoryStream.ToArray();
+                }
+                memoryStream = new MemoryStream();
 
                 DoktorBranslari hemsireBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbHemsireBrans.SelectedItem.ToString());
 
@@ -277,6 +295,42 @@ namespace HastaneOtomasyonu
             lstHemsireKisiler.Items.AddRange(((this.MdiParent as FormGiris).hemsireler).ToArray());
             btnHemsireKaydet.Enabled = true;
             btnHemsireGuncelle.Enabled = false;
+        }
+
+
+
+        MemoryStream memoryStream = new MemoryStream();
+        int bufferSize = 64;
+        byte[] resimArray = new byte[64];
+
+        private void btnFotografHemsire_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dosyaAc.Title = "Bir fotoğraf dosyasını seçiniz";
+                dosyaAc.Filter = "JPG | *.jpg;*.png";
+                dosyaAc.Multiselect = false;
+                dosyaAc.FileName = string.Empty;
+                dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                if (dosyaAc.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream dosya = File.Open(dosyaAc.FileName, FileMode.Open);
+                    while (dosya.Read(resimArray, 0, bufferSize) != 0)
+                    {
+                        memoryStream.Write(resimArray, 0, resimArray.Length);
+                    }
+                    dosya.Close();
+                    dosya.Dispose();
+                    pbHemsire.Image = new Bitmap(memoryStream);
+                }
+
+                MessageBox.Show($"Fotoğraf kaydedildi.");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

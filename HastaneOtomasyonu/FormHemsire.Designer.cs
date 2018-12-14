@@ -60,6 +60,7 @@
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
             this.btnHemsireTemizle = new System.Windows.Forms.Button();
+            this.btnFotografHemsire = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbHemsire)).BeginInit();
             this.cmsHemsire.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -306,12 +307,23 @@
             this.btnHemsireTemizle.UseVisualStyleBackColor = true;
             this.btnHemsireTemizle.Click += new System.EventHandler(this.btnHemsireTemizle_Click);
             // 
+            // btnFotografHemsire
+            // 
+            this.btnFotografHemsire.Location = new System.Drawing.Point(645, 191);
+            this.btnFotografHemsire.Name = "btnFotografHemsire";
+            this.btnFotografHemsire.Size = new System.Drawing.Size(79, 23);
+            this.btnFotografHemsire.TabIndex = 69;
+            this.btnFotografHemsire.Text = "Fotoğraf Ekle";
+            this.btnFotografHemsire.UseVisualStyleBackColor = true;
+            this.btnFotografHemsire.Click += new System.EventHandler(this.btnFotografHemsire_Click);
+            // 
             // FormHemsire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
             this.ClientSize = new System.Drawing.Size(813, 461);
+            this.Controls.Add(this.btnFotografHemsire);
             this.Controls.Add(this.btnHemsireTemizle);
             this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.cmbHemsireBrans);
@@ -380,5 +392,6 @@
         private System.Windows.Forms.OpenFileDialog dosyaAc;
         private System.Windows.Forms.SaveFileDialog dosyaKaydet;
         private System.Windows.Forms.Button btnHemsireTemizle;
+        private System.Windows.Forms.Button btnFotografHemsire;
     }
 }
