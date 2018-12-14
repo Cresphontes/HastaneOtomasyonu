@@ -202,7 +202,7 @@ namespace HastaneOtomasyonu
         private void btnHastaTemizle_Click(object sender, EventArgs e)
         {
             FormuTemizle();
-            lstHastaList.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
+            lstHastaList.Items.AddRange(((this.MdiParent as FormGiris).hastalar).ToArray());
             btnHastaKaydet.Enabled = true;
             btnHastaGuncelle.Enabled = false;
         }

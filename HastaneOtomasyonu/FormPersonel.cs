@@ -276,7 +276,7 @@ namespace HastaneOtomasyonu
             lstPersonelKisiler.SelectedItem = null;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnPersonelTemizle_Click(object sender, EventArgs e)
         {
             FormuTemizle();
             lstPersonelKisiler.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());

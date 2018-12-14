@@ -311,7 +311,7 @@ namespace HastaneOtomasyonu
         private void btnDoktorTemizle_Click(object sender, EventArgs e)
         {
             FormuTemizle();
-            lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
+            lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
             btnDoktorKaydet.Enabled = true;
             btnDoktorGuncelle.Enabled = false;
         }
