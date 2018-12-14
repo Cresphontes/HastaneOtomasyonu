@@ -121,8 +121,9 @@ namespace HastaneOtomasyonu
 
         private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             cmbDoktorHemsire.Items.Clear();
+            pbDoktor.Image = null;
 
             if (lstDoktorlar.SelectedItem == null) return;
 
