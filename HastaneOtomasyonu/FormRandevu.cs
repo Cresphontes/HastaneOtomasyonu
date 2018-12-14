@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HastaneOtomasyonu.ClassLib;
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -32,12 +33,12 @@ namespace HastaneOtomasyonu
             //Kayıtlı hastalar combobox'a eklendi.
             cmbHastaSec.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
             //checkedListBox1.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
-            //lblServisSec.Visible = false;
-            //cmbServisSec.Visible = false;
-            //lblDoktorSec.Visible = false;
-            //cmbDoktorSec.Visible = false;
-            //flwRandevu.Visible = false;
-            //btnRandevuKaydet.Visible = false;
+            lblServisSec.Visible = false;
+            cmbServisSec.Visible = false;
+            lblDoktorSec.Visible = false;
+            cmbDoktorSec.Visible = false;
+            flwRandevu.Visible = false;
+            btnRandevuKaydet.Visible = false;
 
             //Butonların üstlerine saatleri yazıyoruz.
 
@@ -67,68 +68,6 @@ namespace HastaneOtomasyonu
         {
 
             h.RandevuSaati = (sender as MyButton).Text;
-           
-            //Her Gorgune inanma-- MesutHocaya İnan :)
-           // if ((sender as MyButton).Text == "09:00")
-           //     h.RandevuSaati = "09:00";
-           // else if ((sender as MyButton).Text == "09:15")
-           //     h.RandevuSaati = "09:15";
-           //else  if ((sender as MyButton).Text == "09:30")
-           //     h.RandevuSaati = "09:30";
-           // else if ((sender as MyButton).Text == "09:45")
-           //     h.RandevuSaati = "09:45";
-           // else if ((sender as MyButton).Text == "10:00")
-           //     h.RandevuSaati = "10:00";
-           // else if ((sender as MyButton).Text == "10:15")
-           //     h.RandevuSaati = "10:15";
-           // else if ((sender as MyButton).Text == "10:30")
-           //     h.RandevuSaati = "10:30";
-           // else if ((sender as MyButton).Text == "10:45")
-           //     h.RandevuSaati = "10:45";
-           // else if ((sender as MyButton).Text == "11:00")
-           //     h.RandevuSaati = "11:00";
-           // else if ((sender as MyButton).Text == "11:15")
-           //     h.RandevuSaati = "11:15";
-           // else if ((sender as MyButton).Text == "11:30")
-           //     h.RandevuSaati = "11:30";
-           // else if ((sender as MyButton).Text == "11:45")
-           //     h.RandevuSaati = "11:45";
-           // else if ((sender as MyButton).Text == "13:00")
-           //     h.RandevuSaati = "13:00";
-           // else if ((sender as MyButton).Text == "13:15")
-           //     h.RandevuSaati = "13:15";
-           // else if ((sender as MyButton).Text == "13:30")
-           //     h.RandevuSaati = "13:30";
-           // else if ((sender as MyButton).Text == "13:45")
-           //     h.RandevuSaati = "13:45";
-           // else if ((sender as MyButton).Text == "14:00")
-           //     h.RandevuSaati = "14:00";
-           // else if ((sender as MyButton).Text == "14:15")
-           //     h.RandevuSaati = "14:15";
-           // else if ((sender as MyButton).Text == "14:30")
-           //     h.RandevuSaati = "14:30";
-           // else if ((sender as MyButton).Text == "14:45")
-           //     h.RandevuSaati = "14:45";
-           // else if ((sender as MyButton).Text == "15:00")
-           //     h.RandevuSaati = "15:00";
-           // else if ((sender as MyButton).Text == "15:15")
-           //     h.RandevuSaati = "15:15";
-           // else if ((sender as MyButton).Text == "15:30")
-           //     h.RandevuSaati = "15:30";
-           // else if ((sender as MyButton).Text == "15:45")
-           //     h.RandevuSaati = "15:45";
-           // else if ((sender as MyButton).Text == "15:00")
-           //     h.RandevuSaati = "16:00";
-           // else if ((sender as MyButton).Text == "16:15")
-           //     h.RandevuSaati = "16:15";
-           // else if ((sender as MyButton).Text == "16:30")
-           //     h.RandevuSaati = "16:30";
-           // else if ((sender as MyButton).Text == "16:45")
-           //     h.RandevuSaati = "16:45";
-
-
-
-
 
         }
 
