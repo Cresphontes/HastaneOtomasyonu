@@ -11,7 +11,7 @@ namespace HastaneOtomasyonu
 {
     public partial class FormRandevu : Form
     {
-      
+
 
         public FormRandevu()
         {
@@ -20,8 +20,8 @@ namespace HastaneOtomasyonu
 
         }
 
-        Hasta h = new Hasta();
-        MyButton b;
+        Hasta hasta = new Hasta();
+        MyButton button;
         public class MyButton : Button
         {
             protected override Size DefaultSize => Size = new Size(65, 60);
@@ -52,23 +52,19 @@ namespace HastaneOtomasyonu
                 for (int dakika = 0; dakika <= 45; dakika += 15)
                 {
 
-                    b = new MyButton();
-                    b.Text = saat.ToString("00") + ":" + dakika.ToString("00");
-                    flwRandevu.Controls.Add(b);
-                    b.Click += B_Click;
-             }
+                    button = new MyButton();
+                    button.Text = saat.ToString("00") + ":" + dakika.ToString("00");
+                    flwRandevu.Controls.Add(button);
+                    button.Click += Button_Click;
+                }
 
             }
 
-
-
         }
 
-        private void B_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
-
-            h.RandevuSaati = (sender as MyButton).Text;
-
+            hasta.RandevuSaati = (sender as MyButton).Text;
         }
 
         private void cmbHastaSec_SelectedIndexChanged(object sender, EventArgs e)
