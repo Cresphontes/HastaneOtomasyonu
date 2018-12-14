@@ -89,6 +89,10 @@ namespace HastaneOtomasyonu
                 {
                     _frmPersonel.Dispose();
                 }
+                if (_frmRandevu != null)
+                {
+                    _frmRandevu.Dispose();
+                }
             }
            
 
@@ -117,6 +121,10 @@ namespace HastaneOtomasyonu
                 {
                     _frmDoktor.Dispose();
                 }
+                if (_frmRandevu != null)
+                {
+                    _frmRandevu.Dispose();
+                }
             }
 
         } 
@@ -144,6 +152,10 @@ namespace HastaneOtomasyonu
                 {
                     _frmDoktor.Dispose();
                 }
+                if (_frmRandevu!=null)
+                {
+                    _frmRandevu.Dispose();
+                }
              
             }
            
@@ -152,9 +164,10 @@ namespace HastaneOtomasyonu
 
         #endregion
 
+        #region RandevuForm
         private void randevuAlToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_frmRandevu == null || _frmHasta.IsDisposed)
+            if (_frmRandevu == null || _frmRandevu.IsDisposed)
             {
                 _frmRandevu = new FormRandevu();
                 _frmRandevu.MdiParent = this;
@@ -176,7 +189,10 @@ namespace HastaneOtomasyonu
                 {
                     _frmHasta.Dispose();
                 }
-            }
+            } 
+            #endregion
+
+
         }
     }
 }

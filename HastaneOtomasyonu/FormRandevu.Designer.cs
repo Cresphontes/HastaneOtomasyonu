@@ -42,7 +42,7 @@
             // 
             this.flwRandevu.AutoScroll = true;
             this.flwRandevu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flwRandevu.Location = new System.Drawing.Point(347, 20);
+            this.flwRandevu.Location = new System.Drawing.Point(506, 25);
             this.flwRandevu.Name = "flwRandevu";
             this.flwRandevu.Size = new System.Drawing.Size(347, 271);
             this.flwRandevu.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             this.btnRandevuKaydet.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnRandevuKaydet.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRandevuKaydet.Location = new System.Drawing.Point(347, 333);
+            this.btnRandevuKaydet.Location = new System.Drawing.Point(506, 338);
             this.btnRandevuKaydet.Name = "btnRandevuKaydet";
             this.btnRandevuKaydet.Size = new System.Drawing.Size(347, 56);
             this.btnRandevuKaydet.TabIndex = 5;
@@ -124,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(714, 471);
+            this.ClientSize = new System.Drawing.Size(914, 521);
             this.Controls.Add(this.cmbHastaSec);
             this.Controls.Add(this.cmbDoktorSec);
             this.Controls.Add(this.cmbServisSec);
