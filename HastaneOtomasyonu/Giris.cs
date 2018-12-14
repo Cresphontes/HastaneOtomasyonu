@@ -30,6 +30,7 @@ namespace HastaneOtomasyonu
         public List<Doktor> doktorlar { get; set; }
         public List<Hemsire> hemsireler { get; set; }
         public List<Hasta> hastalar { get; set; }  
+        public List<Randevular> RandevuBilgileri { get; set; }
 
         private void FormGiris_Load(object sender, EventArgs e)
         {
@@ -37,6 +38,7 @@ namespace HastaneOtomasyonu
             doktorlar = new List<Doktor>();
             hemsireler = new List<Hemsire>();
             hastalar = new List<Hasta>();
+            RandevuBilgileri = new List<Randevular>();
            
         }
         
