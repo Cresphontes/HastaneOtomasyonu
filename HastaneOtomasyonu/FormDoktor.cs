@@ -42,38 +42,9 @@ namespace HastaneOtomasyonu
             memoryStream = new MemoryStream();
 
             DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
-
-           
-
-
-
-            switch (doktorBrans)
-            {
-
-                case DoktorBranslari.GenelCerrahi:
-                    doktor.DoktorBrans = DoktorBranslari.GenelCerrahi;
-                    break;
-                case DoktorBranslari.Ortopedi:
-                    doktor.DoktorBrans = DoktorBranslari.Ortopedi;
-                    break;
-                case DoktorBranslari.Uroloji:
-                    doktor.DoktorBrans = DoktorBranslari.Uroloji;
-                    break;
-                case DoktorBranslari.KBB:
-                    doktor.DoktorBrans = DoktorBranslari.KBB;
-                    break;
-                case DoktorBranslari.CocukSagligi:
-                    doktor.DoktorBrans = DoktorBranslari.CocukSagligi;
-                    break;
-                case DoktorBranslari.Kardiyoloji:
-                    doktor.DoktorBrans = DoktorBranslari.Kardiyoloji;
-                    break;
-                case DoktorBranslari.GozHastaliklari:
-                    doktor.DoktorBrans = DoktorBranslari.GozHastaliklari;
-                    break;
-                default:
-                    break;
-            }
+            //brans doktora eklendi.
+            doktor.DoktorBrans = doktorBrans;
+         
 
 
             (this.MdiParent as FormGiris).doktorlar.Add(doktor);

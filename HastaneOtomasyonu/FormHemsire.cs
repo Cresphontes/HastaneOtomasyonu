@@ -41,38 +41,8 @@ namespace HastaneOtomasyonu
 
 
             DoktorBranslari hemsireBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbHemsireBrans.SelectedItem.ToString());
-
-
-
-            //doktor.HemsireSec = (this.MdiParent as FormGiris).hemsireler
-
-            switch (hemsireBrans)
-            {
-
-                case DoktorBranslari.GenelCerrahi:
-                    hemsire.HemsireBrans = DoktorBranslari.GenelCerrahi;
-                    break;
-                case DoktorBranslari.Ortopedi:
-                    hemsire.HemsireBrans = DoktorBranslari.Ortopedi;
-                    break;
-                case DoktorBranslari.Uroloji:
-                    hemsire.HemsireBrans = DoktorBranslari.Uroloji;
-                    break;
-                case DoktorBranslari.KBB:
-                    hemsire.HemsireBrans = DoktorBranslari.KBB;
-                    break;
-                case DoktorBranslari.CocukSagligi:
-                    hemsire.HemsireBrans = DoktorBranslari.CocukSagligi;
-                    break;
-                case DoktorBranslari.Kardiyoloji:
-                    hemsire.HemsireBrans = DoktorBranslari.Kardiyoloji;
-                    break;
-                case DoktorBranslari.GozHastaliklari:
-                    hemsire.HemsireBrans = DoktorBranslari.GozHastaliklari;
-                    break;
-                default:
-                    break;
-            }
+            //brans eklendi.
+            hemsire.HemsireBrans = hemsireBrans;
 
             (this.MdiParent as FormGiris).hemsireler.Add(hemsire);
 
