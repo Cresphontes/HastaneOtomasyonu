@@ -82,6 +82,7 @@
             this.btnHemsireGuncelle.TabIndex = 33;
             this.btnHemsireGuncelle.Text = "Güncelle";
             this.btnHemsireGuncelle.UseVisualStyleBackColor = true;
+            this.btnHemsireGuncelle.Click += new System.EventHandler(this.btnHemsireGuncelle_Click);
             // 
             // txtHemsirAra
             // 
@@ -185,7 +186,7 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1

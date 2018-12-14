@@ -84,6 +84,7 @@
             this.btnDoktorGuncelle.TabIndex = 33;
             this.btnDoktorGuncelle.Text = "Güncelle";
             this.btnDoktorGuncelle.UseVisualStyleBackColor = true;
+            this.btnDoktorGuncelle.Click += new System.EventHandler(this.btnDoktorGuncelle_Click_1);
             // 
             // txtDoktorAra
             // 
