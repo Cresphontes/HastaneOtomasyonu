@@ -55,6 +55,7 @@
     <Compile Include="ClassLib\Kisi.cs" />
     <Compile Include="ClassLib\DoktorBranslari.cs" />
     <Compile Include="ClassLib\Personel.cs" />
+    <Compile Include="ClassLib\Randevular.cs" />
     <Compile Include="FormDoktor.cs">
       <SubType>Form</SubType>
     </Compile>
