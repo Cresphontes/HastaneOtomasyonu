@@ -137,6 +137,7 @@
             this.txtDoktorTCKN.Name = "txtDoktorTCKN";
             this.txtDoktorTCKN.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorTCKN.TabIndex = 29;
+            this.txtDoktorTCKN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoktorTCKN_KeyPress);
             // 
             // txtDoktorEmail
             // 
@@ -151,6 +152,7 @@
             this.txtDoktorTelefon.Name = "txtDoktorTelefon";
             this.txtDoktorTelefon.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorTelefon.TabIndex = 27;
+            this.txtDoktorTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoktorTelefon_KeyPress);
             // 
             // txtDoktorSoyad
             // 
@@ -285,6 +287,7 @@
             this.txtDoktorMaas.Name = "txtDoktorMaas";
             this.txtDoktorMaas.Size = new System.Drawing.Size(199, 20);
             this.txtDoktorMaas.TabIndex = 46;
+            this.txtDoktorMaas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoktorMaas_KeyPress);
             // 
             // cmbDoktorHemsire
             // 

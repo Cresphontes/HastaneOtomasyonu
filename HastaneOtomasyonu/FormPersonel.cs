@@ -338,5 +338,23 @@ namespace HastaneOtomasyonu
                 throw new Exception(ex.Message);
             }
         }
+
+        private void txtPersonelMaas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtPersonelTCKN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtPersonelTelefon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //SAdece RAkam girişi
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

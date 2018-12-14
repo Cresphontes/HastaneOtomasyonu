@@ -114,6 +114,7 @@
             this.txtPersonelMaas.Name = "txtPersonelMaas";
             this.txtPersonelMaas.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelMaas.TabIndex = 62;
+            this.txtPersonelMaas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonelMaas_KeyPress);
             // 
             // lblPersonelTCKN
             // 
@@ -213,6 +214,7 @@
             this.txtPersonelTCKN.Name = "txtPersonelTCKN";
             this.txtPersonelTCKN.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelTCKN.TabIndex = 50;
+            this.txtPersonelTCKN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonelTCKN_KeyPress);
             // 
             // txtPersonelEmail
             // 
@@ -227,6 +229,7 @@
             this.txtPersonelTelefon.Name = "txtPersonelTelefon";
             this.txtPersonelTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtPersonelTelefon.TabIndex = 48;
+            this.txtPersonelTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPersonelTelefon_KeyPress);
             // 
             // txtPersonelSoyad
             // 

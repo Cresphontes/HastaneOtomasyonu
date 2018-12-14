@@ -135,6 +135,7 @@
             this.txtHemsireTCKN.Name = "txtHemsireTCKN";
             this.txtHemsireTCKN.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireTCKN.TabIndex = 29;
+            this.txtHemsireTCKN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHemsireTCKN_KeyPress);
             // 
             // txtHemsireEmail
             // 
@@ -149,6 +150,7 @@
             this.txtHemsireTelefon.Name = "txtHemsireTelefon";
             this.txtHemsireTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireTelefon.TabIndex = 27;
+            this.txtHemsireTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHemsireTelefon_KeyPress);
             // 
             // txtHemsireSoyad
             // 
@@ -274,6 +276,7 @@
             this.txtHemsireMaas.Name = "txtHemsireMaas";
             this.txtHemsireMaas.Size = new System.Drawing.Size(135, 20);
             this.txtHemsireMaas.TabIndex = 42;
+            this.txtHemsireMaas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHemsireMaas_KeyPress);
             // 
             // cmbHemsireBrans
             // 

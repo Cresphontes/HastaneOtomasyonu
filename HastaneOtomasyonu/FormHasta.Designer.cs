@@ -119,6 +119,7 @@
             this.txtHastaTCKN.Name = "txtHastaTCKN";
             this.txtHastaTCKN.Size = new System.Drawing.Size(135, 20);
             this.txtHastaTCKN.TabIndex = 29;
+            this.txtHastaTCKN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHastaTCKN_KeyPress);
             // 
             // txtHastaEmail
             // 
@@ -133,6 +134,7 @@
             this.txtHastaTelefon.Name = "txtHastaTelefon";
             this.txtHastaTelefon.Size = new System.Drawing.Size(135, 20);
             this.txtHastaTelefon.TabIndex = 27;
+            this.txtHastaTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHastaTelefon_KeyPress);
             // 
             // txtHastaSoyad
             // 
