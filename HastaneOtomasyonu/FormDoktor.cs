@@ -82,7 +82,7 @@ namespace HastaneOtomasyonu
 
             lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).doktorlar).ToArray());
 
-
+            btnDoktorKaydet.Enabled = false;
 
         }
 
@@ -105,14 +105,15 @@ namespace HastaneOtomasyonu
                 }
                 else if (control is PictureBox pbox)
                 {
-                    pbox.Image = null;
-                }
-                else if (control is ComboBox cb)
-                {
                     if (control.Name == "DoktorAramaResim")
                     {
                         continue;
                     }
+                    pbox.Image = null;
+                }
+                else if (control is ComboBox cb)
+                {
+                    
                     cb.Text = string.Empty; ;
                 }
             }
@@ -154,6 +155,8 @@ namespace HastaneOtomasyonu
 
         private void FormDoktor_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+            btnDoktorGuncelle.Enabled = false;
             lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             cmbDoktorBrans.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
             BransliHemsireler.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
@@ -302,6 +305,20 @@ namespace HastaneOtomasyonu
             FormuTemizle();
             lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             btnDoktorKaydet.Enabled = true;
+            btnDoktorGuncelle.Enabled = false;
+        }
+
+        private void btnDoktorTemizle_Click(object sender, EventArgs e)
+        {
+            FormuTemizle();
+            lstDoktorlar.Items.AddRange(((this.MdiParent as FormGiris).personeller).ToArray());
+            btnDoktorKaydet.Enabled = true;
+            btnDoktorGuncelle.Enabled = false;
+        }
+
+        private void FormDoktor_Click(object sender, EventArgs e)
+        {
+            lstDoktorlar.SelectedItem = null;
         }
 
         MemoryStream memoryStream = new MemoryStream();

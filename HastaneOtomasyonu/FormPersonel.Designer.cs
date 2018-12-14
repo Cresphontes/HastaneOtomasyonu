@@ -59,7 +59,7 @@
             this.PersonelAramaResim = new System.Windows.Forms.PictureBox();
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPersonelTemizle = new System.Windows.Forms.Button();
             this.cmsPersonel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonel)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -188,10 +188,10 @@
             // 
             // lstPersonelKisiler
             // 
+            this.lstPersonelKisiler.ContextMenuStrip = this.cmsPersonel;
             this.lstPersonelKisiler.FormattingEnabled = true;
             this.lstPersonelKisiler.Location = new System.Drawing.Point(348, 57);
             this.lstPersonelKisiler.Name = "lstPersonelKisiler";
-            this.lstPersonelKisiler.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstPersonelKisiler.Size = new System.Drawing.Size(196, 147);
             this.lstPersonelKisiler.TabIndex = 52;
             this.lstPersonelKisiler.SelectedIndexChanged += new System.EventHandler(this.lstPersonelKisiler_SelectedIndexChanged);
@@ -296,15 +296,15 @@
             // 
             this.dosyaAc.FileName = "openFileDialog1";
             // 
-            // button1
+            // btnPersonelTemizle
             // 
-            this.button1.Location = new System.Drawing.Point(203, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 38);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPersonelTemizle.Location = new System.Drawing.Point(71, 254);
+            this.btnPersonelTemizle.Name = "btnPersonelTemizle";
+            this.btnPersonelTemizle.Size = new System.Drawing.Size(79, 38);
+            this.btnPersonelTemizle.TabIndex = 67;
+            this.btnPersonelTemizle.Text = "Temizle";
+            this.btnPersonelTemizle.UseVisualStyleBackColor = true;
+            this.btnPersonelTemizle.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // FormPersonel
             // 
@@ -312,7 +312,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OrangeRed;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPersonelTemizle);
             this.Controls.Add(this.PersonelAramaResim);
             this.Controls.Add(this.cmbPersonelBrans);
             this.Controls.Add(this.lblPersonelMaas);
@@ -378,6 +378,6 @@
         private System.Windows.Forms.PictureBox PersonelAramaResim;
         private System.Windows.Forms.OpenFileDialog dosyaAc;
         private System.Windows.Forms.SaveFileDialog dosyaKaydet;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPersonelTemizle;
     }
 }

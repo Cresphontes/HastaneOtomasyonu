@@ -55,6 +55,7 @@
             this.HastaAramaResim = new System.Windows.Forms.PictureBox();
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
+            this.btnHastaTemizle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).BeginInit();
             this.cmsHastaListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -182,20 +183,20 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
             // 
             this.içeriAktarToolStripMenuItem1.Name = "içeriAktarToolStripMenuItem1";
-            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.içeriAktarToolStripMenuItem1.Text = "&İçeri Aktar";
             this.içeriAktarToolStripMenuItem1.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem1_Click);
             // 
             // dışarıAktarToolStripMenuItem1
             // 
             this.dışarıAktarToolStripMenuItem1.Name = "dışarıAktarToolStripMenuItem1";
-            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.dışarıAktarToolStripMenuItem1.Text = "&Dışarı Aktar";
             this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click);
             // 
@@ -258,12 +259,23 @@
             // 
             this.dosyaAc.FileName = "openFileDialog1";
             // 
+            // btnHastaTemizle
+            // 
+            this.btnHastaTemizle.Location = new System.Drawing.Point(77, 239);
+            this.btnHastaTemizle.Name = "btnHastaTemizle";
+            this.btnHastaTemizle.Size = new System.Drawing.Size(79, 38);
+            this.btnHastaTemizle.TabIndex = 68;
+            this.btnHastaTemizle.Text = "Temizle";
+            this.btnHastaTemizle.UseVisualStyleBackColor = true;
+            this.btnHastaTemizle.Click += new System.EventHandler(this.btnHastaTemizle_Click);
+            // 
             // FormHasta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Peru;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnHastaTemizle);
             this.Controls.Add(this.HastaAramaResim);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -285,6 +297,7 @@
             this.Name = "FormHasta";
             this.Text = "FormHasta";
             this.Load += new System.EventHandler(this.FormHasta_Load);
+            this.Click += new System.EventHandler(this.FormHasta_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pbHasta)).EndInit();
             this.cmsHastaListe.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -322,5 +335,6 @@
         private System.Windows.Forms.PictureBox HastaAramaResim;
         private System.Windows.Forms.OpenFileDialog dosyaAc;
         private System.Windows.Forms.SaveFileDialog dosyaKaydet;
+        private System.Windows.Forms.Button btnHastaTemizle;
     }
 }
