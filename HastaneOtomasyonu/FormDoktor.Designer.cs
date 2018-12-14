@@ -61,6 +61,7 @@
             this.DoktorAramaResim = new System.Windows.Forms.PictureBox();
             this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
             this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
+            this.btnFotograf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoktor)).BeginInit();
             this.cmsListe.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -69,12 +70,13 @@
             // 
             // pbDoktor
             // 
-            this.pbDoktor.Location = new System.Drawing.Point(283, 59);
+            this.pbDoktor.Location = new System.Drawing.Point(603, 52);
             this.pbDoktor.Name = "pbDoktor";
             this.pbDoktor.Size = new System.Drawing.Size(139, 124);
             this.pbDoktor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDoktor.TabIndex = 34;
             this.pbDoktor.TabStop = false;
+
             // 
             // btnDoktorGuncelle
             // 
@@ -88,7 +90,7 @@
             // 
             // txtDoktorAra
             // 
-            this.txtDoktorAra.Location = new System.Drawing.Point(456, 59);
+            this.txtDoktorAra.Location = new System.Drawing.Point(382, 55);
             this.txtDoktorAra.Name = "txtDoktorAra";
             this.txtDoktorAra.Size = new System.Drawing.Size(170, 20);
             this.txtDoktorAra.TabIndex = 32;
@@ -98,7 +100,7 @@
             // 
             this.lstDoktorlar.ContextMenuStrip = this.cmsListe;
             this.lstDoktorlar.FormattingEnabled = true;
-            this.lstDoktorlar.Location = new System.Drawing.Point(430, 81);
+            this.lstDoktorlar.Location = new System.Drawing.Point(356, 81);
             this.lstDoktorlar.Name = "lstDoktorlar";
             this.lstDoktorlar.Size = new System.Drawing.Size(196, 186);
             this.lstDoktorlar.TabIndex = 31;
@@ -188,7 +190,7 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
@@ -304,7 +306,7 @@
             // DoktorAramaResim
             // 
             this.DoktorAramaResim.Image = ((System.Drawing.Image)(resources.GetObject("DoktorAramaResim.Image")));
-            this.DoktorAramaResim.Location = new System.Drawing.Point(430, 59);
+            this.DoktorAramaResim.Location = new System.Drawing.Point(356, 55);
             this.DoktorAramaResim.Name = "DoktorAramaResim";
             this.DoktorAramaResim.Size = new System.Drawing.Size(22, 20);
             this.DoktorAramaResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -315,12 +317,23 @@
             // 
             this.dosyaAc.FileName = "openFileDialog1";
             // 
+            // btnFotograf
+            // 
+            this.btnFotograf.Location = new System.Drawing.Point(624, 184);
+            this.btnFotograf.Name = "btnFotograf";
+            this.btnFotograf.Size = new System.Drawing.Size(90, 23);
+            this.btnFotograf.TabIndex = 53;
+            this.btnFotograf.Text = "Fotoğraf Ekle";
+            this.btnFotograf.UseVisualStyleBackColor = true;
+            this.btnFotograf.Click += new System.EventHandler(this.btnFotograf_Click);
+            // 
             // FormDoktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(785, 461);
+            this.Controls.Add(this.btnFotograf);
             this.Controls.Add(this.DoktorAramaResim);
             this.Controls.Add(this.lblDoktorHemsire);
             this.Controls.Add(this.cmbDoktorHemsire);
@@ -392,5 +405,6 @@
         private System.Windows.Forms.PictureBox DoktorAramaResim;
         private System.Windows.Forms.SaveFileDialog dosyaKaydet;
         private System.Windows.Forms.OpenFileDialog dosyaAc;
+        private System.Windows.Forms.Button btnFotograf;
     }
 }

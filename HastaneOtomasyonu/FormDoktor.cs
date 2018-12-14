@@ -3,6 +3,7 @@ using HastaneOtomasyonu.ClassLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,9 +34,16 @@ namespace HastaneOtomasyonu
             doktor.Maas = txtDoktorMaas.Text;
             doktor.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
 
+            if (memoryStream.Length > 0)
+            {
+                doktor.Fotograf = memoryStream.ToArray();
+            }
+
+            memoryStream = new MemoryStream();
+
             DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
 
-            MessageBox.Show($"{doktor.HemsireSec}");
+           
 
 
 
@@ -126,6 +134,12 @@ namespace HastaneOtomasyonu
             txtDoktorMaas.Text = secilikisi.Maas;
             cmbDoktorBrans.Text = secilikisi.DoktorBrans.ToString();
             cmbDoktorHemsire.Text= secilikisi.HemsireSec.ToString();
+            if (secilikisi.Fotograf != null && secilikisi.Fotograf.Length > 0)
+            {
+                pbDoktor.Image = new Bitmap(new MemoryStream(secilikisi.Fotograf));
+            }
+
+
             //foreach (Hemsire item in BransliHemsireler)
             //{
             //    if (item.HemsireBrans == secilikisi.DoktorBrans)
@@ -133,7 +147,7 @@ namespace HastaneOtomasyonu
             //        cmbDoktorHemsire.Items.Add(item);
             //    }
             //}
-            
+
 
             btnDoktorKaydet.Enabled = false;
         }
@@ -288,6 +302,41 @@ namespace HastaneOtomasyonu
             FormuTemizle();
             lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
             btnDoktorKaydet.Enabled = true;
+        }
+
+        MemoryStream memoryStream = new MemoryStream();
+        int bufferSize = 64;
+        byte[] resimArray = new byte[64];
+
+
+        private void btnFotograf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dosyaAc.Title = "Bir fotoğraf dosyasını seçiniz";
+                dosyaAc.Filter = "JPG | *.jpg";
+                dosyaAc.Multiselect = false;
+                dosyaAc.FileName = string.Empty;
+                dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                if (dosyaAc.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream dosya = File.Open(dosyaAc.FileName, FileMode.Open);
+                    while (dosya.Read(resimArray, 0, bufferSize) != 0)
+                    {
+                        memoryStream.Write(resimArray, 0, resimArray.Length);
+                    }
+                    dosya.Close();
+                    dosya.Dispose();
+                    pbDoktor.Image = new Bitmap(memoryStream);
+                }
+
+                MessageBox.Show($"Fotoğraf kaydedildi.");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

@@ -67,7 +67,7 @@
             // 
             // pbHemsire
             // 
-            this.pbHemsire.Location = new System.Drawing.Point(199, 40);
+            this.pbHemsire.Location = new System.Drawing.Point(619, 43);
             this.pbHemsire.Name = "pbHemsire";
             this.pbHemsire.Size = new System.Drawing.Size(139, 124);
             this.pbHemsire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

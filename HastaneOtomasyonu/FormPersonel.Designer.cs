@@ -161,7 +161,7 @@
             // 
             // pbPersonel
             // 
-            this.pbPersonel.Location = new System.Drawing.Point(203, 33);
+            this.pbPersonel.Location = new System.Drawing.Point(619, 50);
             this.pbPersonel.Name = "pbPersonel";
             this.pbPersonel.Size = new System.Drawing.Size(139, 124);
             this.pbPersonel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,7 +265,7 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
