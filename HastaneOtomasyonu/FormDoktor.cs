@@ -254,34 +254,8 @@ namespace HastaneOtomasyonu
 
                 DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbDoktorBrans.SelectedItem.ToString());
 
-                switch (doktorBrans)
-                {
-
-                    case DoktorBranslari.GenelCerrahi:
-                        seciliKisi.DoktorBrans = DoktorBranslari.GenelCerrahi;
-                        break;
-                    case DoktorBranslari.Ortopedi:
-                        seciliKisi.DoktorBrans = DoktorBranslari.Ortopedi;
-                        break;
-                    case DoktorBranslari.Uroloji:
-                        seciliKisi.DoktorBrans = DoktorBranslari.Uroloji;
-                        break;
-                    case DoktorBranslari.KBB:
-                        seciliKisi.DoktorBrans = DoktorBranslari.KBB;
-                        break;
-                    case DoktorBranslari.CocukSagligi:
-                        seciliKisi.DoktorBrans = DoktorBranslari.CocukSagligi;
-                        break;
-                    case DoktorBranslari.Kardiyoloji:
-                        seciliKisi.DoktorBrans = DoktorBranslari.Kardiyoloji;
-                        break;
-                    case DoktorBranslari.GozHastaliklari:
-                        seciliKisi.DoktorBrans = DoktorBranslari.GozHastaliklari;
-                        break;
-                    default:
-                        break;
-                }
-
+                seciliKisi.DoktorBrans = doktorBrans;
+                
 
             }
             catch (Exception ex)
