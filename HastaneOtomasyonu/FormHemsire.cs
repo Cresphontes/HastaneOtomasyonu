@@ -174,7 +174,7 @@ namespace HastaneOtomasyonu
 
             Hemsire seciliKisi = (Hemsire)lstHemsireKisiler.SelectedItem;// referans tip değişkenler !
 
-            //static metod yap orda ara varsa varde yoksa yokdersin.
+            
             try
             {
                 seciliKisi.Ad = txtHemsireAd.Text;
