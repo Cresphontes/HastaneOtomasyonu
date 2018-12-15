@@ -12,6 +12,11 @@ namespace HastaneOtomasyonu.ClassLib
         public Hasta RandevuHasta { get; set; }
         public DoktorBranslari RandevuBrans { get; set; }
         public string RandevuSaat { get; set; }
-        
+
+        public override string ToString()
+        {
+            return $"{this.RandevuHasta}  {this.RandevuBrans}  {this.RandevuDoktor}  {this.RandevuSaat}";
+        }
+
     }
 }

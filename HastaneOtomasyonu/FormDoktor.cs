@@ -19,6 +19,7 @@ namespace HastaneOtomasyonu
 
         List<Kisi> aramalar = new List<Kisi>();
         List<Hemsire> BransliHemsireler = new List<Hemsire>();
+        Hemsire tut = new Hemsire();
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
@@ -90,7 +91,6 @@ namespace HastaneOtomasyonu
                 }
             }
         }
-        Hemsire tut = new Hemsire();
         private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
 

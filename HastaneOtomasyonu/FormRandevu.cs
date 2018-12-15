@@ -20,13 +20,16 @@ namespace HastaneOtomasyonu
 
         }
 
-       
+
         Randevular Randevu = new Randevular();
         MyButton button;
+        MyButton butonTut;
+        string saatTut;
+        bool basildiMi = false;
         public class MyButton : Button
         {
             protected override Size DefaultSize => Size = new Size(65, 60);
-            public override Color BackColor { get => Color.Peru; }
+            public override Color BackColor { get; set; } // => Color.Peru
 
         }
         private void FormRandevu_Load(object sender, EventArgs e)
@@ -54,6 +57,7 @@ namespace HastaneOtomasyonu
                 {
 
                     button = new MyButton();
+                    button.BackColor = Color.Peru;
                     button.Text = saat.ToString("00") + ":" + dakika.ToString("00");
                     flwRandevu.Controls.Add(button);
                     button.Click += Button_Click;
@@ -65,14 +69,40 @@ namespace HastaneOtomasyonu
 
         private void Button_Click(object sender, EventArgs e)
         {
-            Randevu.RandevuSaat = (sender as MyButton).Text;
+            butonTut = (sender as MyButton);
+            basildiMi = !basildiMi;
+            if (basildiMi)
+            {
+                saatTut = (sender as MyButton).Text;
+                (sender as MyButton).BackColor = Color.LightGray;
+
+                for (int i = 0; i < flwRandevu.Controls.Count; i++)
+                {
+                    if (!(((Button)flwRandevu.Controls[i]).Text == (sender as MyButton).Text))
+                    {
+                        ((Button)flwRandevu.Controls[i]).Enabled = false;
+                    }
+                }
+                
+            }
+            if (!basildiMi)
+            {
+                (sender as MyButton).BackColor = Color.Peru;
+                saatTut = string.Empty;
+                for (int i = 0; i < flwRandevu.Controls.Count; i++)
+                {
+                    ((Button)flwRandevu.Controls[i]).Enabled = true;
+                }
+            }
+
+
         }
 
         private void cmbHastaSec_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbHastaSec.SelectedItem == null) return;
             cmbServisSec.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
-            Randevu.RandevuHasta = cmbHastaSec.SelectedItem as Hasta; 
+            cmbServisSec.Text = string.Empty;
             lblServisSec.Visible = true;
             cmbServisSec.Visible = true;
         }
@@ -80,13 +110,22 @@ namespace HastaneOtomasyonu
         private void cmbServisSec_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbServisSec.SelectedItem == null) return;
-            //Kayıtlı doktorlar Alındı.
-            cmbDoktorSec.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
-            //enum doktor bransları eklendi
-            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbServisSec.SelectedItem.ToString());
-            //secilen doktor bransını randevu hastaya kaydetti
-            Randevu.RandevuBrans = doktorBrans;
-         
+            cmbDoktorSec.Items.Clear();
+            cmbDoktorSec.Text = string.Empty;
+
+            foreach (Doktor item in (this.MdiParent as FormGiris).doktorlar)
+            {
+                if (item == null)
+                {
+                    break;
+                }
+                if (item.DoktorBrans.ToString() == cmbServisSec.Text)
+                {
+                    cmbDoktorSec.Items.Add(item);
+                }
+            }
+
+
             lblDoktorSec.Visible = true;
             cmbDoktorSec.Visible = true;
         }
@@ -94,10 +133,30 @@ namespace HastaneOtomasyonu
         private void cmbDoktorSec_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDoktorSec.SelectedItem == null) return;
-            //secilen doktoru randevulu doktor'a kaydetti.
-            Randevu.RandevuDoktor = cmbDoktorSec.SelectedItem as Doktor;
+
             flwRandevu.Visible = true;
             btnRandevuKaydet.Visible = true;
+        }
+
+        private void btnRandevuKaydet_Click(object sender, EventArgs e)
+        {
+            if (basildiMi == false) return;
+
+            //hasta eklendi
+            Randevu.RandevuHasta = cmbHastaSec.SelectedItem as Hasta;
+            //enum doktor bransları eklendi
+            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbServisSec.SelectedItem.ToString());
+            //secilen doktor bransını randevu hastaya kaydetti
+            Randevu.RandevuBrans = doktorBrans;
+            //secilen doktoru randevulu doktor'a kaydetti.
+            Randevu.RandevuDoktor = cmbDoktorSec.SelectedItem as Doktor;
+            //secilen saat randevuya eklendi
+            Randevu.RandevuSaat = saatTut;
+
+            lstKayitliHastalar.Items.Add(Randevu);
+
+            butonTut.Enabled = false;
+            
         }
     }
 }

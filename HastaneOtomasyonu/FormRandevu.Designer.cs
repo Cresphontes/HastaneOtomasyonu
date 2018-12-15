@@ -36,6 +36,7 @@
             this.cmbServisSec = new System.Windows.Forms.ComboBox();
             this.cmbDoktorSec = new System.Windows.Forms.ComboBox();
             this.cmbHastaSec = new System.Windows.Forms.ComboBox();
+            this.lstKayitliHastalar = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // flwRandevu
@@ -69,6 +70,7 @@
             this.btnRandevuKaydet.TabIndex = 5;
             this.btnRandevuKaydet.Text = "Randevu Kaydet";
             this.btnRandevuKaydet.UseVisualStyleBackColor = false;
+            this.btnRandevuKaydet.Click += new System.EventHandler(this.btnRandevuKaydet_Click);
             // 
             // lblServisSec
             // 
@@ -119,12 +121,21 @@
             this.cmbHastaSec.TabIndex = 10;
             this.cmbHastaSec.SelectedIndexChanged += new System.EventHandler(this.cmbHastaSec_SelectedIndexChanged);
             // 
+            // lstKayitliHastalar
+            // 
+            this.lstKayitliHastalar.FormattingEnabled = true;
+            this.lstKayitliHastalar.Location = new System.Drawing.Point(10, 126);
+            this.lstKayitliHastalar.Name = "lstKayitliHastalar";
+            this.lstKayitliHastalar.Size = new System.Drawing.Size(318, 264);
+            this.lstKayitliHastalar.TabIndex = 11;
+            // 
             // FormRandevu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(914, 521);
+            this.Controls.Add(this.lstKayitliHastalar);
             this.Controls.Add(this.cmbHastaSec);
             this.Controls.Add(this.cmbDoktorSec);
             this.Controls.Add(this.cmbServisSec);
@@ -152,5 +163,6 @@
         private System.Windows.Forms.ComboBox cmbServisSec;
         private System.Windows.Forms.ComboBox cmbDoktorSec;
         private System.Windows.Forms.ComboBox cmbHastaSec;
+        private System.Windows.Forms.ListBox lstKayitliHastalar;
     }
 }
