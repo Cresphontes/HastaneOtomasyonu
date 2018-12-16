@@ -53,15 +53,8 @@ namespace HastaneOtomasyonu
         {
             foreach (Control control in this.Controls)
             {
-               
-                if (control is FlowLayoutPanel flw)
-                {
-                   flw.Controls.Remove(control);
-                    control.Dispose();
-                    
-                }
-                
-                else if (control is ComboBox cb)
+      
+                if (control is ComboBox cb)
                 {
                     cb.Text = string.Empty; ;
                 }
@@ -131,14 +124,15 @@ namespace HastaneOtomasyonu
             lblDoktorSec.Visible = true;
             cmbDoktorSec.Visible = true;
         }
-
+       
         private void cmbDoktorSec_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDoktorSec.SelectedItem == null) return;
 
             //Butonların üstlerine saatleri yazıyoruz.Ve butonları olusturuyoruz.
             //formunloadından buraya taşındı . 2.kez seçim yapıldıgında gelmiyordu butonlar.
-
+            //doktorun randevu saati dolumu bosmu bos ise null atıyorum degilse kontrol ediyoruz.
+            flwRandevu.Controls.Clear();
             for (int saat = 9; saat <= 16; saat++)
             {
 
@@ -152,15 +146,28 @@ namespace HastaneOtomasyonu
                     button = new MyButton();
                     button.BackColor = Color.Peru;
                     button.Text = saat.ToString("00") + ":" + dakika.ToString("00");
+
+                    foreach (Randevular item in (this.MdiParent as FormGiris).RandevuBilgileri)
+                    {
+
+                        if (item.RandevuSaat.ToString() == button.Text)
+                        {
+                            button.Enabled = false;
+                            button.BackColor = Color.Green;
+                           
+                            continue;
+                        }
+                    }
                     flwRandevu.Controls.Add(button);
                     button.Click += Button_Click;
                    
                 }
 
             }
-
             flwRandevu.Visible = true;
             btnRandevuKaydet.Visible = true;
+
+
         }
 
      
@@ -192,10 +199,12 @@ namespace HastaneOtomasyonu
             MessageBox.Show("Tebrikler Kaydınız Oluşturuldu.\nSaglıklı Günler Dileriz.");
             FormuTemizle();
             btnRandevuKaydet.Visible = false;
+            flwRandevu.Visible = false;
             lblServisSec.Visible = false;
             cmbServisSec.Visible = false;
             lblDoktorSec.Visible = false;
             cmbDoktorSec.Visible = false;
+           
 
         }
 
