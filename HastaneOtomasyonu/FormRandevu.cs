@@ -256,6 +256,7 @@ namespace HastaneOtomasyonu
             basildiMi = false;
             saatTut = string.Empty;
 
+
         }
 
         private void içeriAktarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -304,6 +305,16 @@ namespace HastaneOtomasyonu
                 writer.Dispose();
             }
             lstKayitliHastalar.Items.Clear();
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstKayitliHastalar.SelectedItem == null) return;
+            Randevular seciliKisi = (Randevular)lstKayitliHastalar.SelectedItem;
+            (this.MdiParent as FormGiris).RandevuBilgileri.Remove(seciliKisi);
+            FormuTemizle();
+            lstKayitliHastalar.Items.Clear();
+            lstKayitliHastalar.Items.AddRange((this.MdiParent as FormGiris).RandevuBilgileri.ToArray());
         }
     }
 }
