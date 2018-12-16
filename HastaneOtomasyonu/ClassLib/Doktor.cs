@@ -36,5 +36,8 @@ namespace HastaneOtomasyonu.ClassLib
         {
             return $"{this.Ad} {this.Soyad}";
         }
+
+      
+        //public RandevuSaati[] SaatListesi { get; set; }
     }
 }
