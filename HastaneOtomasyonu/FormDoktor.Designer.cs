@@ -261,7 +261,6 @@
             this.cmbDoktorBrans.Name = "cmbDoktorBrans";
             this.cmbDoktorBrans.Size = new System.Drawing.Size(199, 21);
             this.cmbDoktorBrans.TabIndex = 49;
-            this.cmbDoktorBrans.SelectedIndexChanged += new System.EventHandler(this.cmbDoktorBrans_SelectedIndexChanged);
             // 
             // lblDoktorMaas
             // 
@@ -296,6 +295,7 @@
             this.cmbDoktorHemsire.Name = "cmbDoktorHemsire";
             this.cmbDoktorHemsire.Size = new System.Drawing.Size(199, 21);
             this.cmbDoktorHemsire.TabIndex = 50;
+            this.cmbDoktorHemsire.DropDown += new System.EventHandler(this.cmbDoktorHemsire_DropDown);
             // 
             // lblDoktorHemsire
             // 
