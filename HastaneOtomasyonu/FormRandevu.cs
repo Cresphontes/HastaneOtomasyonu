@@ -172,9 +172,7 @@ namespace HastaneOtomasyonu
         }
 
         bool KayiıtVarmi = true;
-
-   
-       
+     
         private void btnRandevuKaydet_Click(object sender, EventArgs e)
         {
 
@@ -189,7 +187,7 @@ namespace HastaneOtomasyonu
             foreach (Randevular item in (this.MdiParent as FormGiris).RandevuBilgileri)
             {
 
-                if (item.RandevuBrans.ToString() == cmbServisSec.SelectedItem.ToString() && item.RandevuHasta.Ad+" "+item.RandevuHasta.Soyad==cmbHastaSec.SelectedItem.ToString()&&item.RandevuHasta.RandevuSaati==button.Text)
+                if (item.RandevuBrans.ToString() == cmbServisSec.SelectedItem.ToString() && item.RandevuHasta.Ad+" "+item.RandevuHasta.Soyad==cmbHastaSec.SelectedItem.ToString())
                 {
                     KayiıtVarmi = false;
            DialogResult secenek =    MessageBox.Show("Bu Serviste Kaydınız Vardır.\nGüncellemek istermisiniz","Kayıt Hatası",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
@@ -239,6 +237,7 @@ namespace HastaneOtomasyonu
                 lstKayitliHastalar.Items.Add(Randevu);
                
             }
+
             (this.MdiParent as FormGiris).RandevuBilgileri.Add(Randevu);
             butonTut.Enabled = false;          
             FormuTemizle();
