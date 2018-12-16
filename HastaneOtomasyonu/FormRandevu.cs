@@ -170,33 +170,76 @@ namespace HastaneOtomasyonu
 
         }
 
-     
+        bool KayiıtVarmi = true;
 
+   
+       
         private void btnRandevuKaydet_Click(object sender, EventArgs e)
         {
+
+            KayiıtVarmi = true;
+            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbServisSec.SelectedItem.ToString());
+
             if (basildiMi == false) {
                 MessageBox.Show("Lütfen Uygun Bir Randevu Saati Seçiniz.");
                 return;
+            }      
+
+            foreach (Randevular item in (this.MdiParent as FormGiris).RandevuBilgileri)
+            {
+
+                if (item.RandevuBrans.ToString() == cmbServisSec.SelectedItem.ToString() && item.RandevuHasta.Ad+" "+item.RandevuHasta.Soyad==cmbHastaSec.SelectedItem.ToString()&&item.RandevuHasta.RandevuSaati==button.Text)
+                {
+                    KayiıtVarmi = false;
+           DialogResult secenek =    MessageBox.Show("Bu Serviste Kaydınız Vardır.\nGüncellemek istermisiniz","Kayıt Hatası",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+                    if (secenek==DialogResult.No)
+                    {
+                      
+                        MessageBox.Show("Saglıklı Günler Dileriz");                    
+                        break;
+                    }
+                    else if (secenek == DialogResult.Yes)
+                    {
+
+                        (this.MdiParent as FormGiris).RandevuBilgileri.Remove(item);
+                        Randevu.RandevuHasta = cmbHastaSec.SelectedItem as Hasta;            
+                        Randevu.RandevuBrans = doktorBrans;
+                        Randevu.RandevuDoktor = cmbDoktorSec.SelectedItem as Doktor;
+                        Randevu.RandevuSaat = saatTut;
+                        lstKayitliHastalar.Items.Add(Randevu);
+
+                        MessageBox.Show("Tebrikler Güncellemeniz Yapıldı.\nSaglıklı Günler Dileriz.");
+                        break;
+                    }
+                    
+                 
+                }
+                else 
+                {
+                    KayiıtVarmi = false;
+                    Randevu.RandevuHasta = cmbHastaSec.SelectedItem as Hasta;                 
+                    Randevu.RandevuBrans = doktorBrans;
+                    Randevu.RandevuDoktor = cmbDoktorSec.SelectedItem as Doktor;      
+                    Randevu.RandevuSaat = saatTut;                
+                    lstKayitliHastalar.Items.Add(Randevu);
+
+                    MessageBox.Show("Tebrikler Kaydınız Oluşturuldu.\nSaglıklı Günler Dileriz.");
+
+                    break;
+                }
+               
             }
-           
-
-            //hasta eklendi
-            Randevu.RandevuHasta = cmbHastaSec.SelectedItem as Hasta;
-            //enum doktor bransları eklendi
-            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbServisSec.SelectedItem.ToString());
-            //secilen doktor bransını randevu hastaya kaydetti
-            Randevu.RandevuBrans = doktorBrans;
-            //secilen doktoru randevulu doktor'a kaydetti.
-            Randevu.RandevuDoktor = cmbDoktorSec.SelectedItem as Doktor;
-            //secilen saat randevuya eklendi
-            Randevu.RandevuSaat = saatTut;
-            //Kayıtlı kişi eklendi.
-            lstKayitliHastalar.Items.Add(Randevu);
-            //Kayıtlı hasta Ana listeye aktarıldı.
+            if (KayiıtVarmi)
+            {
+                Randevu.RandevuHasta = cmbHastaSec.SelectedItem as Hasta;
+                Randevu.RandevuDoktor = cmbDoktorSec.SelectedItem as Doktor;
+                Randevu.RandevuBrans = doktorBrans;
+                Randevu.RandevuSaat = saatTut;
+                lstKayitliHastalar.Items.Add(Randevu);
+               
+            }
             (this.MdiParent as FormGiris).RandevuBilgileri.Add(Randevu);
-
-            butonTut.Enabled = false;
-            MessageBox.Show("Tebrikler Kaydınız Oluşturuldu.\nSaglıklı Günler Dileriz.");
+            butonTut.Enabled = false;          
             FormuTemizle();
             btnRandevuKaydet.Visible = false;
             flwRandevu.Visible = false;
