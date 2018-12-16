@@ -20,6 +20,8 @@ namespace HastaneOtomasyonu
         List<Kisi> aramalar = new List<Kisi>();
         List<Hemsire> BransliHemsireler = new List<Hemsire>();
         Hemsire tut = new Hemsire();
+        bool silKontrol = false;
+  
 
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
@@ -91,6 +93,7 @@ namespace HastaneOtomasyonu
                 }
             }
         }
+
         private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -137,7 +140,6 @@ namespace HastaneOtomasyonu
             BransliHemsireler.AddRange((this.MdiParent as FormGiris).hemsireler.ToArray());
 
         }
-
 
         private void içeriAktarToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
@@ -186,15 +188,17 @@ namespace HastaneOtomasyonu
 
         }
 
-
-
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             if (lstDoktorlar.SelectedItem == null) return;
+
+            
             Doktor seciliKisi = (Doktor)lstDoktorlar.SelectedItem;
             (this.MdiParent as FormGiris).doktorlar.Remove(seciliKisi);
             FormuTemizle();
-            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).hastalar.ToArray());
+            lstDoktorlar.Items.AddRange((this.MdiParent as FormGiris).doktorlar.ToArray());
+            silKontrol = true;
         }
 
         private void txtDoktorAra_KeyUp(object sender, KeyEventArgs e)
@@ -206,7 +210,6 @@ namespace HastaneOtomasyonu
             FormuTemizle();
             lstDoktorlar.Items.AddRange(aramalar.ToArray());
         }
-
 
         private void btnDoktorGuncelle_Click_1(object sender, EventArgs e)
         {
@@ -277,6 +280,7 @@ namespace HastaneOtomasyonu
                 dosyaAc.Multiselect = false;
                 dosyaAc.FileName = string.Empty;
                 dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
                 if (dosyaAc.ShowDialog() == DialogResult.OK)
                 {
                     FileStream dosya = File.Open(dosyaAc.FileName, FileMode.Open);
@@ -362,7 +366,7 @@ namespace HastaneOtomasyonu
                 }
 
 
-                if (cmbDoktorHemsire.Items.Count > 0)
+                if (cmbDoktorHemsire.Items.Count > 0 && silKontrol == false)
                 {
                     foreach (var item3 in cmbDoktorHemsire.Items)
                     {
@@ -392,6 +396,8 @@ namespace HastaneOtomasyonu
                 MessageBox.Show("Şuanda seçilecek boşta bir hemşire yoktur.");
 
             }
+
+            silKontrol = false;
         }
     }
 }
