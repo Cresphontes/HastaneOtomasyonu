@@ -96,6 +96,7 @@ namespace HastaneOtomasyonu
         private void cmbHastaSec_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbHastaSec.SelectedItem == null) return;
+            cmbServisSec.Items.Clear();
             cmbServisSec.Items.AddRange(Enum.GetNames(typeof(DoktorBranslari)));
             cmbServisSec.Text = string.Empty;
             lblServisSec.Visible = true;
