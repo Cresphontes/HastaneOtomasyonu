@@ -32,7 +32,7 @@ namespace HastaneOtomasyonu
         public class MyButton : Button
         {
             protected override Size DefaultSize => Size = new Size(65, 60);
-            public override Color BackColor { get; set; } // => Color.Peru
+            public override Color BackColor { get; set; } // => Color.Peru           
 
         }
         private void FormRandevu_Load(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace HastaneOtomasyonu
             if (basildiMi)
             {
                 saatTut = (sender as MyButton).Text;
-                (sender as MyButton).BackColor = Color.LightGray;
+                (sender as MyButton).BackColor = Color.Green;
 
                 for (int i = 0; i < flwRandevu.Controls.Count; i++)
                 {
@@ -154,6 +154,7 @@ namespace HastaneOtomasyonu
                     button.Text = saat.ToString("00") + ":" + dakika.ToString("00");
                     flwRandevu.Controls.Add(button);
                     button.Click += Button_Click;
+                   
                 }
 
             }
@@ -162,9 +163,15 @@ namespace HastaneOtomasyonu
             btnRandevuKaydet.Visible = true;
         }
 
+     
+
         private void btnRandevuKaydet_Click(object sender, EventArgs e)
         {
-            if (basildiMi == false) return;
+            if (basildiMi == false) {
+                MessageBox.Show("Lütfen Uygun Bir Randevu Saati Seçiniz.");
+                return;
+            }
+           
 
             //hasta eklendi
             Randevu.RandevuHasta = cmbHastaSec.SelectedItem as Hasta;
@@ -184,7 +191,11 @@ namespace HastaneOtomasyonu
             butonTut.Enabled = false;
             MessageBox.Show("Tebrikler Kaydınız Oluşturuldu.\nSaglıklı Günler Dileriz.");
             FormuTemizle();
-            btnRandevuKaydet.Visible = false; 
+            btnRandevuKaydet.Visible = false;
+            lblServisSec.Visible = false;
+            cmbServisSec.Visible = false;
+            lblDoktorSec.Visible = false;
+            cmbDoktorSec.Visible = false;
 
         }
 
