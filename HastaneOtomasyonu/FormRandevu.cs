@@ -171,9 +171,7 @@ namespace HastaneOtomasyonu
         }
 
         bool KayiıtVarmi = true;
-
-   
-       
+     
         private void btnRandevuKaydet_Click(object sender, EventArgs e)
         {
 
