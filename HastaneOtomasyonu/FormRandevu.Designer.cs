@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flwRandevu = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRandevuKaydet = new System.Windows.Forms.Button();
@@ -44,7 +45,10 @@
             this.jSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.içeriAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsHastaListe = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.cmsHastaListe.SuspendLayout();
             this.SuspendLayout();
             // 
             // flwRandevu
@@ -131,6 +135,7 @@
             // 
             // lstKayitliHastalar
             // 
+            this.lstKayitliHastalar.ContextMenuStrip = this.cmsHastaListe;
             this.lstKayitliHastalar.FormattingEnabled = true;
             this.lstKayitliHastalar.Location = new System.Drawing.Point(10, 126);
             this.lstKayitliHastalar.Name = "lstKayitliHastalar";
@@ -165,22 +170,37 @@
             this.içeriAktarToolStripMenuItem1,
             this.dışarıAktarToolStripMenuItem1});
             this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
-            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.jSONToolStripMenuItem.Text = "&JSON";
             // 
             // içeriAktarToolStripMenuItem1
             // 
             this.içeriAktarToolStripMenuItem1.Name = "içeriAktarToolStripMenuItem1";
-            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.içeriAktarToolStripMenuItem1.Text = "&İçeri Aktar";
             this.içeriAktarToolStripMenuItem1.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem1_Click);
             // 
             // dışarıAktarToolStripMenuItem1
             // 
             this.dışarıAktarToolStripMenuItem1.Name = "dışarıAktarToolStripMenuItem1";
-            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.dışarıAktarToolStripMenuItem1.Text = "&Dışarı Aktar";
             this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click);
+            // 
+            // cmsHastaListe
+            // 
+            this.cmsHastaListe.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.cmsHastaListe.Name = "cmsListe";
+            this.cmsHastaListe.Size = new System.Drawing.Size(129, 26);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // FormRandevu
             // 
@@ -203,6 +223,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.cmsHastaListe.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +248,7 @@
         private System.Windows.Forms.ToolStripMenuItem jSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip cmsHastaListe;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
     }
 }
