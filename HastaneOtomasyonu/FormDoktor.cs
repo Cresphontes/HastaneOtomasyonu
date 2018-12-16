@@ -24,7 +24,7 @@ namespace HastaneOtomasyonu
         private void btnDoktorKaydet_Click(object sender, EventArgs e)
         {
             Doktor doktor = new Doktor();
-            
+
             doktor.Ad = txtDoktorAd.Text;
             doktor.Soyad = txtDoktorSoyad.Text;
             doktor.Email = txtDoktorEmail.Text;
@@ -47,10 +47,10 @@ namespace HastaneOtomasyonu
 
             memoryStream = new MemoryStream();
 
-            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari),cmbDoktorBrans.SelectedItem.ToString());
+            DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbDoktorBrans.SelectedItem.ToString());
             //brans doktora eklendi.
             doktor.DoktorBrans = doktorBrans;
-         
+
 
 
             (this.MdiParent as FormGiris).doktorlar.Add(doktor);
@@ -86,7 +86,7 @@ namespace HastaneOtomasyonu
                 }
                 else if (control is ComboBox cb)
                 {
-                    
+
                     cb.Text = string.Empty; ;
                 }
             }
@@ -108,7 +108,7 @@ namespace HastaneOtomasyonu
             txtDoktorTCKN.Text = secilikisi.TCKN;
             txtDoktorMaas.Text = secilikisi.Maas;
             cmbDoktorBrans.Text = secilikisi.DoktorBrans.ToString();
-            cmbDoktorHemsire.Text= secilikisi.HemsireSec.ToString();
+            cmbDoktorHemsire.Text = secilikisi.HemsireSec.ToString();
             if (secilikisi.Fotograf != null && secilikisi.Fotograf.Length > 0)
             {
                 pbDoktor.Image = new Bitmap(new MemoryStream(secilikisi.Fotograf));
@@ -186,25 +186,7 @@ namespace HastaneOtomasyonu
 
         }
 
-        private void cmbDoktorBrans_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbDoktorHemsire.Items.Clear();
-            cmbDoktorHemsire.Text = string.Empty;
-            
-            foreach (Hemsire item in BransliHemsireler)
-            {
-                if (item == null)
-                {
-                    break;
-                }
-                if (item.HemsireBrans.ToString() == cmbDoktorBrans.Text)
-                {
-                    cmbDoktorHemsire.Items.Add(item);
-                }
-              
-            }
-            
-        }
+
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -255,7 +237,7 @@ namespace HastaneOtomasyonu
                 DoktorBranslari doktorBrans = (DoktorBranslari)Enum.Parse(typeof(DoktorBranslari), cmbDoktorBrans.SelectedItem.ToString());
 
                 seciliKisi.DoktorBrans = doktorBrans;
-                
+
 
             }
             catch (Exception ex)
@@ -332,6 +314,84 @@ namespace HastaneOtomasyonu
         {
             //SAdece RAkam girişi
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void cmbDoktorHemsire_DropDown(object sender, EventArgs e)
+        {
+            if ((this.MdiParent as FormGiris).doktorlar.Count == 0)
+            {
+                foreach (var item4 in lstDoktorlar.Items)
+                {
+                    (this.MdiParent as FormGiris).doktorlar.Add(item4 as Doktor);
+                }
+            }
+
+
+            cmbDoktorHemsire.Items.Clear();
+            cmbDoktorHemsire.Text = string.Empty;
+
+            foreach (Hemsire item in BransliHemsireler)
+            {
+                if (item == null)
+                {
+                    break;
+                }
+
+                cmbDoktorHemsire.Items.Add(item);
+
+            }
+
+            if (lstDoktorlar.Items.Count != 0)
+            {
+
+                foreach (var item1 in (this.MdiParent as FormGiris).doktorlar)
+                {
+
+
+                    foreach (var item2 in cmbDoktorHemsire.Items)
+                    {
+
+
+                        if (cmbDoktorBrans.SelectedItem.ToString() != (item2 as Hemsire).HemsireBrans.ToString() || item1.HemsireSec.TCKN == (item2 as Hemsire).TCKN || item1.HemsireSec.HemsireBrans.ToString() != (item2 as Hemsire).HemsireBrans.ToString())
+                        {
+                            cmbDoktorHemsire.Items.Remove(item2);
+                            break;
+                        }
+
+                    }
+                }
+
+
+                if (cmbDoktorHemsire.Items.Count > 0)
+                {
+                    foreach (var item3 in cmbDoktorHemsire.Items)
+                    {
+                        if (cmbDoktorBrans.SelectedItem.ToString() != (item3 as Hemsire).HemsireBrans.ToString())
+                        {
+                            cmbDoktorHemsire.Items.Remove(item3);
+                            break;
+                        }
+                    }
+                }
+
+
+            }
+            else
+            {
+                foreach (Hemsire item in BransliHemsireler)
+                {
+                    if (cmbDoktorBrans.SelectedItem.ToString() != (item as Hemsire).HemsireBrans.ToString())
+                    {
+                        cmbDoktorHemsire.Items.Remove(item);
+                    }
+                }
+            }
+
+            if (cmbDoktorHemsire.Items.Count == 0)
+            {
+                MessageBox.Show("Şuanda seçilecek boşta bir hemşire yoktur.");
+
+            }
         }
     }
 }

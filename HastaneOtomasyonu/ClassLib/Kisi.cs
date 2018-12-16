@@ -72,7 +72,7 @@ namespace HastaneOtomasyonu.Class_Lib
                     throw new Exception("Telefon numarası yalnızca rakamlardan oluşmalıdır.");
                 }
 
-                if( value.Length > 11)
+                if( value.Length > 11 || value.Length < 11)
                 {
                     throw new Exception("Telefon numarası 11 haneli olmalıdır.");
                 }
