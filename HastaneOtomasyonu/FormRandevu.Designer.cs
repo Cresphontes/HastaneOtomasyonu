@@ -37,6 +37,14 @@
             this.cmbDoktorSec = new System.Windows.Forms.ComboBox();
             this.cmbHastaSec = new System.Windows.Forms.ComboBox();
             this.lstKayitliHastalar = new System.Windows.Forms.ListBox();
+            this.dosyaAc = new System.Windows.Forms.OpenFileDialog();
+            this.dosyaKaydet = new System.Windows.Forms.SaveFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dosyaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.içeriAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dışarıAktarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flwRandevu
@@ -129,12 +137,58 @@
             this.lstKayitliHastalar.Size = new System.Drawing.Size(318, 264);
             this.lstKayitliHastalar.TabIndex = 11;
             // 
+            // dosyaAc
+            // 
+            this.dosyaAc.FileName = "openFileDialog1";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dosyaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(914, 24);
+            this.menuStrip1.TabIndex = 57;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // dosyaToolStripMenuItem
+            // 
+            this.dosyaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.jSONToolStripMenuItem});
+            this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
+            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.dosyaToolStripMenuItem.Text = "&Kaydet";
+            // 
+            // jSONToolStripMenuItem
+            // 
+            this.jSONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.içeriAktarToolStripMenuItem1,
+            this.dışarıAktarToolStripMenuItem1});
+            this.jSONToolStripMenuItem.Name = "jSONToolStripMenuItem";
+            this.jSONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem.Text = "&JSON";
+            // 
+            // içeriAktarToolStripMenuItem1
+            // 
+            this.içeriAktarToolStripMenuItem1.Name = "içeriAktarToolStripMenuItem1";
+            this.içeriAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.içeriAktarToolStripMenuItem1.Text = "&İçeri Aktar";
+            this.içeriAktarToolStripMenuItem1.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem1_Click);
+            // 
+            // dışarıAktarToolStripMenuItem1
+            // 
+            this.dışarıAktarToolStripMenuItem1.Name = "dışarıAktarToolStripMenuItem1";
+            this.dışarıAktarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dışarıAktarToolStripMenuItem1.Text = "&Dışarı Aktar";
+            this.dışarıAktarToolStripMenuItem1.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem1_Click);
+            // 
             // FormRandevu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(914, 521);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.lstKayitliHastalar);
             this.Controls.Add(this.cmbHastaSec);
             this.Controls.Add(this.cmbDoktorSec);
@@ -147,6 +201,8 @@
             this.Name = "FormRandevu";
             this.Text = "RANDEVU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +220,12 @@
         private System.Windows.Forms.ComboBox cmbDoktorSec;
         private System.Windows.Forms.ComboBox cmbHastaSec;
         private System.Windows.Forms.ListBox lstKayitliHastalar;
+        private System.Windows.Forms.OpenFileDialog dosyaAc;
+        private System.Windows.Forms.SaveFileDialog dosyaKaydet;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem dosyaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jSONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem1;
     }
 }

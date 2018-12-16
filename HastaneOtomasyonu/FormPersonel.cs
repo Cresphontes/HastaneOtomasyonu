@@ -47,33 +47,8 @@ namespace HastaneOtomasyonu
 
                 PersonelBranslari personelBrans = (PersonelBranslari)Enum.Parse(typeof(PersonelBranslari), cmbPersonelBrans.SelectedItem.ToString());
 
-                switch (personelBrans)
-                {
+                personel.PersonelBrans = personelBrans;
 
-                    case PersonelBranslari.Muhasebe:
-                        personel.PersonelBrans = PersonelBranslari.Muhasebe;
-                        break;
-                    case PersonelBranslari.Temizlik:
-                        personel.PersonelBrans = PersonelBranslari.Temizlik;
-                        break;
-                    case PersonelBranslari.HastaBakici:
-                        personel.PersonelBrans = PersonelBranslari.HastaBakici;
-                        break;
-                    case PersonelBranslari.Rontgenci:
-                        personel.PersonelBrans = PersonelBranslari.Rontgenci;
-                        break;
-                    case PersonelBranslari.Kantin:
-                        personel.PersonelBrans = PersonelBranslari.Kantin;
-                        break;
-                    case PersonelBranslari.Sofor:
-                        personel.PersonelBrans = PersonelBranslari.Sofor;
-                        break;
-                    case PersonelBranslari.HastaKayitci:
-                        personel.PersonelBrans = PersonelBranslari.HastaKayitci;
-                        break;
-                    default:
-                        break;
-                }
 
                 (this.MdiParent as FormGiris).personeller.Add(personel);
 
@@ -233,7 +208,7 @@ namespace HastaneOtomasyonu
 
             Personel seciliKisi = (Personel)lstPersonelKisiler.SelectedItem;// referans tip değişkenler !
 
-            //static metod yap orda ara varsa varde yoksa yokdersin.
+          
             try
             {
                 seciliKisi.Ad = txtPersonelAd.Text;
@@ -252,34 +227,7 @@ namespace HastaneOtomasyonu
 
                 PersonelBranslari personelBrans = (PersonelBranslari)Enum.Parse(typeof(PersonelBranslari), cmbPersonelBrans.SelectedItem.ToString());
 
-                switch (personelBrans)
-                {
-
-                    case PersonelBranslari.Muhasebe:
-                        seciliKisi.PersonelBrans = PersonelBranslari.Muhasebe;
-                        break;
-                    case PersonelBranslari.Temizlik:
-                        seciliKisi.PersonelBrans = PersonelBranslari.Temizlik;
-                        break;
-                    case PersonelBranslari.HastaBakici:
-                        seciliKisi.PersonelBrans = PersonelBranslari.HastaBakici;
-                        break;
-                    case PersonelBranslari.Rontgenci:
-                        seciliKisi.PersonelBrans = PersonelBranslari.Rontgenci;
-                        break;
-                    case PersonelBranslari.Kantin:
-                        seciliKisi.PersonelBrans = PersonelBranslari.Kantin;
-                        break;
-                    case PersonelBranslari.Sofor:
-                        seciliKisi.PersonelBrans = PersonelBranslari.Sofor;
-                        break;
-                    case PersonelBranslari.HastaKayitci:
-                        seciliKisi.PersonelBrans = PersonelBranslari.HastaKayitci;
-                        break;
-                    default:
-                        break;
-                }
-
+                seciliKisi.PersonelBrans = personelBrans;
 
             }
             catch (Exception ex)
@@ -356,5 +304,6 @@ namespace HastaneOtomasyonu
             //SAdece RAkam girişi
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+     
     }
 }

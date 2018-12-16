@@ -1,7 +1,10 @@
 ﻿using HastaneOtomasyonu.ClassLib;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,28 +46,27 @@ namespace HastaneOtomasyonu
             cmbDoktorSec.Visible = false;
             flwRandevu.Visible = false;
             btnRandevuKaydet.Visible = false;
+            
 
-            //Butonların üstlerine saatleri yazıyoruz.
-
-            for (int saat = 9; saat <= 16; saat++)
+        }
+        public void FormuTemizle()
+        {
+            foreach (Control control in this.Controls)
             {
-
-                if (saat == 12)
+               
+                if (control is FlowLayoutPanel flw)
                 {
-                    continue;
+                   flw.Controls.Remove(control);
+                    control.Dispose();
+                    
                 }
-                for (int dakika = 0; dakika <= 45; dakika += 15)
+                
+                else if (control is ComboBox cb)
                 {
-
-                    button = new MyButton();
-                    button.BackColor = Color.Peru;
-                    button.Text = saat.ToString("00") + ":" + dakika.ToString("00");
-                    flwRandevu.Controls.Add(button);
-                    button.Click += Button_Click;
+                    cb.Text = string.Empty; ;
                 }
 
             }
-
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -94,7 +96,7 @@ namespace HastaneOtomasyonu
                     ((Button)flwRandevu.Controls[i]).Enabled = true;
                 }
             }
-
+          
 
         }
 
@@ -134,6 +136,28 @@ namespace HastaneOtomasyonu
         {
             if (cmbDoktorSec.SelectedItem == null) return;
 
+            //Butonların üstlerine saatleri yazıyoruz.Ve butonları olusturuyoruz.
+            //formunloadından buraya taşındı . 2.kez seçim yapıldıgında gelmiyordu butonlar.
+
+            for (int saat = 9; saat <= 16; saat++)
+            {
+
+                if (saat == 12)
+                {
+                    continue;
+                }
+                for (int dakika = 0; dakika <= 45; dakika += 15)
+                {
+
+                    button = new MyButton();
+                    button.BackColor = Color.Peru;
+                    button.Text = saat.ToString("00") + ":" + dakika.ToString("00");
+                    flwRandevu.Controls.Add(button);
+                    button.Click += Button_Click;
+                }
+
+            }
+
             flwRandevu.Visible = true;
             btnRandevuKaydet.Visible = true;
         }
@@ -152,11 +176,64 @@ namespace HastaneOtomasyonu
             Randevu.RandevuDoktor = cmbDoktorSec.SelectedItem as Doktor;
             //secilen saat randevuya eklendi
             Randevu.RandevuSaat = saatTut;
-
+            //Kayıtlı kişi eklendi.
             lstKayitliHastalar.Items.Add(Randevu);
+            //Kayıtlı hasta Ana listeye aktarıldı.
+            (this.MdiParent as FormGiris).RandevuBilgileri.Add(Randevu);
 
             butonTut.Enabled = false;
-            
+            MessageBox.Show("Tebrikler Kaydınız Oluşturuldu.\nSaglıklı Günler Dileriz.");
+            FormuTemizle();
+            btnRandevuKaydet.Visible = false; 
+
+        }
+
+        private void içeriAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            dosyaAc.Title = "Bir JSON dosyası seçiniz";
+            dosyaAc.Filter = "(JSON Dosyası) | *.json";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.FileName = "RandevuluHastalar.json"; // string.Empty;
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    FileStream dosya = File.OpenRead(dosyaAc.FileName);
+                    StreamReader reader = new StreamReader(dosya);
+                    string dosyaIcerigi = reader.ReadToEnd();
+                    reader.Close();
+                    dosya.Close();
+                    (this.MdiParent as FormGiris).RandevuBilgileri = JsonConvert.DeserializeObject<List<Randevular>>(dosyaIcerigi);
+                    //Kisiler = JsonConvert.DeserializeObject(dosyaIcerigi) as List > Kisi >;
+                    //Kisiler = (list<Kisi>)JsonConvert.DeserializeObject(dosyaIcerigi);
+
+                    MessageBox.Show($"{(this.MdiParent as FormGiris).RandevuBilgileri.Count} kişi başarıyala aktarıldı");
+                    lstKayitliHastalar.Items.Clear();
+                    lstKayitliHastalar.Items.AddRange((this.MdiParent as FormGiris).RandevuBilgileri.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("bir hata oluştu " + ex.Message);
+                }
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dosyaKaydet.Title = "Bir JSON dosyası seçiniz";
+            dosyaKaydet.Filter = "(JSON Dosyası) | *.json";
+            dosyaKaydet.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaKaydet.FileName = "RandevuluHastalar.json"; // string.Empty;
+            if (dosyaKaydet.ShowDialog() == DialogResult.OK)
+            {
+                FileStream file = File.Open(dosyaKaydet.FileName, FileMode.Create);
+                StreamWriter writer = new StreamWriter(file);
+                writer.Write(JsonConvert.SerializeObject((this.MdiParent as FormGiris).RandevuBilgileri));
+                writer.Close();
+                writer.Dispose();
+            }
+            lstKayitliHastalar.Items.Clear();
         }
     }
 }

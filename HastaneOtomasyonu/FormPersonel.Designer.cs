@@ -299,7 +299,11 @@
             // dosyaAc
             // 
             this.dosyaAc.FileName = "openFileDialog1";
+            
             // 
+            // dosyaKaydet
+            // 
+            
             // btnPersonelTemizle
             // 
             this.btnPersonelTemizle.Location = new System.Drawing.Point(71, 254);
