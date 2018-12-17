@@ -112,6 +112,7 @@ namespace HastaneOtomasyonu
             txtDoktorMaas.Text = secilikisi.Maas;
             cmbDoktorBrans.Text = secilikisi.DoktorBrans.ToString();
             cmbDoktorHemsire.Text = secilikisi.HemsireSec.ToString();
+
             if (secilikisi.Fotograf != null && secilikisi.Fotograf.Length > 0)
             {
                 pbDoktor.Image = new Bitmap(new MemoryStream(secilikisi.Fotograf));
@@ -228,11 +229,14 @@ namespace HastaneOtomasyonu
                 seciliKisi.Telefon = txtDoktorTelefon.Text;
                 seciliKisi.TCKN = txtDoktorTCKN.Text;
                 seciliKisi.Maas = txtDoktorMaas.Text;
-                seciliKisi.HemsireSec = cmbDoktorHemsire.SelectedItem as Hemsire;
+
+                seciliKisi.HemsireSec = tut as Hemsire;
+
                 if (memoryStream.Length > 0)
                 {
                     seciliKisi.Fotograf = memoryStream.ToArray();
                 }
+
                 memoryStream = new MemoryStream();
 
                 BransliHemsireler.Remove(cmbDoktorHemsire.SelectedItem as Hemsire);
@@ -300,6 +304,8 @@ namespace HastaneOtomasyonu
 
                 throw new Exception(ex.Message);
             }
+
+
         }
 
         private void txtDoktorTCKN_KeyPress(object sender, KeyPressEventArgs e)
